@@ -26,6 +26,12 @@ Modes:
       Deterministic pass/fail check: every validation case's expected outcome is Impactful, so
       this just confirms every verdict says so and reports which (if any) didn't, with the
       case's title, for investigation.
+
+  --expand-verdicts CLUSTER_VERDICTS.json CLUSTERS.json [--out verdicts.json]
+      Takes verdicts keyed by cluster representative row_index (from classifying
+      dedup_rows.py's output) plus the cluster map, and expands them into one verdict per
+      *original* row_index — every row in a cluster inherits its representative's verdict, with
+      the rationale annotated to say so. Feeds the result straight into --write.
 """
 from __future__ import annotations
 
@@ -244,6 +250,39 @@ def write_output(records: list[dict], verdicts_by_row: dict, output_path: Path) 
     print(f"wrote {output_path} ({total} rows, {overturned} overturned to Impactful)")
 
 
+def expand_verdicts(cluster_verdicts_path: Path, clusters_path: Path, out_path: Path) -> None:
+    cluster_verdicts = json.loads(cluster_verdicts_path.read_text(encoding="utf-8"))
+    cluster_map = json.loads(clusters_path.read_text(encoding="utf-8"))
+    verdicts_by_rep = {str(v["row_index"]): v for v in cluster_verdicts}
+
+    expanded = []
+    missing = []
+    for rep_row_index, member_row_indices in cluster_map.items():
+        verdict = verdicts_by_rep.get(rep_row_index)
+        if not verdict:
+            missing.append(rep_row_index)
+            continue
+        for member in member_row_indices:
+            if str(member) == str(rep_row_index):
+                expanded.append(verdict)
+            else:
+                note = (
+                    f"[Deduplicated: near-identical wire coverage of the same underlying event "
+                    f"as row {rep_row_index}, classified there.] {verdict.get('rationale', '')}"
+                )
+                expanded.append({
+                    "row_index": member,
+                    "event_type": verdict.get("event_type", ""),
+                    "recommended_classification": verdict.get("recommended_classification", ""),
+                    "rationale": note,
+                })
+
+    out_path.write_text(json.dumps(expanded, indent=2), encoding="utf-8")
+    print(f"expanded {len(cluster_verdicts)} cluster verdicts -> {len(expanded)} row verdicts -> {out_path}")
+    if missing:
+        print(f"WARNING: {len(missing)} cluster representative(s) had no verdict supplied: {missing[:10]}")
+
+
 def check_validation(verdicts_path: Path, records: list[dict]) -> int:
     verdicts = json.loads(verdicts_path.read_text(encoding="utf-8"))
     verdicts_by_row = {str(v["row_index"]): v for v in verdicts}
@@ -271,6 +310,7 @@ def main() -> int:
     p.add_argument("--write", nargs=2, metavar=("VERDICTS.json", "OUTPUT.xlsx"))
     p.add_argument("--validate", action="store_true")
     p.add_argument("--check-validate", metavar="VERDICTS.json")
+    p.add_argument("--expand-verdicts", nargs=2, metavar=("CLUSTER_VERDICTS.json", "CLUSTERS.json"))
     p.add_argument("--out", default="records.json")
     p.add_argument("--records", default="records.json", help="records.json to pair with --write/--check-validate")
     args = p.parse_args()
@@ -298,6 +338,11 @@ def main() -> int:
     if args.check_validate:
         records = json.loads(Path(args.records).read_text(encoding="utf-8"))
         return check_validation(Path(args.check_validate), records)
+
+    if args.expand_verdicts:
+        cluster_verdicts_path, clusters_path = args.expand_verdicts
+        expand_verdicts(Path(cluster_verdicts_path), Path(clusters_path), Path(args.out))
+        return 0
 
     p.print_help()
     return 1

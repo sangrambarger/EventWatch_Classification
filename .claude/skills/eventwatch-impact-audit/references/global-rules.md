@@ -36,3 +36,32 @@ Do not apply a blanket "if the disruption is over, mark Not Impactful" shortcut.
 - Others explicitly stand down once resolved with no disruption — e.g. Labor Disruption: "Strike Called Off? Mark as Not Impactful." Airport Disruption: "Partial disruptions, no impact on cargo; Operations resumed - Avoid."
 Always check the specific event type's own Reporting Guidelines in `event-types-*.md` for how it treats resolution, rather than assuming either way.
 
+## 6. Materiality floor — a technical keyword match is not automatically Impactful
+
+Some DO-report bullets are written broadly (e.g. Factory Disruption's Sub-Types list includes
+"Future/scheduled shutdowns"). That bullet exists to catch shutdowns that are themselves the
+disruptive event or a company's response to one — not routine, long-pre-announced, business-
+as-usual maintenance windows (e.g. an annual planned maintenance shutdown at a plant, announced
+months ahead, with no indication of extended duration or connection to any actual problem).
+Before classifying Impactful on a "scheduled"/"future"/"planned" keyword match alone, check for
+an actual materiality signal: unusual duration, a stated cause tied to a disruption (fire,
+labor action, regulatory order, financial distress), or scope beyond ordinary operations. A
+title that is purely "Company X's planned annual maintenance shutdown, dates announced," with
+nothing else, is Not Impactful — this is a genuinely clear case, not one where the safe-default-
+to-Impactful rule (#4) should apply, because "routine and pre-planned with no stated disruption"
+is itself a clear signal, not ambiguity.
+
+## 7. Near-duplicate wire stories about the same underlying event
+
+Real-world data includes many near-identical wire-service copies of the same story (the same
+factory fire or sabotage campaign reported by 3-9 different outlets, each captured as a separate
+row). Every row must still receive its own verdict in the output — never silently drop a row —
+but near-duplicate rows describing the *same* underlying event should reach the *same*
+classification and, substantively, the same rationale (pointing to the shared underlying event).
+Treating duplicates inconsistently (some flagged, some not, purely because different analysts or
+different classification passes handled each copy independently) is itself a symptom of the
+failure this audit exists to catch, not something to reproduce. Where the workflow includes a
+deduplication step before classification, that step is a mechanical grouping by title/entity/date
+similarity — it does not decide relevance, it only avoids re-litigating the same fact pattern
+independently once per wire copy.
+

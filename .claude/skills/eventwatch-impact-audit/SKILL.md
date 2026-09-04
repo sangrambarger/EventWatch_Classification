@@ -40,7 +40,27 @@ differ from what was described when this skill was built.
 **Do not skip or sample rows.** The whole point of this audit is that a skimmed row is exactly
 how the original miss happened. Process every record in `records.json`, in full.
 
-### 2. Classify every row (this is the only step that needs your judgment, not the script's)
+### 2. Deduplicate near-identical wire copies of the same event (recommended for large files)
+
+Real production data includes many near-identical wire-service copies of the same underlying
+event — the same factory fire or sabotage campaign reported by 3-12 different outlets, each a
+separate row. Classifying every copy independently wastes effort and risks inconsistent verdicts
+across copies of the same fact pattern (see `references/global-rules.md` #7).
+
+```
+python3 scripts/dedup_rows.py records.json --out-representatives dedup_records.json --out-clusters clusters.json
+```
+
+This is a purely mechanical, deterministic step (title/summary text-similarity clustering, no
+LLM judgment) — it never decides relevance, only groups rows that are near-certainly about the
+same event. Classify `dedup_records.json` (one record per unique-event cluster) in step 3
+instead of the full `records.json`. It is intentionally biased toward under-merging over
+false-merging — see the module docstring in `scripts/dedup_rows.py` for the concrete false-merge
+cases found and fixed during development, and treat every dedup-inherited verdict in the final
+output (tagged `[Deduplicated: ...]` in its rationale) as spot-checkable, not infallible. Skip
+this step for small files where the redundant-effort savings don't matter.
+
+### 3. Classify every row (this is the only step that needs your judgment, not the script's)
 
 For each record, read `record["feed_title"]` + `record["story_summary"]` in full — the title
 alone is usually too thin to judge whether a disruption is confirmed, ongoing, or genuinely
@@ -80,7 +100,15 @@ Write all verdicts to a JSON array, one object per record:
   "recommended_classification": "Impactful", "rationale": "..."}]
 ```
 
-### 3. Render the output workbook
+### 4. Render the output workbook
+
+If you deduplicated in step 2, first expand your cluster-level verdicts back out to every
+original row:
+```
+python3 scripts/run_audit.py --expand-verdicts cluster_verdicts.json clusters.json --out verdicts.json
+```
+(Skip this if you classified `records.json` directly without deduplication — go straight to
+`--write` with your verdicts.)
 
 ```
 python3 scripts/run_audit.py --write verdicts.json "<output path>.xlsx" --records records.json
@@ -101,7 +129,7 @@ Before trusting this skill against a real production file, or after editing anyt
 python3 scripts/run_audit.py --validate --out validation_records.json
 ```
 
-Then classify those 8 records exactly as in step 2 above (they're real cases with enough
+Then classify those 8 records exactly as in step 3 above (they're real cases with enough
 context to judge, though reconstructed from a downstream complaints log rather than the
 original story summary — see the honesty note at the top of `references/validation_cases.md`),
 write verdicts, and check:

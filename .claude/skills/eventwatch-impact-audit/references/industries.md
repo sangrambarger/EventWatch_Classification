@@ -4,6 +4,8 @@ Source: Resilinc EventWatch Industry Definitions_2026_1.pdf (27 industries, rich
 
 > **Decision (process owner, confirmed):** "Tobacco and E-cigarettes", which appears only in the Thresholds & Guide pptx's Slide 62 coverage table and has no formal definition in this document or its docx companion, is **excluded**. A title touching only tobacco/e-cigarette products with no other vertical connection does not by itself make an event Impactful. Do not invent a 28th industry.
 
+> **Applying this to categories the source documents never mention at all** (e.g. cannabis/legal marijuana, primary/secondary education, general municipal/public administration, hospitality/restaurants/tourism, charities/nonprofits): these are not a 28th industry either, so the same rule applies — don't invent one. Check whether the specific title connects to one of the 27 industries above via `global-rules.md` #4's product/vertical-connection test (e.g. a hospitality company's food-processing supply issue can connect to Food & Beverage; a university research lab producing/testing materials can connect to Research & Development; a cannabis-adjacent industrial chemical or packaging supplier can connect to Industrial Chemicals or Packaging). If no such connection exists — the story is about the sector's own front-line service or administrative activity with nothing tying it to a listed industry's supply chain — that absence of a vertical connection is itself the basis for Not Impactful, the same as it would be for any other unmapped, unconnected company.
+
 ## Contents
 - Aerospace
 - Agrochemicals
