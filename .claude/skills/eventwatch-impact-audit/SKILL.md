@@ -75,8 +75,18 @@ Apply, in order:
 1. **Read `references/global-rules.md` first, always** — it's short and applies to every row:
    the safe-default-to-Impactful rule, the severity gauge, why priority tiers (P0-P4) are never
    a reason to call something Not Impactful, the mapped/critical-company heuristic (no supplier
-   database is available — apply the heuristic instead), and the resolved-event rule (never a
-   blanket "if it's over, mark NI" — it varies by event type).
+   database is available — apply the heuristic instead), the resolved-event rule (never a
+   blanket "if it's over, mark NI" — it varies by event type), and — check these before anything
+   else, since they short-circuit the whole procedure — rules #8-9: **we report disruptions, not
+   expansions, resumptions, or market commentary.** A story about a company growing, investing,
+   or announcing expanded capacity, or a follow-up saying operations have simply resumed, or
+   financial/crypto market commentary with no described physical event, is Not Impactful
+   regardless of company size or industry (Event Type: "Irrelevant / Not a Disruption") — don't
+   spend effort on the mapped/critical-company or industry-connection checks for these, since
+   there's no disruption to evaluate in the first place. Also check #10-12 for three specific
+   confirmed decisions: Fishing/general-hotels out of scope, Uber in scope, and Legal Action's
+   materiality floor (a new filing is reportable; a law firm's templated deadline-reminder
+   press release about an already-known suit is not).
 2. **Re-derive Event Type** against the taxonomy in `references/event-types-manmade.md`,
    `references/event-types-natural.md`, and `references/event-types-other.md` — only open the
    one file matching the row's likely category (each has a Contents list at the top; skim that

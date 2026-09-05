@@ -65,3 +65,78 @@ deduplication step before classification, that step is a mechanical grouping by 
 similarity — it does not decide relevance, it only avoids re-litigating the same fact pattern
 independently once per wire copy.
 
+## 8. We report disruptions, not expansions, resumptions, or market commentary (process-owner decision)
+
+EventWatch's job is to catch supply-chain **disruptions and risk signals** — not to report
+positive/neutral corporate developments, and not to report the all-clear once a disruption is
+over. Three concrete patterns to classify Not Impactful (Event Type: "Irrelevant / Not a
+Disruption" — see #9) regardless of company size, industry connection, or dollar amounts
+involved:
+- **Expansion/growth/investment announcements with no disruption angle.** Example: "Chevron will
+  allocate $7 billion over 5 years to double its production in Venezuela" / "Chevron Confirms
+  Expansion of Operations in Venezuela." This is Chevron *growing* — a mapped, critical Oil & Gas
+  company, a huge dollar figure, and still irrelevant, because nothing is being disrupted. Do not
+  let company prominence or headline dollar amounts override the basic question of whether a
+  disruption is being described at all.
+- **Resumption/recovery-only follow-ups.** Once a previously-disruptive event is confirmed over
+  and operations have resumed normally, a later story whose only content is "operations have now
+  resumed" is not independently reportable — it has no new disruption information, only the
+  all-clear. (This does not contradict rule #5: reporting the disruption itself, e.g. a factory
+  fire, even after it's been extinguished, is about the disruptive event; this rule is about a
+  separate, later "we're back to normal now" story with nothing else in it.)
+- **Financial/crypto market commentary with no described physical or operational event.**
+  Example: "Bitcoin August Rally Is Being Put to the Test With Higher Treasury Yields" — this is
+  trading/market-sentiment analysis, not a report of anything happening to a supply chain. No
+  company, asset, or price-movement story qualifies for Impactful unless it describes an actual
+  physical/operational disruption, not just market reaction to one.
+
+## 9. "Irrelevant" is a labeling convention within Not Impactful, not a third classification
+
+The binary output contract (Impactful / Not Impactful) never changes — do not invent a third
+value in the `recommended_classification` field. But content that fails rule #8, or belongs to an
+industry/sector explicitly out of scope (see `industries.md`), is qualitatively different from a
+genuine, real disruption that simply doesn't clear the bar (e.g. a routine scheduled maintenance
+window, rule #6). Distinguish these in the `event_type` field and rationale instead:
+- Use an Event Type like "Irrelevant / Not a Disruption" (rule #8 cases) or "Irrelevant / Out of
+  Scope Industry" (rule #8/industries.md out-of-scope-sector cases) rather than forcing these into
+  one of the 43 real event types.
+- This keeps the aggregate Summary sheet able to separate "real events that were correctly/
+  incorrectly judged not impactful" from "this was never a candidate event in the first place" —
+  the second category should not count toward headline overturn-rate statistics the same way.
+
+## 10. Out-of-scope sectors, expanded (process-owner decisions)
+
+In addition to Tobacco/E-cigarettes (see `industries.md`) and the cannabis/education/municipal-
+services/hospitality guidance already there: **Fishing** (commercial fishing/seafood harvesting)
+and **hotels in general** (as a hospitality/lodging service, not any food-processing or
+manufacturing activity a hotel group might separately run) are confirmed out of scope. As with
+the other out-of-scope categories, a specific story that connects to one of the 27 industries
+despite the sector label (e.g. a hotel construction project tied to Construction, a fishing
+fleet's vessel-building tied to General Manufacturing) is judged on that connection, not
+dismissed just for the sector label.
+
+## 11. Uber — confirmed in scope (process-owner decision)
+
+Uber (ride-hailing, Uber Eats delivery, and Uber Freight collectively) is confirmed **in scope** —
+treat Uber-related stories as connected to a covered vertical (Freight/Public Transportation-
+adjacent, and simply too large and systemically important a logistics/mobility platform to treat
+as unconnected) regardless of which specific business line a story focuses on. Do not gate this
+on whether a story explicitly names Uber Freight specifically — corporate-wide stories (layoffs,
+restructuring, market exits) about Uber as a whole are in scope under this decision.
+
+## 12. Legal Action materiality floor — a new filing vs. a recycled reminder (process-owner decision)
+
+`event-types-manmade.md`'s Legal Action entry says to notify "even if it's a potential legal
+action" and "as soon as the trial becomes public" — read literally, that also seems to cover a
+law firm's templated "Levi & Korsinsky reminds shareholders of the [date] deadline in the [Company]
+class action" press release. It does not. Those are recycled solicitation notices about a lawsuit
+that was *already* reported (or should have been, under the original-filing rule) — they contain
+no new legal development, just a deadline reminder. Confirmed: classify these Not Impactful
+(Event Type: "Irrelevant / Not a Disruption," same as rule #8/#9) regardless of how large or
+industry-connected the underlying defendant company is. The Legal Action rule's low bar
+("even if potential," "as soon as public") governs *new* filings, settlements, or rulings — not
+every subsequent procedural or marketing notice about a suit already in progress. The same logic
+applies to any other recurring "reminder/recap of an already-known development" wire pattern
+(e.g. a second or third press release restating the same settlement) — the *first* substantive
+report of a new legal development is the reportable event; reminders of it are not.
+
