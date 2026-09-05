@@ -78,6 +78,14 @@ involved:
   company, a huge dollar figure, and still irrelevant, because nothing is being disrupted. Do not
   let company prominence or headline dollar amounts override the basic question of whether a
   disruption is being described at all.
+  **This does NOT reach into Business Sale, Business Spin-off, Merger & Acquisition, or
+  Corporate Restructuring** — those are their own explicitly-defined event types in
+  `event-types-manmade.md` with their own DO-report criteria (a company being acquired, sold,
+  split, or restructured is a real corporate-structure change worth tracking regardless of
+  whether it reads as "positive" news), and are governed by that event type's own rules, not by
+  this one. Rule #8's "expansion" carve-out is specifically for organic growth/capacity/
+  investment announcements that don't correspond to any of the 43 event types at all — not a
+  license to wave off an entire category the source guide already covers on its own terms.
 - **Resumption/recovery-only follow-ups.** Once a previously-disruptive event is confirmed over
   and operations have resumed normally, a later story whose only content is "operations have now
   resumed" is not independently reportable — it has no new disruption information, only the
