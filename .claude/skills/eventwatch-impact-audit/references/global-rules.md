@@ -140,3 +140,16 @@ applies to any other recurring "reminder/recap of an already-known development" 
 (e.g. a second or third press release restating the same settlement) — the *first* substantive
 report of a new legal development is the reportable event; reminders of it are not.
 
+## 13. "No stated industry connection" is not the same as "no information at all"
+
+`industries.md`'s guidance that an absent vertical connection is itself grounds for Not Impactful
+assumes the story's subject is actually identifiable — a named company or sector that simply
+doesn't map to one of the 27 industries. It does not apply to a row that is just too thin to
+identify *anything* (e.g. a bare "structure fire" headline with no company, location detail, or
+industry named at all). That second case is not "confirmed unconnected," it's "unknown" — and
+rule #4 already says genuine ambiguity defaults to **Impactful**, not Not Impactful. Two
+independent classification passes made this exact mistake (collapsing "can't tell" into "no
+connection, so Not Impactful") before this rule was added — watch for it specifically: before
+citing "no industry connection" as your reason, confirm you actually know what the story is
+*about* well enough to say that, not just that the text was short.
+
