@@ -169,3 +169,39 @@ connection, so Not Impactful") before this rule was added — watch for it speci
 citing "no industry connection" as your reason, confirm you actually know what the story is
 *about* well enough to say that, not just that the text was short.
 
+## 14. "How Company X Could Address Y Following Z" — check who the real defendant is
+
+A recurring stock-analysis-mill template ("How [Company] Could/May Address [Allegations]
+Following [Case]," "[Company] May Find Opportunities Following [Other Company]'s Lawsuit") shows
+up constantly in real feed data. It resolves two different ways depending on one fact that
+requires reading `story_summary`, not just the title:
+- If the named company IS the actual defendant/litigant in a genuine, real legal action — this is
+  Legal Action reporting as normal (rule #12's low bar: new filings/rulings are reportable).
+- If the named company is an unrelated third party being speculated about in connection with
+  *someone else's* case (a "beneficiary" or "cautionary tale" framing with no actual new legal
+  action against the named company itself) — Not Impactful, Event Type "Irrelevant / Not a
+  Disruption." There is no new legal development for the named company.
+This distinction was validated as necessary (not a false-positive worry) via a real accuracy
+test: a shallow pass that guessed from the title pattern alone was wrong roughly a third of the
+time on this exact template. Reading the summary carefully here is not optional.
+
+## 15. Market-reaction framing of a real event is not the same as market commentary
+
+Rule #8 excludes pure financial/crypto market commentary ("Bitcoin rally tested by Treasury
+yields") because no physical or operational event is described at all — the story is entirely
+about trading/price movement. Do not over-apply that exclusion to a story that describes a real
+geopolitical or physical event and merely *reports its market reaction* alongside it ("US-Iran
+clashes drive oil surge, Dow drops 0.7%," a sanctions announcement noted alongside a currency
+move). If a real conflict, attack, sanction, or disruption is being described and the market
+reaction is color/context rather than the entire subject, classify by the underlying event
+(Geopolitical, Regulatory Change, etc.), not by the fact that a price or index is mentioned.
+
+## 16. Enforcement action against illicit actors is not a disruption to us
+
+A law-enforcement or regulatory action *against* an illegitimate operation — an illegal-refinery
+raid, a botnet takedown, a counterfeit-goods seizure, a bust of an unlicensed operator — is not a
+supply-chain disruption to a legitimate supplier. It's the reverse: authorities disrupting an
+illegitimate one. Classify Not Impactful for that specific reason (the "victim" here isn't a real
+participant in a covered supply chain) rather than trying to force it into Oil & Gas/Cyber
+Attack/etc. by surface keyword match.
+

@@ -1,4 +1,18 @@
-# Triage Checklist — fast, cheap first pass for large files
+# Triage Checklist — NOT CURRENTLY USED — see SKILL.md before touching this
+
+> **Do not use this file in the normal workflow.** It was built to cheaply pre-filter rows before
+> full classification, then validated against 350 rows with known-correct answers (from a
+> completed full-classification run) — it was only 71.8% accurate on the rows it tried to resolve
+> directly (a ~28% error rate), concentrated in exactly the highest-value judgment calls (real
+> defendant vs. third-party speculation in lawsuit-template titles, M&A vs. "growth," Leadership
+> Transition, geopolitical events framed through market reaction). It was also barely cheaper per
+> row than the full pass (~654 vs. ~1,000 tokens). Process-owner decision: rejected in favor of
+> full-depth classification on every row — see SKILL.md's "Running at scale" section. This file
+> is kept for the record and in case a much narrower version is worth building and re-validating
+> later; do not resurrect it without testing against known-correct answers again, the way this
+> version was tested.
+
+---
 
 Purpose: before spending full per-row reasoning (reading all 43 event types' DO/DON'T criteria,
 checking industry connection in depth, writing a cited rationale) on every row, sort rows into

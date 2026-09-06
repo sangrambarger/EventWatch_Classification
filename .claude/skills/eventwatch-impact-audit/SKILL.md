@@ -53,48 +53,39 @@ python3 scripts/dedup_rows.py records.json --out-representatives dedup_records.j
 
 This is a purely mechanical, deterministic step (title/summary text-similarity clustering, no
 LLM judgment) — it never decides relevance, only groups rows that are near-certainly about the
-same event. Classify `dedup_records.json` (one record per unique-event cluster) in step 3
+same event. Classify `dedup_records.json` (one record per unique-event cluster) in the next step
 instead of the full `records.json`. It is intentionally biased toward under-merging over
 false-merging — see the module docstring in `scripts/dedup_rows.py` for the concrete false-merge
 cases found and fixed during development, and treat every dedup-inherited verdict in the final
 output (tagged `[Deduplicated: ...]` in its rationale) as spot-checkable, not infallible. Skip
 this step for small files where the redundant-effort savings don't matter.
 
-### 3. Triage: cheaply separate Irrelevant/Thin rows before the expensive pass (recommended for large files)
+### (Do not use) Triage shortcut — tried, validated against ground truth, rejected
 
-**Do this for anything beyond a few hundred rows — it is the single biggest cost lever in this
-whole skill.** In real production data, roughly 45-55% of rows turn out to be "Irrelevant"
-(expansions, resumptions, market commentary, out-of-scope sectors) or "Thin" (too sparse to
-identify at all, which safe-defaults to Impactful without needing any deep lookup). Full
-classification — reading all 43 event types' criteria, checking industry connection in depth,
-writing a cited rationale — is expensive per row; deciding "is this even a candidate" is not.
-Spending full effort on every row uniformly is the main reason this skill is expensive at scale.
+A cheap pre-filter (`references/triage-checklist.md`, `scripts/run_audit.py --triage-split`) was
+built to sort rows into Irrelevant/Thin/Candidate before the expensive pass, on the theory that
+~45-55% of rows don't need full reasoning. **It was tested against 350 rows with known-correct
+answers (from a completed full-classification run) and failed the accuracy bar**: of the rows it
+tried to resolve directly, only 71.8% matched the actual correct verdict — a ~28% error rate,
+concentrated exactly in the highest-value judgment calls (a real defendant in a new lawsuit vs.
+speculative third-party commentary about someone else's case; a genuine M&A event vs. "growth" it
+got confused with; Leadership Transition; a real geopolitical event framed through market
+reaction). It was also barely cheaper per row than the full pass (~654 vs. ~1,000 tokens), so the
+cost case was weak even before the accuracy problem. **Process-owner decision: do not use this
+shortcut.** The files remain in the repo, clearly marked, in case a much narrower version is
+worth revisiting later — do not resurrect it without re-validating against known-correct answers
+first, the way this one was.
 
-Using **only** `references/triage-checklist.md` (do not load `global-rules.md`,
-`event-types-*.md`, or `industries.md`'s full definitions for this pass — that defeats the
-purpose), sort `dedup_records.json` into IRRELEVANT, THIN, or CANDIDATE per the checklist's exact
-output format. Batch aggressively — hundreds of rows per single response is realistic here, since
-the checklist is short and the output is terse (no rationale paragraphs, just a short reason
-clause). Write the results as a JSON array to `triage.json`.
+### 3. Classify every row (this is the only step that needs your judgment, not the script's)
 
-Then split mechanically (free, no judgment):
-```
-python3 scripts/run_audit.py --triage-split triage.json --records dedup_records.json \
-  --out-verdicts triage_verdicts.json --out-candidates candidate_records.json
-```
-`triage_verdicts.json` already has fully-formed verdicts for every IRRELEVANT/THIN row — nothing
-more to do with those. `candidate_records.json` is what actually needs step 4 below; it should be
-substantially smaller than `dedup_records.json`.
+_(This is the step that matters most — see "Building a skill that really understands the
+EventWatch team's requirements" near the end of this file for the full set of judgment patterns
+learned from real production runs, beyond what's summarized below.)_
 
-Skip this step for small files (a few hundred rows or fewer) where the savings don't justify the
-extra pass — go straight from dedup to step 4 with the full `dedup_records.json`.
-
-### 4. Classify every row (this is the only step that needs your judgment, not the script's)
-
-Classify `candidate_records.json` if you triaged in step 3, otherwise `dedup_records.json` (or
-`records.json` if you skipped dedup too, for a small file). This step keeps its full depth and
-cost per row — that's appropriate here, since triage already filtered out everything that didn't
-need it, and cutting corners on a genuine candidate is exactly how the original misses happened.
+Classify `dedup_records.json` (or `records.json` if you skipped dedup too, for a small file).
+Every row gets the same full depth and cost — no shortcut, per the decision above. Cutting
+corners on any row is exactly how the original misses happened; that is a worse outcome than the
+extra cost.
 
 For each record, read `record["feed_title"]` + `record["story_summary"]` in full — the title
 alone is usually too thin to judge whether a disruption is confirmed, ongoing, or genuinely
@@ -117,10 +108,13 @@ Apply, in order:
    financial/crypto market commentary with no described physical event, is Not Impactful
    regardless of company size or industry (Event Type: "Irrelevant / Not a Disruption") — don't
    spend effort on the mapped/critical-company or industry-connection checks for these, since
-   there's no disruption to evaluate in the first place. Also check #10-12 for three specific
-   confirmed decisions: Fishing/general-hotels out of scope, Uber in scope, and Legal Action's
-   materiality floor (a new filing is reportable; a law firm's templated deadline-reminder
-   press release about an already-known suit is not).
+   there's no disruption to evaluate in the first place. Also check #10-16 for confirmed process-
+   owner decisions: Fishing/general-hotels out of scope (except major global QSR chains — #10),
+   Uber in scope (#11), Legal Action's materiality floor (#12, a new filing is reportable, a
+   templated deadline-reminder isn't), "no connection" requires actually knowing what the story
+   is about, not just short text (#13), the "How Company X Could Address Y" template requiring a
+   real-defendant check (#14), market-reaction framing of a real event vs. pure market commentary
+   (#15), and enforcement action against illicit actors not counting as a disruption to us (#16).
 2. **Re-derive Event Type** against the taxonomy in `references/event-types-manmade.md`,
    `references/event-types-natural.md`, and `references/event-types-other.md` — only open the
    one file matching the row's likely category (each has a Contents list at the top; skim that
@@ -144,17 +138,10 @@ Write all verdicts to a JSON array, one object per record:
   "recommended_classification": "Impactful", "rationale": "..."}]
 ```
 
-### 5. Render the output workbook
+### 4. Render the output workbook
 
-If you triaged in step 3, first merge the triage-resolved verdicts with your step-4 classification
-verdicts (this only concatenates and checks for accidental double-processing — no judgment):
-```
-python3 scripts/run_audit.py --merge-verdicts triage_verdicts.json candidate_verdicts.json --out cluster_verdicts.json
-```
-(Skip this if you didn't triage — your step-4 output already covers every deduped row, just call
-it `cluster_verdicts.json`.)
-
-If you deduplicated in step 2, expand your cluster-level verdicts back out to every original row:
+If you deduplicated in step 2, expand your cluster-level verdicts back out to every original row
+(name your step-3 output `cluster_verdicts.json` first):
 ```
 python3 scripts/run_audit.py --expand-verdicts cluster_verdicts.json clusters.json --out verdicts.json
 ```
@@ -180,7 +167,7 @@ Before trusting this skill against a real production file, or after editing anyt
 python3 scripts/run_audit.py --validate --out validation_records.json
 ```
 
-Then classify those 8 records exactly as in step 4 above (they're real cases with enough
+Then classify those 8 records exactly as in step 3 above (they're real cases with enough
 context to judge, though reconstructed from a downstream complaints log rather than the
 original story summary — see the honesty note at the top of `references/validation_cases.md`),
 write verdicts, and check:
@@ -197,41 +184,80 @@ source pptx/docx/pdf changed) rather than special-casing around a single failure
 
 A real production run (3,088 rows, one shift's worth of "Not Impactful" calls) cost roughly
 1,000 tokens/row end to end when classified via autonomous subagents doing full-depth reasoning
-uniformly on every row. That does not scale to a daily volume in the tens of thousands — it will
-burn a weekly quota on a single day's file. Two things actually move that number, and they are
-not the same lever:
+on every row. A cheap pre-filter to skip full reasoning on "obviously irrelevant" rows was built
+and tested against known-correct answers — it had a ~28% error rate on exactly the categories
+that matter most (see "(Do not use) Triage shortcut" above) and was rejected. **There is
+currently no validated way to safely reduce reasoning depth per row.** Full depth on every row is
+the floor, not a starting point to optimize down from casually.
 
-1. **Triage first (step 3).** This is a volume cut, not a per-row cost cut: it stops ~45-55% of
-   rows from ever reaching the expensive stage at all. Always do this above a few hundred rows.
-2. **Keep the classification pass (step 4) itself lean.** Most of the per-row cost isn't the
-   reasoning — it's agentic overhead: re-reading files "just in case," re-verifying your own
-   output, writing multi-sentence rationales when one clause would do. When invoking this skill
-   at scale (e.g. via a subagent per batch), be explicit about all of the following, since none of
-   it is automatic:
-   - **Batch size**: hundreds of rows per invocation for triage (step 3), on the order of
-     200-300 for the classification pass (step 4) — large enough to amortize the fixed cost of
-     reading the reference docs once, small enough that quality doesn't degrade over a very long
-     single response.
-   - **Read reference docs once, at the start, and trust that reading.** Don't re-open
-     `event-types-*.md` repeatedly per row beyond what's needed, don't re-read the output file
-     back to "double check" — the record-keeping in this skill (row_index matching, the
-     `--check-validate` and validation-case machinery) exists so mistakes get caught downstream,
-     not so every batch re-verifies itself line by line.
-   - **Rationale length**: one sentence, citing the specific rule/criterion by name. Not a
-     paragraph. The rule citation is what makes it auditable; the prose around it is what makes it
-     expensive.
-   - **No exploratory tool calls beyond reading the reference docs and the input records file.**
-     There should be exactly a handful of tool calls per batch (read SKILL.md, read the relevant
-     reference files, read records, write verdicts) — if a batch is making many more than that,
-     something is being re-checked that doesn't need to be.
+The one lever that remains safe — cutting *overhead* around the reasoning, not the reasoning
+itself — is keeping the classification pass lean:
+- **Batch size**: roughly 200-300 rows per invocation — large enough to amortize the fixed cost
+  of reading the reference docs once, small enough that quality doesn't degrade over a very long
+  single response.
+- **Read reference docs once, at the start, and trust that reading.** Don't re-open
+  `event-types-*.md` repeatedly per row beyond what's needed, don't re-read the output file back
+  to "double check" — the record-keeping in this skill (row_index matching, the
+  `--check-validate` and validation-case machinery) exists so mistakes get caught downstream, not
+  so every batch re-verifies itself line by line.
+- **Rationale length**: one sentence, citing the specific rule/criterion by name. Not a
+  paragraph. The rule citation is what makes it auditable; the prose around it is what makes it
+  expensive. This does not mean skipping reasoning — it means not narrating the reasoning at
+  length once it's done.
+- **No exploratory tool calls beyond reading the reference docs and the input records file.**
+  There should be exactly a handful of tool calls per batch (read SKILL.md, read the relevant
+  reference files, read records, write verdicts) — if a batch is making many more than that,
+  something is being re-checked that doesn't need to be, not something being reasoned through
+  more carefully.
 
-Even with both levers applied, treat a sustained daily volume in the tens of thousands as likely
-still too expensive for a subscription-based quota running through Claude Code subagents — that
-architecture has inherent per-call overhead (tool-call loops, file re-reads, session setup) that
-a direct API call doesn't. If that volume is a real, recurring requirement, the actual fix is
-processing rows via the Claude API directly (ideally the Batch API, which is both cheaper per
-token and free of agentic overhead entirely) — not something achievable by further prompt
-engineering inside chat-based sessions alone.
+Realistically, this lever alone yields a modest reduction (perhaps 20-30%), not an
+order-of-magnitude one. Treat a sustained daily volume in the tens of thousands as too expensive
+for a subscription-based quota running through Claude Code subagents at *any* achievable
+per-row depth this skill validates as safe — that architecture also has inherent per-call
+overhead (tool-call loops, file re-reads, session setup) beyond what prompting can remove. If
+that volume is a real, recurring requirement, the actual fix is processing rows via the Claude
+API directly (ideally the Batch API, cheaper per token and free of agentic overhead) — not
+further prompt engineering inside chat-based sessions, and not cutting reasoning depth to make
+the current architecture fit an unfitting volume.
+
+## Building a skill that really understands the EventWatch team's requirements
+
+Correctness is the priority here, not speed (process-owner decision, after the triage
+experiment's accuracy failure). Beyond the rules already in `references/global-rules.md`, these
+are judgment patterns that showed up repeatedly across a real 3,088-row production run —
+documented here so they inform every future classification pass, not just something one batch
+figured out and the next batch has to rediscover:
+
+- **"How Company X Could/May Address Y Following Z" template titles** (a recurring stock-analysis-
+  mill format) require reading closely enough to tell whether X is the actual real defendant/
+  litigant in a genuine new legal action (→ Legal Action applies normally) or an unrelated third
+  party being speculated about in connection with someone else's case (→ Not Impactful, no new
+  legal development for X). This distinction cannot be made from the title alone or from a
+  shallow pass — it is exactly the kind of case that needs the full read of `story_summary`.
+- **A genuine geopolitical/physical event described through market-reaction framing** ("US-Iran
+  clashes drive oil surge, Dow drops 0.7%") is not the same as rule #8's pure market-commentary
+  carve-out (a story that is *only* about trading/price movement with no described physical
+  event, e.g. the Bitcoin-rally example). If a real conflict, sanction, attack, or disruption is
+  described and the market reaction is just color/context around it, classify by the underlying
+  event, not by the framing.
+- **Law-enforcement or regulatory action against illicit/bad actors** (an illegal-refinery bust,
+  a botnet takedown, a raid on counterfeit operations) is not a disruption to a legitimate
+  supplier — it's the opposite, authorities disrupting an illegitimate operation. Classify Not
+  Impactful for that reason specifically, distinct from any of rules #1-13.
+- **Leadership Transition and the sector-specific stricter M&A/Business Sale bar are already
+  correctly scoped in the verbatim source text** — Leadership Transition explicitly covers only
+  CEO/CFO/COO changes (not General Counsel, CMO, or division-level titles), and M&A/Business Sale
+  explicitly requires a mapped/prominent company specifically for retail, consulting/staffing,
+  hospitality, insurance/finance, crude oil, and mining (a stricter bar than the general
+  product-line-connection test used elsewhere). These aren't gaps to patch — they're there in
+  `event-types-manmade.md` already; the point of naming them here is so a future pass trusts that
+  specificity instead of re-deriving or second-guessing it.
+- **Near-duplicate wire copies with genuinely different subjects** (the same template headline
+  applied to different companies, e.g. "FDA Warning Letter to <Company>" sent to five different
+  peptide manufacturers) must not be merged by `dedup_rows.py` — see that script's own docstring
+  for the specific false-merge bugs found and fixed. If a future dedup run produces a cluster that
+  looks like it spans different real-world subjects, that is a bug to fix in the dedup script,
+  not a batch to just push through.
 
 ## Maintaining the reference docs
 
