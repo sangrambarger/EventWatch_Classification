@@ -1,0 +1,294 @@
+SOURCE: Resilinc EventWatch Industry Definitions_2026_1.pdf
+EXTRACTION METHOD: Read tool native PDF text extraction (verbatim), all 15 pages.
+NOTE: pypdf / pdfminer.six could not be installed in the build sandbox (broken system
+`cryptography`/`cffi` bindings; apt's poppler-utils mirror also returned 404). This plaintext
+dump was produced once via direct PDF reading and is checked into the repo so
+build_reference_docs.py can parse it mechanically without needing a working PDF library at build
+time. If a future environment has a working PDF stack, re-extract this file directly from the
+PDF and re-run the build script.
+================================================================================
+
+Resilinc EventWatch Industry Definitions
+
+Use this document to identify the industries and sub-sectors most relevant to your organization when configuring your Resilinc EventWatch monitoring profile.
+
+1. Aerospace
+Definition & Scope
+The Aerospace industry encompasses the research, design, engineering, manufacturing, assembly, integration, testing, and maintenance of civil and commercial aircraft, space launch vehicles, satellites, defense aviation systems, and associated specialized systems.
+Sub-Sectors Covered
+- Commercial Aircraft Manufacturing: Fixed-wing commercial liners, regional jets, business aviation, and civil helicopters.
+- Spacecraft & Satellite Systems: Earth observation satellites, telecommunication satellites, deep-space probes, orbital launch vehicles, and ground support infrastructure.
+- Avionics & Flight Systems: Flight control computers, navigation/GPS modules, radar, communication suites, glass cockpits, and onboard sensor networks.
+- Propulsion & Turbines: Jet engines, turboprops, rocket engines, nacelles, thrust reversers, auxiliary power units (APUs), and fuel management systems.
+- Aerostructures & Airframes: Fuselage sections, wing assemblies, tail cones, landing gear systems, composites, and structural titanium/aluminum assemblies.
+- Maintenance, Repair, & Overhaul (MRO): Heavy airframe maintenance, engine overhaul facilities, component repair stations, and certified spare parts distribution.
+- Unmanned Aerial Systems (UAS): Commercial drones, autonomous cargo aircraft, and urban air mobility (UAM/eVTOL) platforms.
+
+2. Agrochemicals
+Definition & Scope
+The Agrochemicals industry involves the chemical synthesis, biological development, formulation, blending, packaging, and distribution of chemical and biological agents used in agriculture.
+Sub-Sectors Covered
+- Synthetic Fertilizers: Nitrogenous fertilizers (ammonia, urea, ammonium nitrate), phosphatic fertilizers (MAP, DAP), potassic fertilizers (muriate of potash), and complex NPK blends.
+- Crop Protection (Pesticides): Chemical formulations including insecticides, herbicides, fungicides, nematicides, and rodenticides.
+- Agricultural Biologicals: Bio-pesticides, bio-fungicides, bio-stimulants, beneficial microbes, and natural crop enhancement inputs.
+- Seed Treatments: Chemical and biological seed coatings, fungicides, systemic insecticides, and seed inoculation treatments.
+- Soil Conditioners & Micronutrients: Chelated micronutrients (zinc, iron, manganese), soil pH adjusters, soil wetters, and humic additives.
+
+3. Automotive
+Definition & Scope
+The Automotive industry encompasses the design, development, high-volume manufacturing, assembly, logistics, and aftermarket distribution of motor vehicles and their constituent mechanical, electrical, and electronic assemblies. This vertical ranges from traditional internal combustion engine (ICE) vehicles to hybrid, electric (EV), and autonomous platforms, supported by dense global Tier-1, Tier-2, and Tier-3 supplier networks operating on tight production schedules.
+Sub-Sectors Covered
+- Vehicle OEMs (Original Equipment Manufacturers): Light passenger vehicles, commercial trucks, buses, heavy transport vehicles, and specialty utility vehicles.
+- Powertrain & Drivetrain: Internal combustion engines, transmissions, driveshafts, differentials, e-axles, electric traction motors, and inverter modules.
+- EV Battery & Clean Power Systems: Lithium-ion battery cells, battery modules/packs, battery management systems (BMS), thermal management loops, and fuel cell stacks.
+- Automotive Electronics & Autonomous Systems: Advanced Driver Assistance Systems (ADAS), LiDAR/Radar modules, ECU gateway controllers, connected infotainment, and wiring harnesses.
+- Body, Chassis, & Interior Assemblies: Stamped steel/aluminum body panels, structural chassis, suspension systems, braking assemblies, seating systems, cockpits, and interior trim.
+- Aftermarket & Replacement Parts: Replacement mechanical components, wear-and-tear parts, aftermarket electronics, and distribution dealer networks.
+
+4. Biotechnology
+Definition & Scope
+The Biotechnology industry uses living organisms, biological systems, cellular mechanics, genetic engineering, and molecular processes to research, develop, and produce advanced therapeutics, diagnostic technologies, industrial bio-inputs, and biological reagents.
+Sub-Sectors Covered
+- Biopharmaceuticals & Therapeutics: Monoclonal antibodies (mAbs), recombinant proteins, therapeutic enzymes, biological vaccines, and plasma derivatives.
+- Cell & Gene Therapy: Chimeric Antigen Receptor (CAR-T) cell therapies, viral vector production (AAV, lentivirus), gene editing technologies (CRISPR/Cas9), and mRNA therapeutics.
+- Biological Reagents & Media: Cell culture media, fetal bovine serum (FBS), growth factors, enzymes, chromatography resins, and biological buffers.
+- Bioprocess Technology & Equipment: Bioreactors, fermenters, single-use bioprocessing bags, filtration cassettes, and sterile fluid transfer systems.
+- Industrial & Environmental Biotech: Bio-based fuels, industrial enzymes, environmental remediation biology, and synthetic biological materials.
+
+5. Construction
+Definition & Scope
+The Construction industry comprises planning, civil engineering, site preparation, building assembly, structural maintenance, and infrastructure development. It spans large-scale public civil infrastructure, heavy industrial plants, commercial real estate, and residential building projects, relying on heavy raw materials, specialized machinery, skilled trade labor, and extensive contractor networks.
+Sub-Sectors Covered
+- Heavy Civil & Public Infrastructure: Highways, bridges, tunnels, dams, mass transit networks, water treatment infrastructure, and port facilities.
+- Industrial & Utility Construction: Power plants, oil refineries, chemical processing plants, semiconductor fabs, data centers, and manufacturing facilities.
+- Commercial & Institutional Building: Office towers, healthcare complexes, educational facilities, retail complexes, and logistical warehousing hubs.
+- Engineering, Procurement, & Construction (EPC): Turnkey project management, architectural design services, structural engineering, and general contracting.
+- Specialty Trades & Installation: Structural steel fabrication, concrete work, MEP (Mechanical, Electrical, Plumbing), HVAC installation, and roofing/envelope systems.
+- Building Materials & Aggregates: Structural steel, cement/concrete, aggregates, dimensional lumber, asphalt, and architectural glass.
+
+6. Consumer Electronics
+Definition & Scope
+The Consumer Electronics industry involves the high-volume design, hardware engineering, contract manufacturing, surface-mount assembly, and global distribution of electronic devices intended for everyday personal, household, and professional use. Characterized by rapid innovation and short product lifecycles, this sector depends heavily on microelectronics, advanced displays, precision enclosures, and miniaturized hardware.
+Sub-Sectors Covered
+- Personal Mobile Devices: Smartphones, tablets, e-readers, and mobile communication hardware.
+- Wearable Technology: Smartwatches, fitness trackers, smart glasses, and wireless hearables/earbuds.
+- Home Entertainment & Audio: Smart televisions, digital media streaming hardware, soundbars, home theater receivers, and high-fidelity audio equipment.
+- Smart Home & Connected Appliances: Smart thermostats, security cameras, automated door locks, lighting controllers, and connected major/minor appliances.
+- Personal Computing & Peripherals: Laptops, desktop PCs, monitors, computer keyboards, mice, docking stations, and external storage units.
+- Gaming Hardware: Video game consoles, handheld gaming systems, VR/AR headsets, and gaming controller accessories.
+
+7. Cosmetics & Skincare
+Definition & Scope
+The Cosmetics and Skincare industry includes the chemical formulation, compounding, hygienic filling, aesthetic packaging, and global distribution of products designed for personal care, skin health, hygiene, color cosmetics, and fragrances. This sector blends chemical manufacturing, natural botanical sourcing, dermatological research, and high-volume precision packaging.
+Sub-Sectors Covered
+- Skincare & Dermatological Products: Facial cleansers, anti-aging serums, moisturizers, sunscreens, dermatological topicals, and specialized clinical treatments.
+- Color Cosmetics: Makeup foundations, lipsticks, mascaras, eye palettes, face powders, and decorative cosmetics.
+- Haircare & Styling: Shampoos, conditioners, hair colorants, deep conditioning treatments, and chemical styling formulations.
+- Fragrances & Perfumery: Fine perfumes, eau de toilette, essential oil blends, synthetic aroma compounds, and room scents.
+- Personal Hygiene & Toiletries: Soaps, body washes, deodorants, antiperspirants, and oral care products.
+- Primary & Secondary Beauty Packaging: Glass bottles, pump dispensers, cosmetic tubes, compact containers, aluminum aerosol cans, and custom molded caps.
+
+8. Defense
+Definition & Scope
+The Defense industry involves the design, development, engineering, manufacturing, integration, and sustainment of military platforms, weapons systems, naval vessels, tactical equipment, government security electronics, and defense infrastructure.
+Sub-Sectors Covered
+- Military Aircraft & Missiles: Fighter jets, military transport aircraft, attack helicopters, guided missile systems, rockets, and aerial defense shields.
+- Naval Shipbuilding & Submarines: Aircraft carriers, destroyers, frigates, amphibious assault ships, nuclear/diesel submarines, and naval surface combatants.
+- Ordnance, Explosives, & Munitions: Small arms ammunition, artillery shells, tactical warheads, energetic materials, propellants, and bomb assemblies.
+- Tactical Communications & C4ISR: Command, Control, Communications, Computers, Intelligence, Surveillance, and Reconnaissance systems, secure tactical radios, and electronic warfare (EW) suites.
+- Armored Fighting Vehicles & Ground Systems: Main battle tanks, infantry fighting vehicles (IFVs), armored personnel carriers, and tactical wheeled vehicles.
+- Defense Electronics & Radar: Active Electronically Scanned Array (AESA) radars, sonar systems, night vision electro-optics, threat detection sensors, and secure military-grade microchip packaging.
+
+9. Food & Beverage
+Definition & Scope
+The Food & Beverage industry covers the commercial processing, preserving, blending, bottling, packaging, cold-storage, and distribution of raw agricultural outputs into consumable food and drink products.
+Sub-Sectors Covered
+- Grain, Milling, & Bakery: Flour milling, bakery goods, cereal processing, starches, pasta manufacturing, and edible grain processing.
+- Dairy Processing: Liquid milk processing, cheese, butter, yogurt, whey protein isolation, and milk powder production.
+- Meat, Poultry, & Seafood: Slaughtering, primary processing, secondary butchering, cold preservation, and packaged meat products.
+- Beverage Bottling & Distillation: Carbonated soft drinks, bottled water, fruit juices, beer brewing, wine production, and spirit distillation.
+- Prepared & Packaged Foods: Frozen meals, canned goods, condiments, snack foods, confectionery, and infant nutrition.
+- Food Ingredients & Additives: Flavors, natural/synthetic colorants, emulsifiers, preservatives, sweeteners, and texturizers.
+
+10. Freight
+Definition & Scope
+The Freight industry represents the physical movement, warehousing, handling, and distribution of commercial goods, raw materials, and intermediate sub-assemblies across global supply chains. It serves as the physical backbone for cross-border trade, using multimodal transport infrastructure including ocean vessels, aircraft, freight trains, and commercial trucking fleets.
+Sub-Sectors Covered
+- Ocean Cargo & Container Shipping: Containerized cargo lines (TEU transport), dry bulk shipping, liquid tanker transport, and Roll-on/Roll-off (RoRo) vessel operators.
+- Air Freight & Express Courier: Scheduled air cargo carriers, dedicated freighter fleets, belly-cargo operations, and integrated express parcel delivery services.
+- Road Transportation: Long-haul Full Truckload (TL), Less-Than-Truckload (LTL), specialized flatbed/refrigerated haulage, and drayage transport.
+- Rail Freight & Intermodal: Class I freight rail operators, intermodal container transport, unit trains, and rail yard transloading operations.
+- Logistics Providers (3PL/4PL): Contract logistics, freight forwarding, customs brokerage, supply chain orchestration, and fulfillment center operations.
+- Port & Terminal Operations: Marine container terminals, intermodal rail ramps, air cargo handling facilities, and inland dry ports.
+
+11. Furnishing Goods
+Definition & Scope
+The Furnishing Goods industry involves the manufacturing, assembly, finishing, and commercial/residential distribution of interior furniture, architectural fixtures, decorative elements, and commercial office fittings. This sector relies on woodworking, metal stamping, foam chemistry, textile upholstery, and international container shipping.
+Sub-Sectors Covered
+- Commercial & Office Furniture: Modular office workstations, ergonomic seating, conference tables, commercial storage systems, and institutional furniture.
+- Residential & Home Furniture: Upholstered sofas, bedroom furniture, dining sets, accent tables, and outdoor patio furniture.
+- Architectural Lighting & Fixtures: Commercial lighting, residential decorative lamps, LED fixtures, and architectural track lighting.
+- Cabinetry & Architectural Millwork: Custom kitchen/bathroom cabinetry, architectural woodwork, retail fixtures, and decorative wall paneling.
+- Soft Furnishings & Floor Coverings: Carpets, rugs, drapery, window treatments, upholstery fabrics, and commercial vinyl/hardwood flooring.
+
+12. General Manufacturing
+Definition & Scope
+The General Manufacturing industry encompasses broad-based industrial production activities that transform raw metals, polymers, and synthetic materials into finished mechanical hardware, industrial tools, structural components, and multi-use sub-assemblies.
+Sub-Sectors Covered
+- Metal Stamping, Forging, & Casting: Precision metal stamping, die casting, hot/cold forging, foundry operations, and structural sheet metal fabrication.
+- Industrial Fasteners, Valves, & Fittings: Bolts, screws, rivets, industrial ball/gate valves, pipe fittings, hydraulic couplings, and structural fasteners.
+- Machined Mechanical Components: CNC turned parts, precision gears, shafts, bearings, bushings, and custom machined enclosures.
+- Hydraulic & Pneumatic Equipment: Hydraulic pumps, pneumatic cylinders, control valves, pressure hoses, and fluid power actuators.
+- Industrial Machinery & Tools: Machine tools, stamping presses, cutting tools, industrial hand tools, welding equipment, and automated material handling hardware.
+
+13. Healthcare
+Definition & Scope
+The Healthcare industry covers the organizational operations, facility management, clinical care delivery, diagnostic laboratory infrastructure, and supply management of health systems, hospitals, outpatient clinics, and care facilities. This vertical relies on uninterrupted access to medical supplies, utility infrastructure, single-use clinical consumables, and medical equipment.
+Sub-Sectors Covered
+- Hospitals & Integrated Health Systems: Acute care hospitals, inpatient surgical centers, emergency departments, and regional healthcare networks.
+- Outpatient Care & Specialty Clinics: Ambulatory surgical centers, urgent care centers, specialized radiology facilities, and physical therapy networks.
+- Clinical Diagnostic Laboratories: Pathology labs, central reference testing facilities, blood banks, and molecular diagnostic facilities.
+- Medical Consumables & PPE Distribution: Distribution networks for surgical gowns, gloves, syringes, IV tubing, wound care supplies, and personal protective equipment.
+- Clinical Utilities & Medical Gases: Bulk liquid oxygen supply, medical compressed air, nitrous oxide, and critical hospital power/sterilization systems.
+
+14. High Tech
+Definition & Scope
+The High Tech industry focuses on the advanced research, semiconductor physics, microchip manufacturing, circuit board assembly, and system integration of complex microelectronics, computing infrastructure, enterprise hardware, and robotics.
+Sub-Sectors Covered
+- Semiconductor Wafer Fabrication (Front-End Fabs): Pure-play foundries and integrated device manufacturers (IDMs) producing microprocessors, memory chips (DRAM/NAND), microcontrollers, and analog ICs.
+- Semiconductor Assembly, Test, & Packaging (ATP/OSAT): Back-end chip packaging, flip-chip assembly, advanced 2.5D/3D packaging, wafer testing, and wire bonding.
+- Printed Circuit Board Assembly (PCBA): Rigid, flexible, and multi-layer bare PCB manufacturing, Surface Mount Technology (SMT) assembly, and electronics contract manufacturing (EMS).
+- Enterprise Hardware & Datacenter Compute: High-performance computing servers, enterprise storage arrays, blade servers, high-speed network switches, and datacenter racks.
+- Industrial Automation & Robotics: Multi-axis industrial robots, programmable logic controllers (PLCs), automated guided vehicles (AGVs), machine vision hardware, and servo drives.
+- Optoelectronics & Photonics: Fiber-optic transceivers, laser diodes, image sensors (CMOS), optical lenses, and photonic integrated circuits.
+
+15. Industrial Chemicals
+Definition & Scope
+The Industrial Chemicals industry involves the large-scale chemical transformation, cracking, synthesis, and refining of basic raw materials (coal, natural gas, crude oil, minerals, air) into foundational chemical intermediates, industrial gases, bulk polymers, and specialty formulations used across all physical manufacturing sectors.
+Sub-Sectors Covered
+- Basic Petrochemical Intermediates: Ethylene, propylene, benzene, toluene, xylene, butadiene, and styrene.
+- Bulk Polymers, Resins, & Plastics: Polyethylene (HDPE/LDPE), polypropylene (PP), polyvinyl chloride (PVC), polystyrene, polyethylene terephthalate (PET), and engineering thermoplastics.
+- Industrial Gases: Bulk liquid and gaseous oxygen, nitrogen, argon, hydrogen, helium, carbon dioxide, and specialty electronic gases.
+- Chlor-Alkali & Inorganic Chemicals: Chlorine, caustic soda, soda ash, sulfuric acid, nitric acid, ammonia, and titanium dioxide pigments.
+- Specialty Chemicals & Solvents: Industrial solvents, adhesives, sealants, catalysts, industrial coatings, surfactants, functional fluids, and lubricant additives.
+
+16. Insurance & Finance
+Definition & Scope
+The Insurance and Finance sector provides the financial underpinnings, capital liquidity, credit instruments, risk transfer mechanisms, and corporate insurance coverages necessary to sustain global commercial operations, trade supply chains, capital projects, and asset protection.
+Sub-Sectors Covered
+- Trade Credit & Political Risk Insurance: Short-term trade credit coverage, non-payment protection, political risk indemnity, and export credit guarantee insurance.
+- Marine Cargo & Transit Insurance: Ocean cargo coverage, air freight transit insurance, inland marine protection, and port facility liability underwriting.
+- Commercial Property & Business Interruption Insurance: Property damage underwriting, contingent business interruption (CBI) coverage, and industrial casualty risk pooling.
+- Supply Chain & Working Capital Finance: Reverse factoring, supply chain finance (SCF) platforms, receivables discounting, and letters of credit (LC).
+- Commercial Banking & Treasury Services: Corporate lending, cross-border trade settlements, foreign exchange (FX) hedging, and corporate cash management.
+
+17. Life Sciences
+Definition & Scope
+The Life Sciences industry involves the regulated development, clinical testing, commercial scale-up, Good Manufacturing Practice (cGMP) production, and distribution of ethical human medicines, active pharmaceutical ingredients, surgical devices, and clinical diagnostic systems.
+Sub-Sectors Covered
+- Small Molecule Pharmaceuticals: Chemical synthesis of finished dosage form (FDF) solid tablets, capsules, oral liquids, and sterile injectables.
+- Active Pharmaceutical Ingredients (APIs): Production of primary chemical active ingredients, advanced drug intermediates, and bulk active compounds.
+- Medical Devices & Surgical Instruments: Implantable cardiac devices, orthopedic joint implants, surgical instruments, catheters, and endovascular tools.
+- In-Vitro Diagnostics (IVD): Clinical diagnostic test kits, immunoassay analyzers, molecular PCR platforms, blood glucose monitoring systems, and laboratory test consumables.
+- Single-Use Bioprocess Consumables: Sterile tubing, sterile connectors, bioprocess bags, single-use sensors, and depth filtration cartridges used in drug compounding.
+
+18. Natural Resources & Mining
+Definition & Scope
+The Natural Resources and Mining industry comprises the upstream exploration, extraction, beneficiation, primary smelting, and refining of metallic ores, industrial minerals, precious metals, rare earth elements, and structural timber.
+Sub-Sectors Covered
+- Base Metals Mining & Smelting: Extraction and refining of copper, aluminum (bauxite), iron ore, nickel, zinc, lead, and tin.
+- Rare Earth Elements (REE) & Critical Minerals: Extraction and chemical processing of neodymium, dysprosium, terbium, lithium, cobalt, graphite, and nickel sulfate.
+- Precious Metals Mining: Mining, refining, and bullion production of gold, silver, platinum, palladium, and rhodium.
+- Industrial Minerals & Quarrying: Extraction of silica sand, limestone, gypsum, phosphate rock, potash, industrial clays, and dimension stone.
+- Forestry & Timber Operations: Commercial forest management, logging, raw timber harvesting, sawmill operations, and wood pulp processing.
+
+19. Oil & Gas
+Definition & Scope
+The Oil & Gas industry includes the upstream exploration and drilling, midstream transportation and storage, and downstream refining and marketing of petroleum, crude oil, natural gas, and natural gas liquids (NGLs).
+Sub-Sectors Covered
+- Upstream Exploration & Production (E&P): Onshore and offshore oil/gas drilling, well completion, reservoir management, and crude extraction operations.
+- Midstream Pipelines & Storage: Crude and gas pipeline networks, compressor stations, bulk liquid storage terminals, and rail/barge transport infrastructure.
+- Downstream Refining: Petroleum refineries producing gasoline, diesel, jet fuel, heating oil, marine bunker fuel, asphalt, and petroleum coke.
+- Liquefied Natural Gas (LNG): Gas liquefaction plants, cryogenic LNG transport vessels, regasification import terminals, and storage facilities.
+- Oilfield Services & Equipment: Drilling rigs, blowout preventers (BOPs), wellheads, downhole tools, seismic surveying, and hydraulic fracturing equipment.
+
+20. Packaging
+Definition & Scope
+The Packaging industry involves the material conversion, structural engineering, printing, molding, and manufacturing of rigid, flexible, paper-based, glass, metal, and protective container systems.
+Sub-Sectors Covered
+- Corrugated & Paperboard Packaging: Corrugated shipping boxes, folding cartons, liquid paperboard containers, molded fiber packaging, and paper bags.
+- Flexible Packaging & Plastic Films: Multi-layer barrier films, flexible pouches, shrink films, stretch wrap, plastic bags, and laminated foils.
+- Rigid Plastic Packaging: Blow-molded bottles, thermoformed trays, injection-molded tubs, plastic drums, Intermediate Bulk Containers (IBCs), and closures/caps.
+- Metal Packaging: Aluminum beverage cans, steel food cans, aerosol containers, metal drums, and aluminum tubes.
+- Glass Containers: Glass bottles, food jars, pharmaceutical glass vials, ampoules, and specialized cosmetic glass containers.
+- Protective & Transport Packaging: Wooden pallets, plastic pallets, crating, foam cushioning, bubble wrapping, and strapping systems.
+
+21. Power & Energy
+Definition & Scope
+The Power & Energy industry encompasses the generation, high-voltage transmission, local distribution, and management of electrical power. It includes utility-scale infrastructure spanning traditional fossil fuel generation, nuclear power plants, utility-scale solar/wind farms, hydroelectric facilities, and modern electrical grid networks.
+Sub-Sectors Covered
+- Electric Transmission & Grid Infrastructure: High-voltage transmission lines, electrical substations, step-down transformers, switchgear, distribution automation, and smart grid systems.
+- Renewable Power Generation: Solar photovoltaic (PV) utility plants, onshore/offshore wind farms, hydroelectric dams, and geothermal energy generation facilities.
+- Grid Energy Storage Systems: Utility-scale lithium-ion battery energy storage systems (BESS), flow batteries, pumped hydro storage, and grid-scale inverters.
+- Nuclear Power Operations: Commercial nuclear power reactors, nuclear fuel assembly manufacturing, cooling infrastructure, and power plant operations.
+- Thermal & Fossil Power Generation: Combined-cycle natural gas power plants, coal-fired power stations, and industrial co-generation facilities.
+
+22. Public Transportation
+Definition & Scope
+The Public Transportation industry encompasses the management, infrastructure maintenance, rolling stock operation, and fleet services of passenger transport networks in urban, suburban, and regional environments. This vertical supports workforce mobility across industrial clusters and urban centers.
+Sub-Sectors Covered
+- Municipal Bus & Rapid Transit Systems: Urban bus transit fleets, articulated buses, Bus Rapid Transit (BRT) lines, and municipal fleet maintenance yards.
+- Passenger Rail & Mass Transit: Commuter rail networks, urban metro/subway systems, light rail transit (LRT), high-speed passenger rail, and streetcars.
+- Transit Infrastructure & Trackage: Railway signaling systems, catenary power lines, passenger stations, rail maintenance depots, and track infrastructure.
+- Rolling Stock Manufacturing: Passenger rail cars, locomotives, subway cars, electric/diesel buses, and transit signal hardware.
+- Ferry & Maritime Transit: Municipal passenger ferries, water taxis, passenger terminals, and docks.
+
+23. Research & Development (R&D)
+Definition & Scope
+The Research & Development industry comprises contract scientific research organizations, specialized commercial testing laboratories, material engineering facilities, fast-prototyping workshops, and technological incubation centers.
+Sub-Sectors Covered
+- Contract Research Organizations (CROs): Pre-clinical trial management, contract biopharmaceutical research, bio-analytical testing, and central laboratory analytical services.
+- Materials Science & Metallurgical Testing: Material failure analysis, destructive/non-destructive testing (NDT), metallurgical examination, and polymer characterization.
+- Hardware & Prototype Development: Rapid 3D printing/additive manufacturing labs, rapid CNC prototyping, wind-tunnel testing facilities, and environmental stress chambers.
+- Electronics & Semiconductor R&D Labs: Cleanroom prototype fabrication, chip design verification, electromagnetic compatibility (EMC) testing labs, and reliability stress testing.
+- Chemical & Formulation Testing Labs: Contract formulation development, analytical chemistry testing, chromatography analysis, and stability testing chambers.
+
+24. Retail
+Definition & Scope
+The Retail industry includes the multi-channel distribution, physical store operations, e-commerce platforms, fulfillment operations, and direct-to-consumer sales of consumer goods.
+Sub-Sectors Covered
+- Mass Merchants & Hypermarkets: Big-box mass retailers, general merchandise hypermarkets, and broadline departmental retail chains.
+- E-Commerce & Digital Marketplaces: Online retail platforms, pure-play direct-to-consumer (DTC) brands, digital storefronts, and third-party marketplace networks.
+- Specialty Apparel & Footwear Retail: Dedicated apparel chains, footwear retailers, luxury goods boutiques, and sporting goods stores.
+- Grocery & Supermarket Chains: Retail supermarket networks, specialty grocery markets, fresh food distribution, and online grocery delivery services.
+- Wholesale Clubs & Mass Distributors: Membership warehouse clubs, cash-and-carry wholesalers, and institutional consumer goods distributors.
+
+25. Software as a Service (SaaS)
+Definition & Scope
+The Software as a Service (SaaS) industry comprises cloud-native application software providers, enterprise infrastructure platforms, cloud computing hosting networks, cybersecurity software platforms, and industrial software systems. Delivered over the internet, this sector provides the digital systems used to run modern manufacturing, logistics, financial, and organizational operations.
+Sub-Sectors Covered
+- Enterprise Resource Planning (ERP) & Supply Chain Software: Cloud ERP suites, Supply Chain Management (SCM), Warehouse Management Systems (WMS), and Procurement platforms.
+- Cloud Infrastructure (IaaS / PaaS): Public and private cloud hosting networks, hyperscale data center platforms, cloud storage, and serverless compute infrastructure.
+- Cybersecurity & Identity Management Platforms: Endpoint detection and response (EDR), identity and access management (IAM), network firewalls, and cloud security posture platforms.
+- Industrial IoT & Operations Software: Manufacturing Execution Systems (MES), Supervisory Control and Data Acquisition (SCADA) software, digital twin platforms, and plant analytics.
+- Customer Relationship Management (CRM) & Analytics: CRM software suites, enterprise data analytics platforms, business intelligence tools, and workflow automation software.
+
+26. Telecommunications
+Definition & Scope
+The Telecommunications industry includes the building, maintenance, and operation of wired, wireless, fiber-optic, and satellite communications infrastructure. This industry delivers global voice, data, broadband, and cloud connectivity, serving as the communication layer for digital trade, remote site management, and real-time supply chain tracking.
+Sub-Sectors Covered
+- Wireless Carriers & Cellular Infrastructure: 5G/4G cellular networks, mobile network operators (MNOs), cell tower infrastructure, and base station equipment.
+- Fiber-Optic & Wireline Broadband Networks: Long-haul fiber-optic backbones, Fiber-to-the-Home/Premises (FTTH/FTTP), subsea fiber-optic cables, and metro Ethernet networks.
+- Satellite Communications: Low Earth Orbit (LEO) and Geostationary (GEO) satellite communication networks, ground earth stations, and satellite internet receivers.
+- Enterprise Networking Hardware: Core routers, enterprise switches, carrier-grade gateway hardware, radio access network (RAN) equipment, and optical transport hardware.
+- Managed Network & Data Services: Software-Defined Wide Area Networking (SD-WAN), MPLS connectivity, managed network security services, and enterprise telecom backbones.
+
+27. Textile
+Definition & Scope
+The Textile industry involves the spinning, weaving, knitting, non-woven bonding, dyeing, chemical finishing, and assembly of natural and synthetic fibers into yarn, fabrics, technical materials, industrial textiles, and finished garments. This vertical combines agricultural inputs, industrial chemical processing, mechanical weaving/knitting, and labor-intensive assembly.
+Sub-Sectors Covered
+- Technical & Industrial Fabrics: Geotextiles for civil construction, automotive tire cords and airbag fabrics, filtration media, flame-retardant textiles, and medical non-wovens.
+- Synthetic Fiber & Filament Manufacturing: Polymer processing for nylon, polyester, acrylic, spandex, polypropylene yarns, and high-performance aramids (Kevlar/Nomex).
+- Natural Fiber Processing: Cotton ginning, wool scouring, linen/flax processing, silk reeling, and natural yarn spinning mills.
+- Dyeing, Finishing, & Textile Coating: Fabric bleaching, commercial dyeing, screen/digital printing, water-repellent finishing, and protective coating applications.
+- Commercial Apparel & Garment Assembly: Mass apparel manufacturing, activewear, workwear, protective military uniforms, and fashion accessories.
