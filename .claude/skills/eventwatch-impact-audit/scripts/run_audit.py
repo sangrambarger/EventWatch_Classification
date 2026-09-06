@@ -32,6 +32,20 @@ Modes:
       dedup_rows.py's output) plus the cluster map, and expands them into one verdict per
       *original* row_index — every row in a cluster inherits its representative's verdict, with
       the rationale annotated to say so. Feeds the result straight into --write.
+
+  --triage-split TRIAGE.json --records dedup_records.json
+      [--out-verdicts triage_verdicts.json] [--out-candidates candidate_records.json]
+      Splits a completed triage pass (see references/triage-checklist.md) two ways: IRRELEVANT
+      and THIN rows become fully-formed verdicts directly (no further reasoning needed — this is
+      the whole point of triage), written to triage_verdicts.json; CANDIDATE rows are filtered
+      out of dedup_records.json unchanged, written to candidate_records.json, ready to feed into
+      the normal full classification pass. Purely mechanical — the triage_result field decides
+      everything, no judgment happens here.
+
+  --merge-verdicts A.json B.json [C.json ...] --out verdicts.json
+      Concatenates any number of verdict-shaped JSON arrays into one (e.g. triage_verdicts.json +
+      the full classification pass's output on candidate_records.json). Errors if any row_index
+      appears in more than one input file, since that means something was double-processed.
 """
 from __future__ import annotations
 
@@ -283,6 +297,62 @@ def expand_verdicts(cluster_verdicts_path: Path, clusters_path: Path, out_path: 
         print(f"WARNING: {len(missing)} cluster representative(s) had no verdict supplied: {missing[:10]}")
 
 
+def triage_split(triage_path: Path, records_path: Path, out_verdicts: Path, out_candidates: Path) -> None:
+    triage_results = json.loads(triage_path.read_text(encoding="utf-8"))
+    records = json.loads(records_path.read_text(encoding="utf-8"))
+    triage_by_row = {str(t["row_index"]): t for t in triage_results}
+
+    resolved_verdicts = []
+    candidate_records = []
+    missing = []
+    for rec in records:
+        t = triage_by_row.get(str(rec["row_index"]))
+        if not t:
+            missing.append(rec["row_index"])
+            continue
+        result = t.get("triage_result", "").strip().upper()
+        if result == "CANDIDATE":
+            candidate_records.append(rec)
+        elif result in ("IRRELEVANT", "THIN"):
+            classification = "Not Impactful" if result == "IRRELEVANT" else "Impactful"
+            resolved_verdicts.append({
+                "row_index": rec["row_index"],
+                "event_type": t.get("event_type", "Irrelevant / Not a Disruption"),
+                "recommended_classification": classification,
+                "rationale": f"[Triage: {result}] {t.get('reason', '')}",
+            })
+        else:
+            missing.append(rec["row_index"])
+
+    out_verdicts.write_text(json.dumps(resolved_verdicts, indent=2), encoding="utf-8")
+    out_candidates.write_text(json.dumps(candidate_records, indent=2), encoding="utf-8")
+    print(
+        f"triage split: {len(resolved_verdicts)} resolved directly (IRRELEVANT/THIN), "
+        f"{len(candidate_records)} candidates need full classification"
+        + (f", {len(missing)} rows had no usable triage result (treated as unresolved)" if missing else "")
+    )
+    if missing:
+        print(f"  unresolved row_index sample: {missing[:10]}")
+
+
+def merge_verdicts(input_paths: list[Path], out_path: Path) -> None:
+    combined = []
+    seen: dict[str, Path] = {}
+    for p in input_paths:
+        verdicts = json.loads(p.read_text(encoding="utf-8"))
+        for v in verdicts:
+            key = str(v["row_index"])
+            if key in seen:
+                raise SystemExit(
+                    f"ERROR: row_index {key!r} appears in both {seen[key]} and {p} — "
+                    f"a row was double-processed, refusing to silently pick one."
+                )
+            seen[key] = p
+            combined.append(v)
+    out_path.write_text(json.dumps(combined, indent=2), encoding="utf-8")
+    print(f"merged {len(input_paths)} files -> {len(combined)} verdicts -> {out_path}")
+
+
 def check_validation(verdicts_path: Path, records: list[dict]) -> int:
     verdicts = json.loads(verdicts_path.read_text(encoding="utf-8"))
     verdicts_by_row = {str(v["row_index"]): v for v in verdicts}
@@ -311,8 +381,12 @@ def main() -> int:
     p.add_argument("--validate", action="store_true")
     p.add_argument("--check-validate", metavar="VERDICTS.json")
     p.add_argument("--expand-verdicts", nargs=2, metavar=("CLUSTER_VERDICTS.json", "CLUSTERS.json"))
+    p.add_argument("--triage-split", metavar="TRIAGE.json")
+    p.add_argument("--out-verdicts", default="triage_verdicts.json")
+    p.add_argument("--out-candidates", default="candidate_records.json")
+    p.add_argument("--merge-verdicts", nargs="+", metavar="VERDICTS.json")
     p.add_argument("--out", default="records.json")
-    p.add_argument("--records", default="records.json", help="records.json to pair with --write/--check-validate")
+    p.add_argument("--records", default="records.json", help="records.json to pair with --write/--check-validate/--triage-split")
     args = p.parse_args()
 
     if args.extract:
@@ -342,6 +416,17 @@ def main() -> int:
     if args.expand_verdicts:
         cluster_verdicts_path, clusters_path = args.expand_verdicts
         expand_verdicts(Path(cluster_verdicts_path), Path(clusters_path), Path(args.out))
+        return 0
+
+    if args.triage_split:
+        triage_split(
+            Path(args.triage_split), Path(args.records),
+            Path(args.out_verdicts), Path(args.out_candidates),
+        )
+        return 0
+
+    if args.merge_verdicts:
+        merge_verdicts([Path(p_) for p_ in args.merge_verdicts], Path(args.out))
         return 0
 
     p.print_help()

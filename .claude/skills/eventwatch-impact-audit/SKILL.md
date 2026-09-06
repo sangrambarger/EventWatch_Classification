@@ -60,7 +60,41 @@ cases found and fixed during development, and treat every dedup-inherited verdic
 output (tagged `[Deduplicated: ...]` in its rationale) as spot-checkable, not infallible. Skip
 this step for small files where the redundant-effort savings don't matter.
 
-### 3. Classify every row (this is the only step that needs your judgment, not the script's)
+### 3. Triage: cheaply separate Irrelevant/Thin rows before the expensive pass (recommended for large files)
+
+**Do this for anything beyond a few hundred rows — it is the single biggest cost lever in this
+whole skill.** In real production data, roughly 45-55% of rows turn out to be "Irrelevant"
+(expansions, resumptions, market commentary, out-of-scope sectors) or "Thin" (too sparse to
+identify at all, which safe-defaults to Impactful without needing any deep lookup). Full
+classification — reading all 43 event types' criteria, checking industry connection in depth,
+writing a cited rationale — is expensive per row; deciding "is this even a candidate" is not.
+Spending full effort on every row uniformly is the main reason this skill is expensive at scale.
+
+Using **only** `references/triage-checklist.md` (do not load `global-rules.md`,
+`event-types-*.md`, or `industries.md`'s full definitions for this pass — that defeats the
+purpose), sort `dedup_records.json` into IRRELEVANT, THIN, or CANDIDATE per the checklist's exact
+output format. Batch aggressively — hundreds of rows per single response is realistic here, since
+the checklist is short and the output is terse (no rationale paragraphs, just a short reason
+clause). Write the results as a JSON array to `triage.json`.
+
+Then split mechanically (free, no judgment):
+```
+python3 scripts/run_audit.py --triage-split triage.json --records dedup_records.json \
+  --out-verdicts triage_verdicts.json --out-candidates candidate_records.json
+```
+`triage_verdicts.json` already has fully-formed verdicts for every IRRELEVANT/THIN row — nothing
+more to do with those. `candidate_records.json` is what actually needs step 4 below; it should be
+substantially smaller than `dedup_records.json`.
+
+Skip this step for small files (a few hundred rows or fewer) where the savings don't justify the
+extra pass — go straight from dedup to step 4 with the full `dedup_records.json`.
+
+### 4. Classify every row (this is the only step that needs your judgment, not the script's)
+
+Classify `candidate_records.json` if you triaged in step 3, otherwise `dedup_records.json` (or
+`records.json` if you skipped dedup too, for a small file). This step keeps its full depth and
+cost per row — that's appropriate here, since triage already filtered out everything that didn't
+need it, and cutting corners on a genuine candidate is exactly how the original misses happened.
 
 For each record, read `record["feed_title"]` + `record["story_summary"]` in full — the title
 alone is usually too thin to judge whether a disruption is confirmed, ongoing, or genuinely
@@ -110,10 +144,17 @@ Write all verdicts to a JSON array, one object per record:
   "recommended_classification": "Impactful", "rationale": "..."}]
 ```
 
-### 4. Render the output workbook
+### 5. Render the output workbook
 
-If you deduplicated in step 2, first expand your cluster-level verdicts back out to every
-original row:
+If you triaged in step 3, first merge the triage-resolved verdicts with your step-4 classification
+verdicts (this only concatenates and checks for accidental double-processing — no judgment):
+```
+python3 scripts/run_audit.py --merge-verdicts triage_verdicts.json candidate_verdicts.json --out cluster_verdicts.json
+```
+(Skip this if you didn't triage — your step-4 output already covers every deduped row, just call
+it `cluster_verdicts.json`.)
+
+If you deduplicated in step 2, expand your cluster-level verdicts back out to every original row:
 ```
 python3 scripts/run_audit.py --expand-verdicts cluster_verdicts.json clusters.json --out verdicts.json
 ```
@@ -139,7 +180,7 @@ Before trusting this skill against a real production file, or after editing anyt
 python3 scripts/run_audit.py --validate --out validation_records.json
 ```
 
-Then classify those 8 records exactly as in step 3 above (they're real cases with enough
+Then classify those 8 records exactly as in step 4 above (they're real cases with enough
 context to judge, though reconstructed from a downstream complaints log rather than the
 original story summary — see the honesty note at the top of `references/validation_cases.md`),
 write verdicts, and check:
@@ -151,6 +192,46 @@ python3 scripts/run_audit.py --check-validate validation_verdicts.json --records
 All 8 must come back Impactful. If any don't, the gap is in `references/event-types-*.md`, not
 in the case — fix the rule text there (re-run `scripts/build_reference_docs.py` first if the
 source pptx/docx/pdf changed) rather than special-casing around a single failure.
+
+## Running at scale — what actually drives cost, and what to do about it
+
+A real production run (3,088 rows, one shift's worth of "Not Impactful" calls) cost roughly
+1,000 tokens/row end to end when classified via autonomous subagents doing full-depth reasoning
+uniformly on every row. That does not scale to a daily volume in the tens of thousands — it will
+burn a weekly quota on a single day's file. Two things actually move that number, and they are
+not the same lever:
+
+1. **Triage first (step 3).** This is a volume cut, not a per-row cost cut: it stops ~45-55% of
+   rows from ever reaching the expensive stage at all. Always do this above a few hundred rows.
+2. **Keep the classification pass (step 4) itself lean.** Most of the per-row cost isn't the
+   reasoning — it's agentic overhead: re-reading files "just in case," re-verifying your own
+   output, writing multi-sentence rationales when one clause would do. When invoking this skill
+   at scale (e.g. via a subagent per batch), be explicit about all of the following, since none of
+   it is automatic:
+   - **Batch size**: hundreds of rows per invocation for triage (step 3), on the order of
+     200-300 for the classification pass (step 4) — large enough to amortize the fixed cost of
+     reading the reference docs once, small enough that quality doesn't degrade over a very long
+     single response.
+   - **Read reference docs once, at the start, and trust that reading.** Don't re-open
+     `event-types-*.md` repeatedly per row beyond what's needed, don't re-read the output file
+     back to "double check" — the record-keeping in this skill (row_index matching, the
+     `--check-validate` and validation-case machinery) exists so mistakes get caught downstream,
+     not so every batch re-verifies itself line by line.
+   - **Rationale length**: one sentence, citing the specific rule/criterion by name. Not a
+     paragraph. The rule citation is what makes it auditable; the prose around it is what makes it
+     expensive.
+   - **No exploratory tool calls beyond reading the reference docs and the input records file.**
+     There should be exactly a handful of tool calls per batch (read SKILL.md, read the relevant
+     reference files, read records, write verdicts) — if a batch is making many more than that,
+     something is being re-checked that doesn't need to be.
+
+Even with both levers applied, treat a sustained daily volume in the tens of thousands as likely
+still too expensive for a subscription-based quota running through Claude Code subagents — that
+architecture has inherent per-call overhead (tool-call loops, file re-reads, session setup) that
+a direct API call doesn't. If that volume is a real, recurring requirement, the actual fix is
+processing rows via the Claude API directly (ideally the Batch API, which is both cheaper per
+token and free of agentic overhead entirely) — not something achievable by further prompt
+engineering inside chat-based sessions alone.
 
 ## Maintaining the reference docs
 
