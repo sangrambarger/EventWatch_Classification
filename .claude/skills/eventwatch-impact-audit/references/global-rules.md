@@ -123,6 +123,14 @@ despite the sector label (e.g. a hotel construction project tied to Construction
 fleet's vessel-building tied to General Manufacturing) is judged on that connection, not
 dismissed just for the sector label.
 
+**Carve-in exception (process-owner decision, mirrors Uber in rule #11):** major global
+restaurant/QSR chains — confirmed examples: Starbucks, McDonald's, KFC — are **in scope** despite
+"restaurants" being a generally out-of-scope hospitality category. These operate at a scale where
+their supply chains (coffee, beef, chicken, produce, packaging, franchise distribution networks)
+are systemically significant, unlike a generic local restaurant. Treat comparably large, well-
+known global restaurant/QSR chains the same way; a small independent restaurant or local chain
+still falls under the general hospitality exclusion.
+
 ## 11. Uber — confirmed in scope (process-owner decision)
 
 Uber (ride-hailing, Uber Eats delivery, and Uber Freight collectively) is confirmed **in scope** —
