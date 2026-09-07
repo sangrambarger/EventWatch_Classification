@@ -76,11 +76,33 @@ shortcut.** The files remain in the repo, clearly marked, in case a much narrowe
 worth revisiting later — do not resurrect it without re-validating against known-correct answers
 first, the way this one was.
 
+### 2b. Prepare lean input (Python — do this, it is free and saves ~44% of the input payload)
+
+```
+# auto-resolve machine-generated feed templates (GDACS Green alerts, eClips placeholders)
+python3 scripts/run_audit.py --prefilter dedup_records.json \
+  --out-verdicts auto_verdicts.json --out-remaining remaining_records.json
+
+# split what's left into lean per-batch files (drops fields the classifier doesn't need)
+python3 scripts/run_audit.py --make-batches remaining_records.json --out-dir batches --batch-size 250
+
+# one reference file to read per batch instead of six separate reads
+python3 scripts/run_audit.py --reference-bundle --out reference_bundle.md
+```
+
+`--prefilter` is not a judgment shortcut — it only matches machine-generated feed formats that
+carry no company/site/disruption text by construction, and every pattern in it was verified at
+100% verdict-consistency against a real production run (see the table above and the comments in
+`run_audit.py`). Merge `auto_verdicts.json` back in at step 4 with `--merge-verdicts`.
+
 ### 3. Classify every row (this is the only step that needs your judgment, not the script's)
 
 _(This is the step that matters most — see "Building a skill that really understands the
 EventWatch team's requirements" near the end of this file for the full set of judgment patterns
 learned from real production runs, beyond what's summarized below.)_
+
+Read `reference_bundle.md` once, then work through `batches/batch_NN.tsv` (columns: row_index,
+feed_title, story_summary, analyst_stated_reason). One batch per invocation.
 
 Classify `dedup_records.json` (or `records.json` if you skipped dedup too, for a small file).
 Every row gets the same full depth and cost — no shortcut, per the decision above. Cutting
@@ -140,8 +162,13 @@ Write all verdicts to a JSON array, one object per record:
 
 ### 4. Render the output workbook
 
-If you deduplicated in step 2, expand your cluster-level verdicts back out to every original row
-(name your step-3 output `cluster_verdicts.json` first):
+If you prefiltered in step 2b, merge the auto-resolved verdicts with your step-3 verdicts first
+(this only concatenates and rejects accidental double-processing — no judgment):
+```
+python3 scripts/run_audit.py --merge-verdicts auto_verdicts.json classified_verdicts.json --out cluster_verdicts.json
+```
+
+If you deduplicated in step 2, expand your cluster-level verdicts back out to every original row:
 ```
 python3 scripts/run_audit.py --expand-verdicts cluster_verdicts.json clusters.json --out verdicts.json
 ```
@@ -179,6 +206,55 @@ python3 scripts/run_audit.py --check-validate validation_verdicts.json --records
 All 8 must come back Impactful. If any don't, the gap is in `references/event-types-*.md`, not
 in the case — fix the rule text there (re-run `scripts/build_reference_docs.py` first if the
 source pptx/docx/pdf changed) rather than special-casing around a single failure.
+
+## What Python does vs. what genuinely needs the model
+
+Every line below was measured against a real 3,088-row production run, not assumed. The rule is:
+**Python does anything whose answer is determined by structure or arithmetic; the model does
+anything whose answer depends on knowing something about the world.** Moving work across that
+line in the wrong direction is how the rejected triage shortcut produced a 28% error rate.
+
+| Work | Who | Evidence |
+|---|---|---|
+| Read xlsx, detect columns, emit records | Python | mechanical |
+| Deduplicate near-identical wire copies | Python | text similarity; see `dedup_rows.py` |
+| Serialize classification input (lean) | Python | 44% of input payload was waste — see below |
+| Split into batches, build reference bundle | Python | mechanical |
+| Auto-resolve machine-generated feed templates | Python | GDACS Green 66/66, eClips 8/8 — 100% consistent |
+| Identify company / product / region in a story | **Model** | needs world knowledge |
+| Re-derive event type against the 43-type taxonomy | **Model** | semantic |
+| Apply an event type's DO/DON'T criteria | **Model** | semantic |
+| Industry-connection check | **Model** | e.g. recognising PET → Industrial Chemicals |
+| Mapped/critical-company heuristic | **Model** | needs to know if a company is significant |
+| "Real defendant vs. third-party speculation" (#14) | **Model** | shallow matching measured 71.8% accurate — not safe |
+| Expand cluster verdicts, merge, write workbook | Python | mechanical |
+
+Two patterns were **tested and rejected** for Python, worth recording so nobody retries them:
+- **Law-firm deadline-reminder press releases** — looked definitionally company-independent, but
+  measured only 80% verdict-consistency across the real run (and just 10 rows). Not safe, not
+  worth it. Goes to the model under rule #12.
+- **Blank `story_summary` → auto safe-default** — 87.5% consistent, not 100%. Goes to the model
+  under rule #13.
+
+### The lean-input finding (biggest single free win)
+
+The classifier only needs `row_index`, `feed_title`, `story_summary` (plus
+`analyst_stated_reason` on the rare rows where it's populated — 2 of 3,088 in the real file).
+Everything else stored in `records.json` is dead weight in the prompt, measured across the full
+file:
+
+| Serialization | Tokens |
+|---|---|
+| Pretty-printed JSON, all 7 fields (what was being read) | ~433,000 |
+| Compact JSON, all fields | ~396,000 |
+| Compact JSON, lean fields | ~259,000 |
+| **TSV, lean fields (`--make-batches --format tsv`)** | **~242,000** |
+
+**~191,000 tokens (44%) saved per full pass, at zero accuracy risk.** Two of the dropped fields
+were actively harmful to include: `analyst_original_classification` is the constant
+`"Not Impactful"` repeated on every row (that's what the whole file is), and
+`upstream_event_classification` is the Event/Non-Event feed tag that `global-rules.md` explicitly
+says not to trust — feeding it to the classifier is a bias risk, not just waste.
 
 ## Running at scale — what actually drives cost, and what to do about it
 
