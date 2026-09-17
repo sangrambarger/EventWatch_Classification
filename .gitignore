@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Period stores are derived from audit/data/raw/ plus the code, so they are rebuilt with
+# `ingest.py --add` and cost nothing to regenerate.
+audit/data/periods/*/manifest.json
+audit/data/periods/*/decisions.json
+audit/data/periods/*/teacher/batch_*.json
+audit/data/periods/*/teacher/field_cheatsheet.json
+
+# Teacher labels are NOT derived — they cost a full LLM pass over every row — so they are
+# committed. Same for the near-duplicate groups and the funnel result, which are the audit record.
+!audit/data/periods/*/teacher/labels_*.json
+!audit/data/periods/*/near_dup_groups.json
+!audit/data/periods/*/funnel.json

@@ -159,20 +159,60 @@ def _load_priority_matrix() -> dict[str, str]:
 PRIORITY_BY_EVENT_TYPE = _load_priority_matrix()
 
 
+#: The Prioritization Matrix and the Thresholds & Guide name several event types differently.
+#: These are spelling differences for the same type, verified one by one against both documents —
+#: not judgement calls, so they are resolved here rather than sent to a human.
+PRIORITY_NAME_ALIASES = {
+    "Counterfeit (CFSI)": "Counterfeit",
+    "Others": "Other",
+    "Earthquake (Japan/Taiwan/S.Korea/Philippines/Indonesia/China)": "Earthquake",
+    "Earthquake (Rest of the World)": "Earthquake",
+}
+
+#: Event types with no row of their own in the Prioritization Matrix, whose own slide files them
+#: under another type. Each mapping quotes the slide line that establishes it, so an inherited
+#: tier is auditable rather than assumed.
+PRIORITY_INHERITANCE = {
+    # "Notify under labor disruptions" (slide 49)
+    "Layoffs": "Labor Disruption",
+    # "Notify under Compliance" (slide 48)
+    "Airworthiness": "Compliance",
+    # Sub-types "Notified under (Labor disruptions OR port disruptions OR factory disruptions)"
+    # (slide 47); Labor Disruption is taken as the primary, and all three are P2 anyway.
+    "Mail/Postal/Package Delivery Services Disruptions": "Labor Disruption",
+    # 'Classify it as "Other."' (slide 22) — the same line flagged as a source conflict in
+    # financial_family.py. Used here only to source a priority tier, which is the one use the
+    # instruction unambiguously supports; it does not reclassify the event type.
+    "Financial Distress": "Other",
+}
+
+
 def priority_for(event_type: str) -> str:
     """Return P0-P4 for an event type.
 
     Per `global-rules.md` #3 this is *response urgency* for an already-impactful event. It is
     never an input to any threshold decision, which is why it lives outside `Decision` and is
     attached after the fact.
+
+    Resolves a name through `PRIORITY_NAME_ALIASES` (the two source documents spell four types
+    differently) and then `PRIORITY_INHERITANCE` (four types have no row of their own and are
+    filed under another type by their own slide). Anything still unmatched raises rather than
+    defaulting to a tier, because a silently-invented priority would look exactly like a real one.
     """
-    try:
-        return PRIORITY_BY_EVENT_TYPE[event_type]
-    except KeyError:
-        raise RuleConflict(
-            f"event type {event_type!r} has no row in priority-matrix.md; add it to the "
-            "approved matrix rather than guessing a tier here"
-        ) from None
+    name = PRIORITY_NAME_ALIASES.get(event_type, event_type)
+    if name in PRIORITY_BY_EVENT_TYPE:
+        return PRIORITY_BY_EVENT_TYPE[name]
+
+    inherited = PRIORITY_INHERITANCE.get(event_type)
+    if inherited is not None:
+        resolved = PRIORITY_NAME_ALIASES.get(inherited, inherited)
+        if resolved in PRIORITY_BY_EVENT_TYPE:
+            return PRIORITY_BY_EVENT_TYPE[resolved]
+
+    raise RuleConflict(
+        f"event type {event_type!r} has no row in priority-matrix.md and no documented "
+        "inheritance; add it to the approved matrix rather than guessing a tier here"
+    )
 
 
 # --- Field access ---------------------------------------------------------------------------

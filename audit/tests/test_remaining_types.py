@@ -331,3 +331,40 @@ def test_regional_types_drop_only_when_every_limb_is_no():
     d = fl.decide({**GATE, **REGION_NONE, "flood_alert_tier": "ACTUAL_FLOODING"})
     assert d.classification == NOT_IMPACTFUL
     assert d.rule_id == "FL.NONE"
+
+
+# ============================================================ priority coverage
+
+def test_every_registered_event_type_resolves_to_a_priority_tier():
+    """Caught a real gap: the Prioritization Matrix and the rulebook name 8 types differently or
+    omit them, so priority_for() raised for 8 of 47 modules before aliases and documented
+    inheritance were added."""
+    from logic import registry
+    from logic.base import priority_for
+
+    unresolved = []
+    for name in registry.MODULES:
+        try:
+            tier = priority_for(name)
+        except Exception as exc:  # noqa: BLE001 - the point is to report, not to raise
+            unresolved.append((name, str(exc)[:60]))
+            continue
+        assert tier in {"P0", "P1", "P2", "P3", "P4"}, (name, tier)
+    assert unresolved == [], unresolved
+
+
+def test_inherited_priorities_match_the_type_their_slide_files_them_under():
+    from logic.base import priority_for
+
+    assert priority_for("Layoffs") == priority_for("Labor Disruption")
+    assert priority_for("Airworthiness") == priority_for("Compliance")
+    assert priority_for("Earthquake (Rest of the World)") == "P0"
+    assert priority_for("Counterfeit (CFSI)") == "P3"
+
+
+def test_an_unknown_event_type_still_raises_rather_than_defaulting():
+    import pytest as _pytest
+    from logic.base import RuleConflict, priority_for
+
+    with _pytest.raises(RuleConflict):
+        priority_for("Interpretive Dance Disruption")
