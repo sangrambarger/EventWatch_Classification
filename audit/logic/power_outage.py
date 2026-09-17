@@ -46,6 +46,7 @@ from .base import (
     evidence,
     get,
 )
+from .connection import mapped_party
 from .global_gate import apply_global_gate
 
 EVENT_TYPE = "Power Outage"
@@ -124,6 +125,9 @@ def decide(fields: Mapping[str, object]) -> Decision:
 
     kind = get(fields, "outage_kind", allowed=OUTAGE_KIND)
     mapped = get(fields, "sites_mapped_in_region", allowed=YES_NO)
+    if mapped == UNKNOWN:
+        # Mapped status resolves through industry relevance (process-owner decision).
+        mapped = mapped_party(fields)
     fab_region = get(fields, "semiconductor_fab_region", allowed=YES_NO)
     ert_provided = get(fields, "expected_recovery_time_provided", allowed=YES_NO)
     location = get(fields, "outage_location", allowed=OUTAGE_LOCATION)

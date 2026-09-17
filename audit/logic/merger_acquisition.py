@@ -35,6 +35,7 @@ from .base import (
     evidence,
     get,
 )
+from .connection import mapped_party
 from .global_gate import apply_global_gate
 
 EVENT_TYPE = "Merger & Acquisition"
@@ -131,7 +132,7 @@ def decide(fields: Mapping[str, object]) -> Decision:
 
     stage = get(fields, "deal_stage", allowed=DEAL_STAGE)
     sector = get(fields, "strict_bar_sector", allowed=STRICT_BAR_SECTOR)
-    mapped = get(fields, "mapped_or_prominent_party_involved", allowed=YES_NO)
+    mapped = mapped_party(fields)
     product = get(fields, "product_line_connection", allowed=PRODUCT_CONNECTION)
     service = get(fields, "service_sector_applicability", allowed=SERVICE_APPLICABILITY)
     steel = get(fields, "steel_company_involved", allowed=YES_NO)
@@ -304,7 +305,11 @@ def decide(fields: Mapping[str, object]) -> Decision:
         )
 
     # R7 — the general test: product line and applications relevant to the covered verticals.
-    if product == "CONNECTED":
+    # `mapped == "YES"` satisfies it outright: under the process-owner decision that a company
+    # relevant to our industries IS a mapped partner, mapped status and product relevance are the
+    # same finding expressed two ways, so requiring the product field separately would send
+    # rows to review over a question already answered.
+    if product == "CONNECTED" or mapped == "YES":
         return Decision(
             classification=IMPACTFUL,
             rule_id="MA.R7a",

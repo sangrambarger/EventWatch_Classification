@@ -46,6 +46,7 @@ from .base import (
     evidence,
     get,
 )
+from .connection import MAPPED_IS_INDUSTRY_RELEVANCE, mapped_party
 from .global_gate import apply_global_gate
 
 EVENT_TYPE = "Leadership Transition"
@@ -99,7 +100,14 @@ def decide(fields: Mapping[str, object]) -> Decision:
 
     role = get(fields, "role", allowed=ROLE)
     partner = get(fields, "partner_involved", allowed=YES_NO)
+    # Both halves of "a partner is involved, AND sites are mapped" resolve through the same
+    # industry-relevance test per the process-owner decision, so they no longer disagree: a
+    # company relevant to our industries satisfies both.
     mapped = get(fields, "sites_mapped", allowed=YES_NO)
+    if mapped == UNKNOWN:
+        mapped = mapped_party(fields)
+    if partner == UNKNOWN:
+        partner = mapped_party(fields)
     sc_consequence = get(fields, "supply_chain_department_consequence", allowed=YES_NO)
     announced = get(fields, "announced", allowed=YES_NO)
     get(fields, "transition_nature", allowed=TRANSITION_NATURE)
@@ -112,7 +120,7 @@ def decide(fields: Mapping[str, object]) -> Decision:
         return Decision(
             classification=NOT_IMPACTFUL,
             rule_id="LT.R1",
-            rule_text=_PARTNER_AND_MAPPED + "  ||  " + _MAPPED_ONLY,
+            rule_text=_PARTNER_AND_MAPPED + "  ||  " + _MAPPED_ONLY + "  ||  " + MAPPED_IS_INDUSTRY_RELEVANCE,
             source=SOURCE,
             threshold_met=False,
             severity=LOW,
@@ -128,7 +136,7 @@ def decide(fields: Mapping[str, object]) -> Decision:
         return Decision(
             classification=THRESHOLD_REVIEW,
             rule_id="LT.R2",
-            rule_text=_PARTNER_AND_MAPPED,
+            rule_text=_PARTNER_AND_MAPPED + "  ||  " + MAPPED_IS_INDUSTRY_RELEVANCE,
             source=SOURCE,
             missing_fields=tuple(
                 name
@@ -137,8 +145,8 @@ def decide(fields: Mapping[str, object]) -> Decision:
             ),
             evidence=trail,
             notes=(
-                "Partner/mapped status is the whole gate for this type and no supplier-mapping "
-                "database is available to this pipeline.",
+                "Mapped status resolves through industry relevance, and neither that nor the "
+                "product line was determined for this row.",
             ),
         )
 

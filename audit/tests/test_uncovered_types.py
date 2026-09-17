@@ -451,9 +451,17 @@ def test_every_registered_module_exposes_the_contract():
         assert getattr(module, "SOURCE", "").strip(), name
 
 
-def test_coverage_ledger_is_honest_about_what_is_left():
+def test_every_rulebook_event_type_now_has_a_module():
+    """Coverage is complete: the ledger's 'without_module' list is empty.
+
+    This assertion is deliberately the inverse of the one it replaced. While types were still
+    being built, the ledger's job was to keep naming them; now its job is to fail the moment a new
+    event type is added to the approved rules without a module to decide it.
+    """
     cov = registry.coverage()
-    assert "Cyber Attack" in " ".join(cov["with_module"])
-    # The point of the ledger: the untouched types must still be listed, not quietly dropped.
-    assert cov["without_module"], "ledger must name the event types still to build"
+    assert cov["without_module"] == [], (
+        "these rulebook entries have no decision module: " + ", ".join(cov["without_module"])
+    )
+    assert len(cov["with_module"]) >= 52
+    # Still honest about which modules carry author-derived fields rather than schema authority.
     assert "Merger & Acquisition" in cov["module_but_no_supplied_schema"]

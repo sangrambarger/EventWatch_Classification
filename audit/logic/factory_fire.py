@@ -45,6 +45,7 @@ from .base import (
     evidence,
     get,
 )
+from .connection import mapped_party
 from .global_gate import apply_global_gate
 
 EVENT_TYPE = "Factory Fire"
@@ -118,6 +119,8 @@ def decide(fields: Mapping[str, object]) -> Decision:
         return gate
 
     partner = get(fields, "partner_site_involved", allowed=YES_NO)
+    if partner == UNKNOWN:
+        partner = mapped_party(fields)
     product = get(fields, "product_line_connection", allowed=PRODUCT_CONNECTION)
     indirect = get(fields, "indirect_supplier", allowed=YES_NO)
     service = get(fields, "service_sector_applicability", allowed=SERVICE_APPLICABILITY)

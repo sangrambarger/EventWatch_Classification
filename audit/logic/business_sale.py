@@ -40,6 +40,7 @@ from .base import (
     evidence,
     get,
 )
+from .connection import mapped_party
 from .global_gate import apply_global_gate
 
 EVENT_TYPE = "Business Sale"
@@ -122,7 +123,7 @@ def decide(fields: Mapping[str, object]) -> Decision:
         return gate
 
     stage = get(fields, "sale_stage", allowed=SALE_STAGE)
-    mapped = get(fields, "mapped_or_prominent_party_involved", allowed=YES_NO)
+    mapped = mapped_party(fields)
     product = get(fields, "product_line_connection", allowed=PRODUCT_CONNECTION)
     service = get(fields, "service_sector_applicability", allowed=SERVICE_APPLICABILITY)
 

@@ -28,6 +28,7 @@ def base_fields(**over):
         "deal_stage": "ANNOUNCED",
         "strict_bar_sector": "NONE",
         "mapped_or_prominent_party_involved": "NO",
+        "industry_relevance": "RELEVANT",
         "product_line_connection": "CONNECTED",
         "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
         "steel_company_involved": "NO",
@@ -79,18 +80,40 @@ def test_unknown_product_connection_goes_to_review_not_to_not_impactful():
         "MINING",
     ],
 )
-def test_strict_sector_without_mapped_party_is_not_impactful_even_when_product_connects(sector):
-    """The strict bar *replaces* the product test; a connected product must not rescue the row."""
+def test_strict_sector_without_mapped_party_is_not_impactful(sector):
+    """The strict bar replaces the product test for these six sectors."""
     d = ma.decide(
         base_fields(
             strict_bar_sector=sector,
             mapped_or_prominent_party_involved="NO",
-            product_line_connection="CONNECTED",
+            industry_relevance="NOT_RELEVANT",
+            product_line_connection="NOT_CONNECTED",
         )
     )
     assert d.classification == NOT_IMPACTFUL
     assert d.rule_id == "MA.R4b"
     assert sector in d.notes[0]
+
+
+def test_strict_sector_bar_is_narrowed_by_the_mapped_is_industry_relevance_decision():
+    """Documents a real consequence of the process-owner decision, rather than hiding it.
+
+    "A company relevant to our industries counts as a mapped partner" means a strict-sector
+    company WITH a connected product line now resolves to mapped=YES, so MA.R4a reports it. The
+    source's literal reading -- strict bar overrides a connected product line -- can therefore no
+    longer fire. The bar still bites for a strict-sector company that is not industry-relevant,
+    which is the common case, but the distinction the slide drew is genuinely narrowed. Flagged in
+    merger_acquisition.spec.md for a ruling.
+    """
+    d = ma.decide(
+        base_fields(
+            strict_bar_sector="RETAIL",
+            mapped_or_prominent_party_involved="",
+            product_line_connection="CONNECTED",
+        )
+    )
+    assert d.classification == IMPACTFUL
+    assert d.rule_id == "MA.R4a"
 
 
 def test_strict_sector_with_mapped_party_is_impactful():
@@ -101,12 +124,32 @@ def test_strict_sector_with_mapped_party_is_impactful():
     assert d.rule_id == "MA.R4a"
 
 
-def test_strict_sector_with_unknown_mapping_goes_to_review():
+def test_strict_sector_with_wholly_unknown_relevance_goes_to_review():
+    """Mapped status is now derivable from industry relevance, so review needs BOTH unknown."""
     d = ma.decide(
-        base_fields(strict_bar_sector="RETAIL", mapped_or_prominent_party_involved="")
+        base_fields(
+            strict_bar_sector="RETAIL",
+            mapped_or_prominent_party_involved="",
+            industry_relevance="",
+            product_line_connection="",
+            service_sector_applicability="",
+        )
     )
     assert d.classification == THRESHOLD_REVIEW
     assert d.missing_fields == ("mapped_or_prominent_party_involved",)
+
+
+def test_industry_relevance_alone_establishes_mapped_status():
+    """The point of the decision: a knowable relevance answer no longer stalls on an
+    unknowable mapping question."""
+    d = ma.decide(
+        base_fields(
+            mapped_or_prominent_party_involved="",
+            industry_relevance="RELEVANT",
+            product_line_connection="",
+        )
+    )
+    assert d.classification == IMPACTFUL
 
 
 # --- Completion suppression (MA.R3) — the mirror of Business Sale ------------------------------
