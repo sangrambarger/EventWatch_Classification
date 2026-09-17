@@ -52,19 +52,35 @@ exact counts.
 3. Geopolitical → Factory Fire → Labor Disruption → Legal Action → Flood/Extreme Weather →
    Leadership Transition → Protest/Riot, then the tail in the order above.
 
+## Status (updated)
+
+14 of 53 rulebook entries now have a decision module: Merger & Acquisition, Business Sale, Cyber
+Attack, Factory Fire, Chemical Spill, Leadership Transition, Earthquake (both variants), Power
+Outage (incl. the Software/Internet redirect), Layoffs, Airworthiness, Mail/Postal, Others, plus
+the Software/Internet redirect resolving to Power Outage. `logic/registry.py`'s `coverage()`
+prints the live ledger — including the 38 entries still to build — and a test asserts the ledger
+keeps naming them rather than quietly dropping them.
+
+Every event type that had **no supplied extraction schema** now has a module, so the gap below is
+closed on the logic side even though the schema pack itself is unchanged.
+
 ## Finding: the supplied schema pack does not cover the top-volume type
 
 `audit/schemas/extraction_fields/` holds 35 schemas. The rulebook covers ~43 event types. The
 types with **no supplied extraction schema** include, notably:
 
-- **Merger & Acquisition** ← rank 1
-- **Business Sale** ← rank 1
-- **Leadership Transition** ← rank 9
-- **Factory Fire** ← rank 4
-- **Chemical Spill**
-- **Power Outage** ← rank 15
-- **Earthquake** (both regional variants)
-- Layoffs, Airworthiness, Mail/Postal Delivery Disruptions, Others
+- **Merger & Acquisition** ← rank 1 · module built
+- **Business Sale** ← rank 1 · module built
+- **Leadership Transition** ← rank 9 · module built
+- **Factory Fire** ← rank 4 · module built
+- **Chemical Spill** · module built
+- **Power Outage** ← rank 15 · module built
+- **Earthquake** (both regional variants) · module built
+- Layoffs, Airworthiness, Mail/Postal Delivery Disruptions, Others · modules built
+
+Correction to an earlier draft of this file: **Business Spin-off does have a schema**
+(`Business_Spinoff_Extraction_Only_Fields.json`); the hyphen defeated the name matcher. It is not
+an uncovered type.
 
 So for the first module the evidence-field list is **derived from the verbatim reporting
 guidelines, not supplied by the approved schema pack**. Every such field is annotated in the spec

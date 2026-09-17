@@ -52,6 +52,14 @@ ALL_OUTCOMES = frozenset({IMPACTFUL, NOT_IMPACTFUL, THRESHOLD_REVIEW, NEEDS_CONT
 #: Sentinel meaning "the extraction pass could not determine this field from the row".
 UNKNOWN = "UNKNOWN"
 
+#: Severity gauge from `global-rules.md` #2. Only ever set where a source rule pins it; the
+#: general Medium/High/Severe judgement needs facts this pipeline does not extract.
+LOW = "LOW"
+MEDIUM = "MEDIUM"
+HIGH = "HIGH"
+SEVERE = "SEVERE"
+SEVERITY_LEVELS = frozenset({LOW, MEDIUM, HIGH, SEVERE})
+
 
 class RuleConflict(Exception):
     """Raised when the source rules give no consistent answer for a reachable field combination.
@@ -76,6 +84,15 @@ class Decision:
     #: Set when a rule reassigns the row to a different event type rather than deciding it
     #: (e.g. M&A's "if a mapped partner sells the business, notify it as a business sale").
     reroute_to: str | None = None
+    #: Severity per `global-rules.md` #2, where a source rule fixes it (Leadership Transition is
+    #: "always gauged Low"; an earthquake with no mapped sites is a "LOW FYI News"). Left None
+    #: when the source does not pin it — severity is not guessed here.
+    severity: str | None = None
+    #: Whether the source rules call for a WarRoom. Kept distinct from the impact call because
+    #: Cyber Attack separates the two explicitly: a vulnerability advisory is still notified as a
+    #: news alert but must NOT open a WarRoom, so collapsing the two would either suppress a
+    #: reportable alert or open WarRooms the guidelines forbid.
+    warroom_eligible: bool | None = None
     notes: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
@@ -96,6 +113,10 @@ class Decision:
             )
         if not self.rule_text.strip():
             raise ValueError(f"rule {self.rule_id} must quote the source line it fired on")
+        if self.severity is not None and self.severity not in SEVERITY_LEVELS:
+            raise ValueError(
+                f"severity {self.severity!r} is not one of {sorted(SEVERITY_LEVELS)}"
+            )
 
     @property
     def is_resolved(self) -> bool:
