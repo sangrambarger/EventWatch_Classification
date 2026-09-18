@@ -44,7 +44,7 @@ from .base import (
     evidence,
     get,
 )
-from .connection import mapped_party
+from .connection import derived_or_given
 from .global_gate import apply_global_gate
 
 EVENT_TYPE_REGIONAL = "Earthquake"
@@ -216,9 +216,7 @@ def decide(fields: Mapping[str, object]) -> Decision:
         )
 
     epicenter = get(fields, "epicenter", allowed=EPICENTER)
-    mapped = get(fields, "sites_mapped_in_region", allowed=YES_NO)
-    if mapped == UNKNOWN:
-        mapped = mapped_party(fields)
+    mapped = derived_or_given(fields, "sites_mapped_in_region")
     important = get(fields, "important_region", allowed=YES_NO)
     tsunami = get(fields, "tsunami_alert", allowed=YES_NO)
     disruptions = get(fields, "disruptions_observed", allowed=YES_NO)

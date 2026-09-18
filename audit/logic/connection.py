@@ -64,6 +64,43 @@ MAPPED_IS_INDUSTRY_RELEVANCE = (
 )
 
 
+#: Fields the source rules phrase as a supplier-mapping lookup. **No news story can answer
+#: these**, and no mapping database is available to this pipeline, so asking an extractor for them
+#: produces UNKNOWN at rates of 80-100% — measured on the first teacher batch:
+#: utility_or_service_region_has_mapped_sites 100%, sites_mapped_in_region 93%, indirect_supplier
+#: 90%, partner_site_involved 80%. Each of those UNKNOWNs became a review row that no human could
+#: resolve either, because the question is unanswerable from the evidence the reviewer has.
+#:
+#: Under the process-owner decision that industry relevance *is* mapped status, they all reduce to
+#: one question the story CAN answer. They are therefore derived here rather than extracted, and
+#: `build_batches.py` drops them from the cheatsheet so nobody is asked for them.
+DERIVED_FROM_RELEVANCE = frozenset({
+    "mapped_or_prominent_party_involved",
+    "sites_mapped_in_region",
+    "sites_mapped",
+    "partner_site_involved",
+    "partner_involved",
+    "indirect_supplier",
+    "utility_or_service_region_has_mapped_sites",
+    "supplier_or_partner_involved",
+    "supplier_making_layoffs",
+    "sites_in_country",
+    "major_company_in_our_verticals",
+})
+
+
+def derived_or_given(fields: Mapping[str, object], name: str) -> str:
+    """Read a mapping-dependent field, falling back to industry relevance when unstated.
+
+    Keeps an explicit extracted value when one exists (a story that plainly names a partner site
+    should be believed), but never lets an unanswerable question block a decision.
+    """
+    explicit = get(fields, name, allowed=YES_NO)
+    if explicit != UNKNOWN:
+        return explicit
+    return mapped_party(fields)
+
+
 def mapped_party(fields: Mapping[str, object]) -> str:
     """Resolve mapped-partner status for any rule that gates on it.
 

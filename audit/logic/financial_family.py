@@ -44,7 +44,7 @@ from .base import (
     evidence,
     get,
 )
-from .connection import connection_cascade, unresolved_cascade
+from .connection import connection_cascade, derived_or_given, unresolved_cascade
 from .global_gate import apply_global_gate
 
 YES_NO = frozenset({"YES", "NO"})
@@ -120,7 +120,7 @@ def _supplier_only(
     gate = apply_global_gate(fields, candidate_event_type=event_type)
     if gate is not None:
         return gate
-    supplier = get(fields, "supplier_or_partner_involved", allowed=YES_NO)
+    supplier = derived_or_given(fields, "supplier_or_partner_involved")
     if supplier == "NO":
         return Decision(
             classification=NOT_IMPACTFUL, rule_id=f"{prefix}.R1", rule_text=rule_text,
@@ -205,7 +205,7 @@ def decide_fine(fields: Mapping[str, object]) -> Decision:
     # A settlement carries a higher bar than a fine: mapped partner OR a major company from our
     # verticals, with no plain product-connection route.
     if kind == "SETTLEMENT":
-        major = get(fields, "major_company_in_our_verticals", allowed=YES_NO)
+        major = derived_or_given(fields, "major_company_in_our_verticals")
         if mapped == "YES" or major == "YES":
             return Decision(
                 classification=IMPACTFUL, rule_id="FN.S1", rule_text=_FN_SETTLEMENT,

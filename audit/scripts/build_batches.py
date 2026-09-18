@@ -23,6 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from logic import registry  # noqa: E402
+from logic.connection import DERIVED_FROM_RELEVANCE  # noqa: E402
 from scripts.ingest import PERIODS_DIR, load_period  # noqa: E402
 
 #: Fields every row needs regardless of event type — the global gate plus the shared cascade.
@@ -43,12 +44,18 @@ UNIVERSAL_FIELDS = {
 }
 
 
-FIELD_READ = re.compile(r'get\(\s*fields\s*,\s*"([a-z0-9_]+)"')
+#: `get(fields, "name", allowed=ENUM)` — captures the field AND the enum guarding it, so the
+#: cheatsheet can state each field's own allowed values instead of leaving the labeller to guess
+#: which constant applies. Leaving that to inference cost 43% of the first teacher batch: fields
+#: guarded by YES_NO were answered "CONNECTED", and free-form stages were invented wholesale.
+FIELD_READ = re.compile(
+    r'get\(\s*fields\s*,\s*"([a-z0-9_]+)"(?:\s*,\s*allowed=([A-Za-z_][A-Za-z0-9_]*))?'
+)
 FLOAT_READ = re.compile(r'_as_float\(\s*fields\s*,\s*"([a-z0-9_]+)"')
 CALL = re.compile(r'\b([a-z_][a-z0-9_]*)\s*\(')
 
 
-def fields_read_by(module) -> list[str]:
+def fields_read_by(module) -> dict[str, list[str]]:
     """Extract the field names this event type's decision path actually reads.
 
     Walks the real call graph from `module.decide` rather than scanning whole files, because the
@@ -60,7 +67,7 @@ def fields_read_by(module) -> list[str]:
     branch, and a cheatsheet missing a field the decider needs sends every affected row to review
     for want of evidence nobody was asked for.
     """
-    found: list[str] = []
+    found: list[tuple[str, list[str]]] = []
     seen: set[str] = set()
 
     def walk(fn) -> None:
@@ -72,9 +79,16 @@ def fields_read_by(module) -> list[str]:
             src = inspect.getsource(fn)
         except (OSError, TypeError):  # pragma: no cover
             return
-        found.extend(FIELD_READ.findall(src))
-        found.extend(FLOAT_READ.findall(src))
         namespace = sys.modules[fn.__module__].__dict__
+        for field, enum_name in FIELD_READ.findall(src):
+            values: list[str] = []
+            if enum_name:
+                enum = namespace.get(enum_name)
+                if isinstance(enum, (frozenset, set)):
+                    values = sorted(enum)
+            found.append((field, values))
+        for field in FLOAT_READ.findall(src):
+            found.append((field, ["<number>"]))
         for called in set(CALL.findall(src)):
             target = namespace.get(called)
             if inspect.isfunction(target):
@@ -82,21 +96,20 @@ def fields_read_by(module) -> list[str]:
 
     walk(module.decide)
 
-    out, dedup = [], set()
-    for f in found:
-        if f not in dedup:
-            dedup.add(f)
-            out.append(f)
-    return out
-
-
-def enum_values_for(module) -> dict[str, list[str]]:
-    """Harvest the frozenset enum constants a module validates against."""
-    out = {}
-    for name, value in vars(module).items():
-        if isinstance(value, frozenset) and name.isupper() and value:
-            if all(isinstance(v, str) for v in value):
-                out[name] = sorted(value)
+    out: dict[str, list[str]] = {}
+    for field, values in found:
+        # Never ask for a field the pipeline derives. These are supplier-mapping lookups no news
+        # story can answer; asking produced 80-100% UNKNOWN and a review queue nobody could clear.
+        if field in DERIVED_FROM_RELEVANCE:
+            continue
+        if field not in out or (not out[field] and values):
+            out[field] = values
+    # UNKNOWN is always a legal answer and is the correct one whenever the row does not say.
+    for field, values in out.items():
+        if values and values != ["<number>"] and "UNKNOWN" not in values:
+            out[field] = values + ["UNKNOWN"]
+        elif not values:
+            out[field] = sorted(UNIVERSAL_FIELDS.get(field, ["YES", "NO", "UNKNOWN"]))
     return out
 
 
@@ -107,7 +120,6 @@ def build_cheatsheet() -> dict:
         sheet["event_types"][event_type] = {
             "module": module.__name__.rsplit(".", 1)[-1],
             "fields_to_extract": fields_read_by(module),
-            "enums": enum_values_for(module),
             "priority": None,
         }
         try:

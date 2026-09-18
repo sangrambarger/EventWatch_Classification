@@ -46,7 +46,7 @@ from .base import (
     evidence,
     get,
 )
-from .connection import connection_cascade, mapped_party, unresolved_cascade
+from .connection import connection_cascade, derived_or_given, mapped_party, unresolved_cascade
 from .global_gate import apply_global_gate
 
 YES_NO = frozenset({"YES", "NO"})

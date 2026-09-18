@@ -45,7 +45,7 @@ from .base import (
     evidence,
     get,
 )
-from .connection import mapped_party
+from .connection import derived_or_given, mapped_party
 from .global_gate import apply_global_gate
 
 EVENT_TYPE = "Factory Fire"
@@ -118,15 +118,11 @@ def decide(fields: Mapping[str, object]) -> Decision:
     if gate is not None:
         return gate
 
-    partner = get(fields, "partner_site_involved", allowed=YES_NO)
-    if partner == UNKNOWN:
-        partner = mapped_party(fields)
+    partner = derived_or_given(fields, "partner_site_involved")
     product = get(fields, "product_line_connection", allowed=PRODUCT_CONNECTION)
-    indirect = get(fields, "indirect_supplier", allowed=YES_NO)
+    indirect = derived_or_given(fields, "indirect_supplier")
     service = get(fields, "service_sector_applicability", allowed=SERVICE_APPLICABILITY)
-    utility_region = get(
-        fields, "utility_or_service_region_has_mapped_sites", allowed=YES_NO
-    )
+    utility_region = derived_or_given(fields, "utility_or_service_region_has_mapped_sites")
     infrastructure = get(fields, "affected_region_has_major_infrastructure", allowed=YES_NO)
     evac = get(fields, "neighbouring_evacuations", allowed=YES_NO)
     # Read purely as evidence. Validated so a bad label surfaces, but never branched on to reject.

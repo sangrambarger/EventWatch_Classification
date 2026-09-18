@@ -39,6 +39,7 @@ from .base import (
     evidence,
     get,
 )
+from .connection import derived_or_given
 from .global_gate import apply_global_gate
 
 EVENT_TYPE = "Layoffs"
@@ -66,7 +67,7 @@ def decide(fields: Mapping[str, object]) -> Decision:
     if gate is not None:
         return gate
 
-    supplier = get(fields, "supplier_making_layoffs", allowed=YES_NO)
+    supplier = derived_or_given(fields, "supplier_making_layoffs")
     nature = get(fields, "layoff_nature", allowed=LAYOFF_NATURE)
     scope = get(fields, "layoff_scope", allowed=LAYOFF_SCOPE)
     trail = evidence(fields, "layoff_nature", "layoff_scope")

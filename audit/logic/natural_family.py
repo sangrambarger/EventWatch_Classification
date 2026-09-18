@@ -53,7 +53,7 @@ from .base import (
     evidence,
     get,
 )
-from .connection import mapped_party
+from .connection import derived_or_given
 from .global_gate import apply_global_gate
 
 YES_NO = frozenset({"YES", "NO"})
@@ -81,9 +81,7 @@ def _regional_gate(
     `require_disruption=True` implements the event types whose slides say *both* a regional
     presence and a reported disruption are needed (Extreme Weather, Tornado), rather than either.
     """
-    sites = get(fields, "sites_mapped_in_region", allowed=YES_NO)
-    if sites == UNKNOWN:
-        sites = mapped_party(fields)
+    sites = derived_or_given(fields, "sites_mapped_in_region")
     important = get(fields, "region_industrially_important", allowed=YES_NO)
     disruptions = get(fields, "operational_disruptions_reported", allowed=YES_NO)
     trail = evidence(fields, *REGIONAL_FIELDS)

@@ -36,6 +36,7 @@ from .base import (
     evidence,
     get,
 )
+from .connection import derived_or_given
 from .global_gate import apply_global_gate
 
 EVENT_TYPE = "Mail/Postal/Package Delivery Services Disruptions"
@@ -77,7 +78,7 @@ def decide(fields: Mapping[str, object]) -> Decision:
     if gate is not None:
         return gate
 
-    in_country = get(fields, "sites_in_country", allowed=YES_NO)
+    in_country = derived_or_given(fields, "sites_in_country")
     kind = get(fields, "disruption_kind", allowed=DISRUPTION_KIND)
     major = get(fields, "major_postal_operator", allowed=YES_NO)
     trail = evidence(fields, "disruption_kind", "major_postal_operator")

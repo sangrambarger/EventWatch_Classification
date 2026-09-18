@@ -46,7 +46,7 @@ from .base import (
     evidence,
     get,
 )
-from .connection import MAPPED_IS_INDUSTRY_RELEVANCE, mapped_party
+from .connection import MAPPED_IS_INDUSTRY_RELEVANCE, derived_or_given
 from .global_gate import apply_global_gate
 
 EVENT_TYPE = "Leadership Transition"
@@ -99,15 +99,11 @@ def decide(fields: Mapping[str, object]) -> Decision:
         return gate
 
     role = get(fields, "role", allowed=ROLE)
-    partner = get(fields, "partner_involved", allowed=YES_NO)
     # Both halves of "a partner is involved, AND sites are mapped" resolve through the same
     # industry-relevance test per the process-owner decision, so they no longer disagree: a
     # company relevant to our industries satisfies both.
-    mapped = get(fields, "sites_mapped", allowed=YES_NO)
-    if mapped == UNKNOWN:
-        mapped = mapped_party(fields)
-    if partner == UNKNOWN:
-        partner = mapped_party(fields)
+    mapped = derived_or_given(fields, "sites_mapped")
+    partner = derived_or_given(fields, "partner_involved")
     sc_consequence = get(fields, "supply_chain_department_consequence", allowed=YES_NO)
     announced = get(fields, "announced", allowed=YES_NO)
     get(fields, "transition_nature", allowed=TRANSITION_NATURE)
