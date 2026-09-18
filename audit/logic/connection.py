@@ -86,6 +86,11 @@ DERIVED_FROM_RELEVANCE = frozenset({
     "supplier_making_layoffs",
     "sites_in_country",
     "major_company_in_our_verticals",
+    # Both came back 100% UNKNOWN in the second teacher run, for the same reason: a story says a
+    # business was sold, not whether the seller is one of our partners, and it says software was
+    # attacked, not whose software we depend on.
+    "selling_party_is_mapped_partner",
+    "partner_software_attacked",
 })
 
 

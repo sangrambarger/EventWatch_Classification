@@ -1,143 +1,26 @@
 {
  "period": "2026-09-07",
  "rows_in_period": 1079,
- "rows_labelled": 220,
- "rows_unlabelled": 859,
+ "rows_labelled": 639,
+ "rows_unlabelled": 440,
  "duplicate_keys": 0,
  "orphan_keys": 0,
  "unknown_event_types": {},
- "invalid_values": {
-  "bankruptcy_stage": {
-   "FILED_AND_PROCEEDINGS_OPENED": 2,
-   "ADMINISTRATION_APPOINTED_PROCEEDINGS_OPENED": 1,
-   "SIGNS_OR_TALKS_OF_POSSIBLE_INSOLVENCY": 1,
-   "INSOLVENCY_FILED_CRIMINAL_INVESTIGATION_ONGOING": 1,
-   "INSOLVENCY_PROCEEDINGS_LIQUIDATION_CLEARANCE_UNDERWAY": 1,
-   "ADMINISTRATION": 1
-  },
-  "stage": {
-   "IN_PROGRESS_DELAYED": 1
-  },
-  "multi_tier_connection": {
-   "CONNECTED": 7
-  },
-  "disruption_nature": {
-   "LABOR_ACCIDENT_AND_REGULATORY_VIOLATION_HISTORY_AT_PLANT": 3,
-   "CONSTRUCTION_WORK_STALLED_AT_MULTIPLE_SITES": 1,
-   "PROLONGED_PRODUCTION_SUSPENSION": 1,
-   "PLANT_CONVERSION_AUTOMOTIVE_PRODUCTION_ENDS": 1
-  },
-  "materiality_signal": {
-   "ELEVEN_WORKER_DEATHS_AND_54_ENVIRONMENTAL_VIOLATION_NOTICES": 3,
-   "FUNDING_DISPUTE_LABOUR_AND_MATERIAL_SHORTAGES_CONTRACT_TERMINATION_NOTICE": 1,
-   "SIX_YEAR_SHUTDOWN_RESTART_NOT_EXPECTED_BEFORE_JUNE_2027": 1,
-   "CAR_PRODUCTION_CEASES_AT_OSNABRUCK_1400_JOBS_REPURPOSED": 1
-  },
-  "smog_alert_tier": {
-   "NOT_APPLICABLE": 2,
-   "HAZARDOUS_API_521_EMERGENCY_DECLARED": 1,
-   "SEASONAL_HAZARDOUS_AIR_QUALITY_NO_CURRENT_ALERT_STATED": 1,
-   "NO_SPECIFIC_ALERT_GLOBAL_COMMENTARY": 1
-  },
-  "airport_profile": {
-   "MAJOR_INTERNATIONAL_CARGO_HUB": 27,
-   "MAJOR_INTERNATIONAL_AIRPORT": 1,
-   "EU_AIRPORTS_GENERALLY": 1,
-   "MAJOR_INTERNATIONAL_CARGO_AIRPORT": 1
-  },
-  "cargo_impact": {
-   "YES": 28,
-   "NO": 1
-  },
-  "disruption_scale": {
-   "RUNWAY_AND_TAXIWAY_CLOSURES_FLIGHTS_HALTED_HUNDREDS_CANCELLED": 26,
-   "ROAD_ACCESS_CLOSURE_ONLY_NO_FLIGHT_IMPACT_REPORTED": 1,
-   "PARTIAL_AIRPORT_CLOSURE_AND_FLIGHT_DISRUPTIONS": 1,
-   "PASSENGER_CONGESTION_AND_DELAYS_ONLY": 1,
-   "SEVERE_CARGO_CONGESTION_48_72_HOUR_TRUCK_WAITS": 1
-  },
-  "strike_status": {
-   "ANNOUNCED_FUTURE_DATED_SEPT_11": 1,
-   "STRIKE_HELD_AUG_30_31_PROTESTS_CONTINUING": 1,
-   "THREATENED_15_DAY_DEADLINE_NO_DATE_SET": 1,
-   "ONGOING_SINCE_JUNE_18": 1,
-   "THREATENED_MEDIATION_SET_FOR_SEPT_24_NO_STRIKE_DATE": 1,
-   "DISPUTE_ONGOING_NO_STRIKE_CALLED": 1,
-   "ANNOUNCED_FUTURE_DATED_SEPT_17": 1,
-   "ANNOUNCED_FUTURE_DATED_SEPT_14_25": 1,
-   "ANNOUNCED_FUTURE_DATED_SEPT_10_11": 1,
-   "ONGOING_STRIKE": 1,
-   "ANNOUNCED_STARTING_SEPT_8": 1,
-   "THREATENED_STRIKE_SEPT_7": 1,
-   "ANNOUNCED_STARTING_SEPT_11": 1
-  },
-  "strike_target": {
-   "INDIAN_PUBLIC_SECTOR_BANKS_NATIONWIDE": 1,
-   "VAERSA_FIRE_PREVENTION_SERVICE": 1,
-   "KARNATAKA_108_AMBULANCE_SERVICE": 1,
-   "EMBASSY_SUITES_BY_HILTON_SEATTLE_HOTEL": 1,
-   "DINO_POLSKA_RETAIL_CHAIN": 1,
-   "CLIFTON_HERITAGE_AUTHORITY": 1,
-   "CYPRUS_GOVERNMENT_HOURLY_PAID_WORKERS": 1,
-   "LACERA_SCHOOL_CLEANING_CONCESSION": 1,
-   "CRETE_TOURIST_BUS_OPERATORS": 1,
-   "BRAZILIAN_BANKS_PARA_STATE": 1,
-   "BRAZILIAN_BANKS_MOSSORO": 1,
-   "KENYAN_PUBLIC_PHARMACY_SERVICES": 1,
-   "LA_MONTANETA_YOUTH_CENTRE": 1
-  },
-  "duration_hours": {
-   "UNKNOWN": 3
-  },
-  "port_profile": {
-   "CARGO_AND_LOGISTICS_PORT": 2,
-   "MAJOR_INTERNATIONAL_CONTAINER_PORTS": 1
-  },
-  "legislative_stage": {
-   "PROPOSED_LEGISLATION_PRESIDENTIAL_DIRECTIVE": 1,
-   "INDUSTRY_ADVOCACY_NO_LEGISLATION_PROPOSED_YET": 1
-  },
-  "action_kind": {
-   "INSPECTION_CLOSED_VOLUNTARY_ACTION_INDICATED": 1,
-   "LICENCE_SUSPENSION_THREE_DAYS": 1
-  },
-  "landfall_certainty": {
-   "HURRICANE_CONDITIONS_EXPECTED_WITHIN_48_HOURS": 3,
-   "OFFSHORE_NO_LANDFALL_FORECAST": 1
-  },
-  "weather_severity": {
-   "ROUTINE_THUNDERSTORM_AND_RAINFALL_FORECAST": 1,
-   "HEAVY_RAIN_AND_THUNDERSTORMS_ROAD_CLOSURE": 1,
-   "ROUTINE_THUNDERSTORMS_NUISANCE_FLOODING": 1,
-   "SEVERE_TYPHOON_RELATED_RAINFALL_LANDSLIDE_WARNINGS": 1
-  },
-  "flood_alert_tier": {
-   "FORECAST_MINOR_FLOODING_NO_WARNING_STATED": 1,
-   "MAJOR_FLOOD_DISASTER_CASUALTIES_CONFIRMED": 1,
-   "PLANNED_DAM_SPILLAGE_EVACUATION_ORDERED": 1,
-   "LOCALIZED_FLOODING_NO_FORMAL_WARNING_STATED": 1,
-   "LANDSLIDE_DISASTER_AFTERMATH": 1
-  },
-  "volcanic_activity": {
-   "ERUPTION_WITH_ASH_CLOUD_DISRUPTING_AVIATION": 5,
-   "ERUPTION_OCCURRED_LAVA_AND_GASES": 1,
-   "ERUPTION_ENDED_ALERT_LEVEL_III_MAINTAINED": 1
-  }
- },
- "invalid_value_count": 177,
+ "invalid_values": {},
+ "invalid_value_count": 0,
  "fields_omitted": {},
  "unknown_rate": {
-  "sites_mapped_in_region": 0.932,
-  "product_line_connection": 0.179,
-  "industry_relevance": 0.113,
-  "region_industrially_important": 0.487,
-  "service_sector_applicability": 0.095,
-  "utility_or_service_region_has_mapped_sites": 1.0,
-  "indirect_supplier": 0.9,
-  "partner_site_involved": 0.8,
-  "neighbouring_evacuations": 0.8,
-  "initial_announcement_already_notified": 0.462,
-  "affected_region_has_major_infrastructure": 0.6,
-  "mapped_or_prominent_party_involved": 0.03
+  "product_line_connection": 0.165,
+  "industry_relevance": 0.117,
+  "selling_party_is_mapped_partner": 0.761,
+  "service_sector_applicability": 0.056,
+  "region_industrially_important": 0.223,
+  "initial_announcement_already_notified": 0.478,
+  "neighbouring_evacuations": 0.71,
+  "affected_region_has_major_infrastructure": 0.452,
+  "disruption_scale": 0.171,
+  "duration_hours": 0.667,
+  "steel_applications_match_or_partner_involved": 0.196,
+  "partner_software_attacked": 0.429
  }
 }

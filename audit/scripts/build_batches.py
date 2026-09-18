@@ -49,7 +49,11 @@ UNIVERSAL_FIELDS = {
 #: which constant applies. Leaving that to inference cost 43% of the first teacher batch: fields
 #: guarded by YES_NO were answered "CONNECTED", and free-form stages were invented wholesale.
 FIELD_READ = re.compile(
-    r'get\(\s*fields\s*,\s*"([a-z0-9_]+)"(?:\s*,\s*allowed=([A-Za-z_][A-Za-z0-9_]*))?'
+    r'get\(\s*fields\s*,\s*"([a-z0-9_]+)"'
+    # The inline `frozenset({...})` branch MUST come first: the bare-identifier branch happily
+    # matches the literal word "frozenset" and swallows the alternation, which is exactly how
+    # smog_alert_tier and volcanic_activity were still reported as YES/NO after the first fix.
+    r'(?:\s*,\s*allowed=(?:frozenset\(\{([^}]*)\}\)|([A-Za-z_][A-Za-z0-9_]*)))?'
 )
 FLOAT_READ = re.compile(r'_as_float\(\s*fields\s*,\s*"([a-z0-9_]+)"')
 CALL = re.compile(r'\b([a-z_][a-z0-9_]*)\s*\(')
@@ -80,12 +84,18 @@ def fields_read_by(module) -> dict[str, list[str]]:
         except (OSError, TypeError):  # pragma: no cover
             return
         namespace = sys.modules[fn.__module__].__dict__
-        for field, enum_name in FIELD_READ.findall(src):
+        for field, inline, enum_name in FIELD_READ.findall(src):
             values: list[str] = []
             if enum_name:
                 enum = namespace.get(enum_name)
                 if isinstance(enum, (frozenset, set)):
                     values = sorted(enum)
+            elif inline:
+                # Several modules guard a field with an anonymous `frozenset({...})` at the call
+                # site rather than a named constant. Missing those told the labeller they were
+                # plain YES/NO fields, which is how smog_alert_tier, volcanic_activity and
+                # action_kind came back unusable in the second teacher run.
+                values = sorted(v.strip().strip('"\'') for v in inline.split(",") if v.strip())
             found.append((field, values))
         for field in FLOAT_READ.findall(src):
             found.append((field, ["<number>"]))

@@ -76,14 +76,17 @@ def validate(period: str) -> dict:
                 missing_fields[event_type][field] += 1
                 continue
             value = str(given[field])
+            if value == "UNKNOWN":
+                # Legal everywhere, including numeric fields — a story that does not state a
+                # duration has not stated it, and demanding a float there would push honest
+                # UNKNOWNs into the invalid pile.
+                unknown_rate[field] += 1
+                continue
             if allowed == ["<number>"]:
                 try:
                     float(value)
                 except ValueError:
                     bad_values[field][value] += 1
-                continue
-            if value == "UNKNOWN":
-                unknown_rate[field] += 1
                 continue
             if value not in allowed:
                 bad_values[field][value] += 1
