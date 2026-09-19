@@ -1,0 +1,3150 @@
+[
+ {
+  "key": "e4243bd992eb6b02",
+  "event_type": "Regulatory Change",
+  "event_type_reason": "US tariffs in force are squeezing named BC apparel/beauty brands",
+  "fields": {
+   "legislative_stage": "IN_FORCE_OR_CHANGE_ANNOUNCED",
+   "reputable_sources_indicate_significant_impact": "YES",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "19e458ef00ebecdb",
+  "event_type": "Extreme Weather",
+  "event_type_reason": "very strong El Nino forecast to cut Philippine rainfall Oct-Dec",
+  "fields": {
+   "weather_severity": "UNKNOWN",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "YES",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "c9bf7617cb7a5056",
+  "event_type": "Flood",
+  "event_type_reason": "torrential rain flooded Cape Breton, washing out roads and bridges",
+  "fields": {
+   "flood_alert_tier": "ACTUAL_FLOODING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "UNKNOWN",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "UNKNOWN",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "a828a7979567d5ad",
+  "event_type": "Recall",
+  "event_type_reason": "FDA recall of moringa leaf powder over Salmonella contamination",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "cabbce514996592a",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Israeli military/settler violence in Gaza and the West Bank",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "cb412eda52e592a4",
+  "event_type": "Power Outage",
+  "event_type_reason": "cascading multi-country blackout from Toktogul hydro unit trips",
+  "fields": {
+   "outage_kind": "POWER",
+   "semiconductor_fab_region": "NO",
+   "expected_recovery_time_provided": "UNKNOWN",
+   "outage_location": "OTHER_LOCATION",
+   "important_manufacturing_region": "NO",
+   "operations_already_resumed": "UNKNOWN",
+   "mapped_site_confirms_impact": "UNKNOWN",
+   "duration_hours": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "c025c289a0c64be8",
+  "event_type": "Recall",
+  "event_type_reason": "SAIC-GM recall of imported Cadillac SRX over rupturing airbag inflators",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "79b7f0192fd13815",
+  "event_type": "Business Sale",
+  "event_type_reason": "Partners Group sold data-centre platform atNorth; deal completed",
+  "fields": {
+   "sale_stage": "COMPLETED",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "3e5431adc868b537",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "several completed acquisitions of physiotherapy/care businesses",
+  "fields": {
+   "deal_stage": "COMPLETED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "1261f5f243af82fa",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Kistos completed transfer of Oman onshore blocks from Mitsui E&P",
+  "fields": {
+   "deal_stage": "COMPLETED",
+   "strict_bar_sector": "CRUDE_OIL",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "YES",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "557d9a351037b4e1",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "KONE/TK Elevator deal filed with India's CCI for approval",
+  "fields": {
+   "deal_stage": "REGULATORY_APPROVAL_PENDING",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "YES",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "167143294eec21cd",
+  "event_type": "Corporate Restructuring",
+  "event_type_reason": "London & Partners merged three internal teams into one unit",
+  "fields": {
+   "stage": "ANNOUNCED",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT",
+   "commodity_rider": "NONE",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "9b570ee74eaaffce",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Advent acquiring clinical research organisation NZCR Group",
+  "fields": {
+   "deal_stage": "ANNOUNCED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "8a677a86473d77d9",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Advent acquiring clinical research organisation NZCR Group",
+  "fields": {
+   "deal_stage": "ANNOUNCED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "33137115dc7e9d10",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Ode with Anthropic acquiring AI services firm Casper Studios",
+  "fields": {
+   "deal_stage": "ANNOUNCED",
+   "strict_bar_sector": "CONSULTING_OR_STAFFING",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "NOT_RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "27344cbe18fb9d10",
+  "event_type": "Labor Disruption",
+  "event_type_reason": "hospital workers threaten protest and possible indefinite strike",
+  "fields": {
+   "strike_status": "INTENTION_OR_BALLOT_PENDING",
+   "strike_target": "OTHER",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "730a22ecf34af477",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Israeli strikes on southern Lebanon killed 12, escalation feared",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "24acfafcf50c1dcb",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Israeli strikes on southern Lebanon killed 12, escalation feared",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "1192c734ead66471",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "peaceful pensioner pickets outside SASSA offices",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "0563d74dcc33f5fb",
+  "event_type": "Labor Disruption",
+  "event_type_reason": "medical interns' hunger strike over stipend demand",
+  "fields": {
+   "strike_status": "UNDERWAY",
+   "strike_target": "OTHER",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "ff8b5dfc8ae84d0f",
+  "event_type": "Forest Fire",
+  "event_type_reason": "trackside grass fire burned overhead cables, hitting Heathrow rail links",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "YES",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE"
+  }
+ },
+ {
+  "key": "4a1d70de31956aa4",
+  "event_type": "Legal Action",
+  "event_type_reason": "SEC subpoena-enforcement suit against proxy adviser ISS",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "fa29caf39c299375",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "NHS-linked health app compromised to serve illegal gambling adverts",
+  "fields": {
+   "incident_nature": "CONFIRMED_ATTACK_OR_BREACH",
+   "named_victim_status": "SPECIFIC_VICTIM_NAMED",
+   "confirmation_status": "CONFIRMED_BY_COMPANY",
+   "entity_role": "OTHER_SECTOR",
+   "industry_connection": "NOT_CONNECTED",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "6cee8ff8dd13315a",
+  "event_type": null,
+  "event_type_reason": "store opening-hours notice, no event of any kind",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "843aab581f3dcc38",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "long-serving Telus CEO stepping down with named successor",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "RETIRES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "3763c6a4482dae84",
+  "event_type": null,
+  "event_type_reason": "amusement-park ride retirement, no supply-chain event",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "6c7ed4198f860c73",
+  "event_type": "Legal Action",
+  "event_type_reason": "New Jersey petitions Supreme Court against prediction markets",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "2368bad4421d2c36",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "9ea7358349736195",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "76ab4add96e79c13",
+  "event_type": "Regulatory Change",
+  "event_type_reason": "Kenya directive barring foreign nationals from small-scale trading",
+  "fields": {
+   "legislative_stage": "IN_FORCE_OR_CHANGE_ANNOUNCED",
+   "reputable_sources_indicate_significant_impact": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "dd7fb28fbee52ff5",
+  "event_type": "Fine",
+  "event_type_reason": "Meta agreed a $17.1bn consumer-protection settlement with 47 states",
+  "fields": {
+   "fine_kind": "SETTLEMENT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "1078f7161291f5aa",
+  "event_type": "Legal Action",
+  "event_type_reason": "legal notice served over approvals for Biman's $3.7bn Boeing order",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "63762d4eba3ec898",
+  "event_type": "Environmental Hazard",
+  "event_type_reason": "transboundary haze pushed Serian's API to 519, emergency declared",
+  "fields": {
+   "smog_alert_tier": "RED_HIGHEST",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "UNKNOWN",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "UNKNOWN",
+   "product_line_connection": "UNKNOWN",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "f100018c7a493534",
+  "event_type": null,
+  "event_type_reason": "vendor research report on breach costs, no actual incident reported",
+  "fields": {
+   "story_nature": "MARKET_COMMENTARY_NO_PHYSICAL_EVENT",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "f0b1dc2c06650846",
+  "event_type": "Environmental Hazard",
+  "event_type_reason": "transboundary haze pushed Serian's API to 519, emergency declared",
+  "fields": {
+   "smog_alert_tier": "RED_HIGHEST",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "UNKNOWN",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "UNKNOWN",
+   "product_line_connection": "UNKNOWN",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "c96bc47f61901b5c",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "breach at fulfilment provider ShipMonk exposed Trezor customer records",
+  "fields": {
+   "incident_nature": "CONFIRMED_ATTACK_OR_BREACH",
+   "named_victim_status": "MULTIPLE_VICTIMS_NAMED",
+   "confirmation_status": "CONFIRMED_BY_COMPANY",
+   "entity_role": "CARGO_OR_FREIGHT_SERVICES",
+   "industry_connection": "CONNECTED",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "19fa0ce53235e2b4",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "new Air India CEO took operational charge",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "fbb25ca987451089",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "board resignation ahead of taking the Lululemon CEO role",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "c88e65b9ddb2341f",
+  "event_type": "Price Fluctuation",
+  "event_type_reason": "Mexican crude blend at $90.94 on real US-Iran escalation (rule #15)",
+  "fields": {
+   "move_significance": "SIGNIFICANT_OR_EXPECTED",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "7a90f0966234c002",
+  "event_type": "Supply Shortage",
+  "event_type_reason": "737 MAX line halted ~10 days for want of wiring harnesses/connectors",
+  "fields": {
+   "multi_tier_connection": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "451e554107831198",
+  "event_type": null,
+  "event_type_reason": "parliamentary warning about biodiversity risk, no event described",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "08ff0f55f4353d03",
+  "event_type": "Bankruptcy",
+  "event_type_reason": "cashback operator filed for insolvency, payouts frozen",
+  "fields": {
+   "bankruptcy_stage": "FILED",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "3e049ddb104b7a6f",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "JLR cyber attack halted production and cascaded through UK suppliers",
+  "fields": {
+   "incident_nature": "CONFIRMED_ATTACK_OR_BREACH",
+   "named_victim_status": "SPECIFIC_VICTIM_NAMED",
+   "confirmation_status": "CONFIRMED_BY_COMPANY",
+   "entity_role": "MANUFACTURER",
+   "industry_connection": "CONNECTED",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "a2502a2a4440697f",
+  "event_type": "Geopolitical",
+  "event_type_reason": "UK sanctions on Israeli West Bank settlement interests",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "UNKNOWN",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "UNKNOWN",
+   "product_line_connection": "UNKNOWN",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "1a49d7af3098efa4",
+  "event_type": "Supply Shortage",
+  "event_type_reason": "Q3 fuel oil shortage looming from refinery damage and tanker disruption",
+  "fields": {
+   "multi_tier_connection": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "c2ae48c9cc0582d5",
+  "event_type": "Power Outage",
+  "event_type_reason": "storm downed lines leaving ~4,000 Manitoba Hydro customers off supply",
+  "fields": {
+   "outage_kind": "POWER",
+   "semiconductor_fab_region": "NO",
+   "expected_recovery_time_provided": "YES",
+   "outage_location": "RESIDENTIAL_OR_LOCAL_USER",
+   "important_manufacturing_region": "NO",
+   "operations_already_resumed": "NO",
+   "mapped_site_confirms_impact": "NO",
+   "duration_hours": "UNKNOWN",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "8ccca612d8044aa7",
+  "event_type": "Power Outage",
+  "event_type_reason": "storm downed lines leaving ~4,000 Manitoba Hydro customers off supply",
+  "fields": {
+   "outage_kind": "POWER",
+   "semiconductor_fab_region": "NO",
+   "expected_recovery_time_provided": "YES",
+   "outage_location": "RESIDENTIAL_OR_LOCAL_USER",
+   "important_manufacturing_region": "NO",
+   "operations_already_resumed": "NO",
+   "mapped_site_confirms_impact": "NO",
+   "duration_hours": "UNKNOWN",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "920f456146b68c9b",
+  "event_type": "Recall",
+  "event_type_reason": "nationwide recall of supplements with hidden yohimbine linked to deaths",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "ba07b2cc6981cd96",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Poggipolini completed acquisition of aerospace fastener maker",
+  "fields": {
+   "deal_stage": "COMPLETED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "4d7135ce71d68704",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "EQT acquired majority stake in specialty insurance broker",
+  "fields": {
+   "deal_stage": "COMPLETED",
+   "strict_bar_sector": "INSURANCE",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "e62b826c9487ca6d",
+  "event_type": "Corporate Restructuring",
+  "event_type_reason": "leaked VW plan to phase out the SEAT brand and its production",
+  "fields": {
+   "stage": "SIGNS_TALKS_OR_PLANS",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "commodity_rider": "NONE",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "1cc9dea191d15463",
+  "event_type": "Layoffs",
+  "event_type_reason": "Uber cutting 3,000+ roles (~10% of workforce) to strip management layers",
+  "fields": {
+   "layoff_nature": "PERMANENT",
+   "layoff_scope": "GLOBAL",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE"
+  }
+ },
+ {
+  "key": "1fcbcbab872b13af",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Israeli drone strike on a Nabatieh parking lot killed three",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "46a41fe6a14cb152",
+  "event_type": "Geopolitical",
+  "event_type_reason": "IDF strike in Gaza City killed a Hamas commander",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "3aea80baa1143735",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Ukrainian strikes on Russian aircraft and a Crimean rail bridge",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "c567ebb49ee9ee8c",
+  "event_type": "Labor Disruption",
+  "event_type_reason": "RMT deadline to TfL raising fresh Tube strike threat, no date set",
+  "fields": {
+   "strike_status": "INTENTION_OR_BALLOT_PENDING",
+   "strike_target": "COMMUTER_TRANSPORT_ONLY",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "c31ea068d434d05d",
+  "event_type": "Legal Action",
+  "event_type_reason": "law-firm lead-plaintiff solicitation over an already-filed securities suit",
+  "fields": {
+   "story_nature": "RECYCLED_REMINDER_OF_KNOWN_DEVELOPMENT",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "13526d9b231fe60b",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Russia ordered the German consulate and Goethe-Instituts closed",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "046d57244fdf0a77",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Russia ordered the German consulate and Goethe-Instituts closed",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "b70a5676fc4e209f",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Russia ordered the German consulate and Goethe-Instituts closed",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "87d2c334e8f89da6",
+  "event_type": "Volcano",
+  "event_type_reason": "Anak Krakatau ash forced Indonesian airport closures (classified by cause)",
+  "fields": {
+   "volcanic_activity": "ERUPTING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "c0d5c1a2cff77d7f",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "UAE airport delays/cancellations from volcanic ash and regional tension",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "UNKNOWN",
+   "disruption_scale": "PARTIAL",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "a6e1f5f011724428",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "UAE airport delays/cancellations from volcanic ash and regional tension",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "UNKNOWN",
+   "disruption_scale": "PARTIAL",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "f9489a4fd17e850d",
+  "event_type": null,
+  "event_type_reason": "explainer on China's liquidation procedure, no company or event",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "04ff6b54c17fb688",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Centum CEO left to become founding CEO of Kenya's infrastructure fund",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "98dfffb935b9f19e",
+  "event_type": "Geopolitical",
+  "event_type_reason": "strikes closed Russian airports, hit refineries and halted a steel plant",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "YES",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "16526193fce41751",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "week-long Punjab farmers' border protest called off after assurances",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "RESUMPTION_OR_ALL_CLEAR_ONLY",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "80d261d1cc6a0004",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "week-long Punjab farmers' border protest called off after assurances",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "RESUMPTION_OR_ALL_CLEAR_ONLY",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "2dffb6db3edff498",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "week-long Punjab farmers' border protest called off after assurances",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "RESUMPTION_OR_ALL_CLEAR_ONLY",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "e10c4bf5c0a4d5cf",
+  "event_type": "Port Disruption",
+  "event_type_reason": "vegetable-oil glut congesting Kandla and Haldia, vessels waiting 10 days",
+  "fields": {
+   "port_profile": "CONTAINER_OR_CARGO_PORT",
+   "strike_ballot_only_no_date": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "164718af12d69b46",
+  "event_type": null,
+  "event_type_reason": "paywalled item with no extractable content",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "NO",
+   "industry_relevance": "UNKNOWN"
+  }
+ },
+ {
+  "key": "16bf07bca80d2804",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Finland completed 200km of border fencing; crossings remain closed",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "533acd45c6473ec8",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Finland completed 200km of border fencing; crossings remain closed",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "7156a21a72463ea9",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Finland completed 200km of border fencing; crossings remain closed",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "719627b2e6e0364c",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Finland completed 200km of border fencing; crossings remain closed",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "36f6798a99ea234a",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Advania UK named a permanent CEO",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "d3dde3a6db6bcd48",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "Weverse disclosed a breach exposing ~422k user account and payment records",
+  "fields": {
+   "incident_nature": "CONFIRMED_ATTACK_OR_BREACH",
+   "named_victim_status": "SPECIFIC_VICTIM_NAMED",
+   "confirmation_status": "CONFIRMED_BY_COMPANY",
+   "entity_role": "OTHER_SECTOR",
+   "industry_connection": "NOT_CONNECTED",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "f0fee1fb2fdeda00",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "Weverse disclosed a breach exposing ~422k user account and payment records",
+  "fields": {
+   "incident_nature": "CONFIRMED_ATTACK_OR_BREACH",
+   "named_victim_status": "SPECIFIC_VICTIM_NAMED",
+   "confirmation_status": "CONFIRMED_BY_COMPANY",
+   "entity_role": "OTHER_SECTOR",
+   "industry_connection": "NOT_CONNECTED",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "da6931ff965b9736",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "4c461a0f04f265b5",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "a8f76829911cdd74",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "7a0aebe311652ad2",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "7fe3c601359d3dd3",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "9f96ea97f0f433d8",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "4ee5dbe9d5697e0b",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "faa8b85c99c2287f",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "47d88060553fe930",
+  "event_type": "Chemical Spill",
+  "event_type_reason": "Enbridge building a temporary bypass around a Line 5 pipeline leak",
+  "fields": {
+   "news_is_public": "YES",
+   "spill_location": "OTHER_LOCATION",
+   "external_disruption": "NONE_REPORTED",
+   "regional_industrial_importance": "UNKNOWN",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "e9acd56230d19fad",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Tekmetric appointed its first CFO",
+  "fields": {
+   "role": "CFO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "bcb2683d55d71bdc",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "~70 trailers blockaded a main San Jose road over foreign-driver hiring",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE"
+  }
+ },
+ {
+  "key": "7b6af94f3f9e0676",
+  "event_type": "Corporate Restructuring",
+  "event_type_reason": "three A-share issuers announced major asset restructurings",
+  "fields": {
+   "stage": "ANNOUNCED",
+   "product_line_connection": "UNKNOWN",
+   "service_sector_applicability": "UNKNOWN",
+   "industry_relevance": "UNKNOWN",
+   "commodity_rider": "NONE",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "34d042546d5baf37",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "planned share-and-cash acquisition of a controlling stake, trading suspended",
+  "fields": {
+   "deal_stage": "SIGNS_TALKS_OR_PLANS",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "UNKNOWN",
+   "service_sector_applicability": "UNKNOWN",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "NO",
+   "industry_relevance": "UNKNOWN",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "951b71cb74dfcb45",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "regulator approved CICC's share-swap merger of two brokerages",
+  "fields": {
+   "deal_stage": "COMPLETED",
+   "strict_bar_sector": "INVESTMENT_OR_FINANCE",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "YES",
+   "industry_relevance": "NOT_RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "5cd4fce0b0d39a34",
+  "event_type": "Business Sale",
+  "event_type_reason": "Shaanxi Jinye sold 51% of two tobacco-supporting subsidiaries",
+  "fields": {
+   "sale_stage": "ANNOUNCED",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "NOT_RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "a0ae42d10c105927",
+  "event_type": "Factory Disruption",
+  "event_type_reason": "proposed closure of the Linares plant with collective redundancy for 80",
+  "fields": {
+   "disruption_nature": "PARTIAL_OR_FULL_CLOSURE",
+   "materiality_signal": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "073acf9a444b79a9",
+  "event_type": "Supply Shortage",
+  "event_type_reason": "Bangladesh gas shortage, supplies expected to normalise via imports",
+  "fields": {
+   "multi_tier_connection": "UNKNOWN",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "ca674ba390f8eae3",
+  "event_type": "Geopolitical",
+  "event_type_reason": "UAE rerouted trade and energy flows after attacks near Hormuz",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "YES",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "f70baa144fae3b0c",
+  "event_type": "Chemical Spill",
+  "event_type_reason": "unidentified substance dumped into the Yangtze, agencies investigating",
+  "fields": {
+   "news_is_public": "YES",
+   "spill_location": "OTHER_LOCATION",
+   "external_disruption": "WATER_OR_RIVER_CONTAMINATION",
+   "regional_industrial_importance": "UNKNOWN",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "UNKNOWN"
+  }
+ },
+ {
+  "key": "067a205680f4d6db",
+  "event_type": null,
+  "event_type_reason": "funding appeal to repair a recreational cycle trail, no supply-chain event",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "122fbfdb15537a39",
+  "event_type": null,
+  "event_type_reason": "seasonal statistic: no Atlantic hurricane has formed yet",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "33a084844060df63",
+  "event_type": "Extreme Weather",
+  "event_type_reason": "heavy rain in eastern Japan with maximum landslide vigilance urged",
+  "fields": {
+   "weather_severity": "HIGHLY_DISRUPTIVE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "YES",
+   "operational_disruptions_reported": "UNKNOWN",
+   "industry_relevance": "UNKNOWN",
+   "product_line_connection": "UNKNOWN",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "1dffa8a22f8e6ffe",
+  "event_type": "Layoffs",
+  "event_type_reason": "JLR cutting 4,000 jobs, no affected sites specified",
+  "fields": {
+   "layoff_nature": "PERMANENT",
+   "layoff_scope": "UNIDENTIFIED",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "9eb1dc5980020c76",
+  "event_type": "Layoffs",
+  "event_type_reason": "JLR cutting ~4,000 jobs worldwide over two years via voluntary redundancy",
+  "fields": {
+   "layoff_nature": "PERMANENT",
+   "layoff_scope": "GLOBAL",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "5b8e7851e5282c91",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Drax agreed a cash takeover of a solar income fund",
+  "fields": {
+   "deal_stage": "ANNOUNCED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "9ccae46fa1c2bb5f",
+  "event_type": "Business Sale",
+  "event_type_reason": "ITV agreed to sell its media and entertainment arm to Sky",
+  "fields": {
+   "sale_stage": "ANNOUNCED",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "3a13a059e1c58a9a",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "ABF completed its acquisition of bakery group Hovis",
+  "fields": {
+   "deal_stage": "COMPLETED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "YES",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "4f3dff5c5dfe4bb0",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "UST completed purchase of a majority stake in Italdesign from Audi",
+  "fields": {
+   "deal_stage": "COMPLETED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "7fb318defa44913d",
+  "event_type": "Compliance",
+  "event_type_reason": "Turkish competition probe into no-poach deals among automotive suppliers",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "240252b6f159655a",
+  "event_type": "Compliance",
+  "event_type_reason": "Turkish competition probe into no-poach deals among automotive suppliers",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "29e0041baffc3a9d",
+  "event_type": "Compliance",
+  "event_type_reason": "Turkish competition probe into no-poach deals among automotive suppliers",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "aebbd88d18912ff0",
+  "event_type": "Compliance",
+  "event_type_reason": "Turkish competition probe into no-poach deals among automotive suppliers",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "0d41652e94994edd",
+  "event_type": "Layoffs",
+  "event_type_reason": "roundup of large workforce cuts across VW, JLR, Nissan, Ford and Bosch",
+  "fields": {
+   "layoff_nature": "PERMANENT",
+   "layoff_scope": "GLOBAL",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "4e6c24f507ccf2bb",
+  "event_type": "Business Sale",
+  "event_type_reason": "VW agreed to sell the Osnabruck plant; vehicle production ends 2027",
+  "fields": {
+   "sale_stage": "ANNOUNCED",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "422d49afe40c6ad8",
+  "event_type": "Labor Disruption",
+  "event_type_reason": "SBI flagged branch disruption on announced future bank strike dates",
+  "fields": {
+   "strike_status": "FUTURE_DATED",
+   "strike_target": "OTHER",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "91518837c51e22fa",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "former workers protesting unpaid severance, hunger strike threatened",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "0d194d7e6ef70078",
+  "event_type": "Labor Disruption",
+  "event_type_reason": "Latvian regional carriers to halt bus services for one day on 16 Sept",
+  "fields": {
+   "strike_status": "FUTURE_DATED",
+   "strike_target": "COMMUTER_TRANSPORT_ONLY",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "d8cacc1bda716410",
+  "event_type": "Geopolitical",
+  "event_type_reason": "US strikes around Iran's Bushehr nuclear plant and a nearby base",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "YES",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "UNKNOWN",
+   "product_line_connection": "UNKNOWN",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "e502f5db04b663d8",
+  "event_type": "Volcano",
+  "event_type_reason": "Anak Krakatau ash forced Indonesian airport closures (classified by cause)",
+  "fields": {
+   "volcanic_activity": "ERUPTING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "1dde4ddfd05b70bc",
+  "event_type": "Volcano",
+  "event_type_reason": "Anak Krakatau ash forced Indonesian airport closures (classified by cause)",
+  "fields": {
+   "volcanic_activity": "ERUPTING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "e07239d3e110f33c",
+  "event_type": "Volcano",
+  "event_type_reason": "Anak Krakatau ash forced Indonesian airport closures (classified by cause)",
+  "fields": {
+   "volcanic_activity": "ERUPTING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "12db1c7a373df8b2",
+  "event_type": "Volcano",
+  "event_type_reason": "Anak Krakatau ash forced Indonesian airport closures (classified by cause)",
+  "fields": {
+   "volcanic_activity": "ERUPTING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "8a53ad57794ffbcf",
+  "event_type": "Volcano",
+  "event_type_reason": "Anak Krakatau ash forced Indonesian airport closures (classified by cause)",
+  "fields": {
+   "volcanic_activity": "ERUPTING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "0b2ee976b4e23af5",
+  "event_type": "Volcano",
+  "event_type_reason": "Anak Krakatau ash forced Indonesian airport closures (classified by cause)",
+  "fields": {
+   "volcanic_activity": "ERUPTING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "8cce7885c370a74c",
+  "event_type": "Legal Action",
+  "event_type_reason": "consolidated authors' copyright suit alleging OpenAI concealed LibGen data",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "28be692b267055a3",
+  "event_type": "Supply Shortage",
+  "event_type_reason": "rain-hit coal output and dispatch rebounded, easing the supply squeeze",
+  "fields": {
+   "multi_tier_connection": "UNKNOWN",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "RESUMPTION_OR_ALL_CLEAR_ONLY",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "6e0ca1d1f77413c5",
+  "event_type": null,
+  "event_type_reason": "one-hour ministry work stoppage for a funeral, no supply-chain event",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "8b669d80cd2027aa",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "a8d4f7612af8a41e",
+  "event_type": "Power Outage",
+  "event_type_reason": "Australia-Singapore submarine cable break forced traffic rerouting",
+  "fields": {
+   "outage_kind": "SOFTWARE_OR_INTERNET",
+   "semiconductor_fab_region": "NO",
+   "expected_recovery_time_provided": "NO",
+   "outage_location": "OTHER_LOCATION",
+   "important_manufacturing_region": "NO",
+   "operations_already_resumed": "NO",
+   "mapped_site_confirms_impact": "UNKNOWN",
+   "duration_hours": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "b71317f49ca48b89",
+  "event_type": "Geopolitical",
+  "event_type_reason": "strikes near Hormuz disabled tankers and redirected commercial vessels",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "YES",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "65260ab44f6a9968",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "anti-immigration protests in Portsmouth after a migrant boat landing",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "e5fb87401b263763",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "anti-immigration protests in Portsmouth after a migrant boat landing",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "416596922e85e8a8",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "airline temporarily suspending four domestic Chennai routes",
+  "fields": {
+   "airport_profile": "DOMESTIC_NO_CARGO",
+   "cargo_impact": "PASSENGER_ONLY",
+   "disruption_scale": "PARTIAL",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "fdd1e19f056211fe",
+  "event_type": "Legal Action",
+  "event_type_reason": "CBI's second chargesheet over diverted funds at Reliance Commercial Finance",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "2d0d7a6b14e8cfb1",
+  "event_type": "Legal Action",
+  "event_type_reason": "Supreme Court let a criminal case against Sanofi India proceed",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "1c7efcd8851111b7",
+  "event_type": "Legal Action",
+  "event_type_reason": "Supreme Court let a criminal case against Sanofi India proceed",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "875f117efb1f4a56",
+  "event_type": "Forest Fire",
+  "event_type_reason": "25-acre grass and brush fire in Hill County, Texas",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "3b7ab2d225bb3286",
+  "event_type": "Power Outage",
+  "event_type_reason": "Carabobo blackouts cut industrial output to about 30%",
+  "fields": {
+   "outage_kind": "POWER",
+   "semiconductor_fab_region": "NO",
+   "expected_recovery_time_provided": "NO",
+   "outage_location": "OTHER_LOCATION",
+   "important_manufacturing_region": "YES",
+   "operations_already_resumed": "NO",
+   "mapped_site_confirms_impact": "UNKNOWN",
+   "duration_hours": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "a090d1979360184b",
+  "event_type": "Forest Fire",
+  "event_type_reason": "grass fire near Paddington burned overhead cables, hitting Heathrow rail links",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "YES",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE"
+  }
+ },
+ {
+  "key": "15bc849b62526c15",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "3014bc9b66a98d3d",
+  "event_type": "Price Fluctuation",
+  "event_type_reason": "Maersk peak-season surcharge and expanded Durban congestion fee",
+  "fields": {
+   "move_significance": "SIGNIFICANT_OR_EXPECTED",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "fd4c77116de422b9",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "edtech provider's self-hosted Metabase exploited, 1m+ records exposed",
+  "fields": {
+   "incident_nature": "CONFIRMED_ATTACK_OR_BREACH",
+   "named_victim_status": "SPECIFIC_VICTIM_NAMED",
+   "confirmation_status": "CONFIRMED_BY_COMPANY",
+   "entity_role": "OTHER_SECTOR",
+   "industry_connection": "NOT_CONNECTED",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "030bf9a91d2bdeb5",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "Coldcard firmware flaw exploited to steal and launder bitcoin",
+  "fields": {
+   "incident_nature": "CONFIRMED_ATTACK_OR_BREACH",
+   "named_victim_status": "NO_NAMED_VICTIM_VENDOR_OR_PRODUCT_ONLY",
+   "confirmation_status": "REPORTED_BY_THREAT_ACTOR_OR_THIRD_PARTY",
+   "entity_role": "OTHER_SECTOR",
+   "industry_connection": "NOT_CONNECTED",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "a41bf694d2297ed8",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "Amazon 767 freighter overran the runway at Miami International, halting operations",
+  "fields": {
+   "airport_profile": "MAPPED",
+   "cargo_impact": "CARGO_DISRUPTED",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "6ee47fbf5020f375",
+  "event_type": "Recall",
+  "event_type_reason": "FSIS recall of imported ready-to-eat guanciale products",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "dc01b0055557e98c",
+  "event_type": "Bankruptcy",
+  "event_type_reason": "solar park developer Enerparc filed for insolvency",
+  "fields": {
+   "bankruptcy_stage": "FILED",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "24d7400b7cf852eb",
+  "event_type": "Bankruptcy",
+  "event_type_reason": "automotive supplier Paragon filed for insolvency, 552 jobs at risk",
+  "fields": {
+   "bankruptcy_stage": "FILED",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "17928064d667419e",
+  "event_type": "Flood",
+  "event_type_reason": "bridge out of service in Somalia amid widespread flooding warnings",
+  "fields": {
+   "flood_alert_tier": "WARNING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "8432e4b3de8b6873",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "Yadgir bandh closed markets and the APMC, traffic briefly disrupted",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "f27dffb1e4877c0a",
+  "event_type": "Flood",
+  "event_type_reason": "record Iguazu river flows monitored; visitor walkways stayed open",
+  "fields": {
+   "flood_alert_tier": "ADVISORY",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "2b204a18d3c61ddf",
+  "event_type": null,
+  "event_type_reason": "trend piece recapping already-known food recalls, no new development",
+  "fields": {
+   "story_nature": "RECYCLED_REMINDER_OF_KNOWN_DEVELOPMENT",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "7a5a3185820a44fa",
+  "event_type": "Recall",
+  "event_type_reason": "sprout recalls after an E. coli/Salmonella outbreak; seed supplier refused to recall",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "82bf39764f99b6f9",
+  "event_type": "Recall",
+  "event_type_reason": "FDA notice of the Foods Alive moringa leaf powder Salmonella recall",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "8264e22a60a12dd1",
+  "event_type": "Recall",
+  "event_type_reason": "Canadian recall of a protein puff snack for undeclared milk",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "47ced443d29d7811",
+  "event_type": "Hurricane/Typhoon (Pre-Landfall)",
+  "event_type_reason": "Hurricane Lowell's outer bands may bring rare Hawaii tornadoes",
+  "fields": {
+   "landfall_certainty": "UNCERTAIN_OR_DEVELOPING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "dd623fd28aecde3e",
+  "event_type": "Labor Disruption",
+  "event_type_reason": "bank employees across Maranhao began an indefinite strike",
+  "fields": {
+   "strike_status": "UNDERWAY",
+   "strike_target": "OTHER",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "59b3e44f46e314cb",
+  "event_type": "Business Sale",
+  "event_type_reason": "Foresight completed the sale of its public markets division",
+  "fields": {
+   "sale_stage": "COMPLETED",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "4d92b272093a7262",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Novartis India buying Pfizer's Minipress trademarks and IP in India",
+  "fields": {
+   "deal_stage": "ANNOUNCED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "af75afb8f7541b75",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Novartis India buying Pfizer's Minipress trademarks and IP in India",
+  "fields": {
+   "deal_stage": "ANNOUNCED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "a7ca21cfc1652110",
+  "event_type": "Layoffs",
+  "event_type_reason": "PayPal cutting 251 San Jose roles within a ~4,760-job global reduction",
+  "fields": {
+   "layoff_nature": "PERMANENT",
+   "layoff_scope": "GLOBAL",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE"
+  }
+ },
+ {
+  "key": "a4ab98ed9d4dc5d7",
+  "event_type": "Layoffs",
+  "event_type_reason": "layoffs across News 12's regional newsrooms",
+  "fields": {
+   "layoff_nature": "PERMANENT",
+   "layoff_scope": "SPECIFIC_DIVISION",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE"
+  }
+ },
+ {
+  "key": "28efd8b0f6dad939",
+  "event_type": "Layoffs",
+  "event_type_reason": "JLR cutting ~4,000 jobs worldwide over two years via voluntary redundancy",
+  "fields": {
+   "layoff_nature": "PERMANENT",
+   "layoff_scope": "GLOBAL",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "d904196102aa3329",
+  "event_type": "Forest Fire",
+  "event_type_reason": "hazelnut orchard fire in Duzce spread into adjacent forest",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "c7e84ef4f25b40f6",
+  "event_type": "Power Outage",
+  "event_type_reason": "animal-caused substation short cut power to 8,000 homes for under four minutes",
+  "fields": {
+   "outage_kind": "POWER",
+   "semiconductor_fab_region": "NO",
+   "expected_recovery_time_provided": "YES",
+   "outage_location": "RESIDENTIAL_OR_LOCAL_USER",
+   "important_manufacturing_region": "NO",
+   "operations_already_resumed": "YES",
+   "mapped_site_confirms_impact": "NO",
+   "duration_hours": "0.06",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "0ac3a638f3b0af78",
+  "event_type": "Regulatory Change",
+  "event_type_reason": "China suspended approvals for new battery storage manufacturing projects",
+  "fields": {
+   "legislative_stage": "IN_FORCE_OR_CHANGE_ANNOUNCED",
+   "reputable_sources_indicate_significant_impact": "YES",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "1b1c21c3ecbcdeeb",
+  "event_type": null,
+  "event_type_reason": "government task force cracking down on illegal mining operators",
+  "fields": {
+   "story_nature": "ENFORCEMENT_AGAINST_ILLICIT_ACTOR",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "c7e4f9e8e8c8b97e",
+  "event_type": null,
+  "event_type_reason": "public procurement tender notice, no event",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "1ee3c6d9c70b29ba",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "acting president appointed at a state agricultural bank pre-privatisation",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "020c4a6a90a321f8",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "new President and CEO appointed at MCB Islamic Bank",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "51a625b339342aa5",
+  "event_type": "Geopolitical",
+  "event_type_reason": "UN rights chief urged halting arms transfers and settlement-linked business",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "UNKNOWN",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "3f3b505b57c99d11",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "bank appointed a new head of branch banking, below C-suite",
+  "fields": {
+   "role": "OTHER_EXECUTIVE",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "f828a7a47ad11d30",
+  "event_type": null,
+  "event_type_reason": "Egyptian renewable-energy investment build-out with Chinese firms, no disruption",
+  "fields": {
+   "story_nature": "ORGANIC_EXPANSION_OR_INVESTMENT",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "5e9f0e9470dc191c",
+  "event_type": "Geopolitical",
+  "event_type_reason": "Poland urging EU-wide cuts to Russia's diplomatic presence",
+  "fields": {
+   "major_trade_deal_or_agreement": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "61177b33845626a4",
+  "event_type": "Environmental Hazard",
+  "event_type_reason": "residents petitioned over cement dust from a nearby factory",
+  "fields": {
+   "smog_alert_tier": "NOT_A_SMOG_ALERT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "UNKNOWN",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "6638e0f1b4a3e29c",
+  "event_type": null,
+  "event_type_reason": "nationwide enforcement drive against illegal mining operators",
+  "fields": {
+   "story_nature": "ENFORCEMENT_AGAINST_ILLICIT_ACTOR",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "0c79181e72a223d7",
+  "event_type": "Legal Action",
+  "event_type_reason": "TCL sued Samsung over Mini LED marketing claims",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "90dd5e586d1b29b1",
+  "event_type": null,
+  "event_type_reason": "login page boilerplate, nothing identifiable",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "NO",
+   "industry_relevance": "UNKNOWN"
+  }
+ },
+ {
+  "key": "8cc3026220b6181e",
+  "event_type": "Port Disruption",
+  "event_type_reason": "protest blockade brought the Port of Dover to a standstill until midday",
+  "fields": {
+   "port_profile": "CONTAINER_OR_CARGO_PORT",
+   "strike_ballot_only_no_date": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "3cea55f0acc07862",
+  "event_type": "Legal Action",
+  "event_type_reason": "personal-injury suit against a local convenience store",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "7841fae0883ed8bd",
+  "event_type": "Supply Shortage",
+  "event_type_reason": "nationwide fluoride shortage left a municipal water system without it",
+  "fields": {
+   "multi_tier_connection": "UNKNOWN",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "4ce9ba8b78beaf09",
+  "event_type": "Bribery/Corruption",
+  "event_type_reason": "PVR INOX probe into alleged kickbacks; preliminary review found no evidence",
+  "fields": {
+   "state_or_country_level_scandal": "NO",
+   "potential_manufacturing_or_supply_chain_impact": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "012102425a173ce2",
+  "event_type": "Bribery/Corruption",
+  "event_type_reason": "PVR INOX probe into alleged kickbacks; preliminary review found no evidence",
+  "fields": {
+   "state_or_country_level_scandal": "NO",
+   "potential_manufacturing_or_supply_chain_impact": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "8293bd6502c30cf6",
+  "event_type": "Business Sale",
+  "event_type_reason": "VW agreed to sell the Osnabruck plant; vehicle production ends 2027",
+  "fields": {
+   "sale_stage": "ANNOUNCED",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "bff7b63eb6b9e32e",
+  "event_type": "Business Sale",
+  "event_type_reason": "VW agreed to sell the Osnabruck plant; vehicle production ends 2027",
+  "fields": {
+   "sale_stage": "ANNOUNCED",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "0851523af835557f",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Carborundum Universal appointed a new CFO",
+  "fields": {
+   "role": "CFO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "c88ad10c169b744a",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Sterlite Electric appointed a new CFO",
+  "fields": {
+   "role": "CFO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "0ee6bd04a307800a",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "ZESA appointed a Group CEO",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "d7e190413107daff",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Maronan Metals appointed a Managing Director and CEO",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "6623b7d91ec9c1bc",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "care operator Attendo appointed a new President and CEO",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "f35d1d95d01ddd5c",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Albemarle named a new President and CEO in a planned succession",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "4eeedb931d5b0c64",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Choice Hotels appointed a new President and CEO",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "a99dc07f4d223099",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Neurizon Therapeutics appointed a new CEO",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "ed295798dbffa905",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Anteris Technologies named a new CFO",
+  "fields": {
+   "role": "CFO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "ab4767d430ab4e23",
+  "event_type": null,
+  "event_type_reason": "first mass-production server racks delivered to a cloud customer, no disruption",
+  "fields": {
+   "story_nature": "ORGANIC_EXPANSION_OR_INVESTMENT",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "72e0da6118e7888a",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "infrastructure fund named its founding CEO",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "5afdc2dcecdc97c8",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Oxford Metrics named a new CEO after the incumbent left for health reasons",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "06f6dc3d312f21cc",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Centum appointed an acting Group CEO after its CEO's exit",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "c23e04b96a8b000f",
+  "event_type": "Power Outage",
+  "event_type_reason": "storm outages peaked at ~450,000 DTE customers in Metro Detroit",
+  "fields": {
+   "outage_kind": "POWER",
+   "semiconductor_fab_region": "NO",
+   "expected_recovery_time_provided": "UNKNOWN",
+   "outage_location": "RESIDENTIAL_OR_LOCAL_USER",
+   "important_manufacturing_region": "YES",
+   "operations_already_resumed": "NO",
+   "mapped_site_confirms_impact": "UNKNOWN",
+   "duration_hours": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "UNKNOWN",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "3045e4072d6210f9",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "drone strike ignited fuel depots at Sochi airport, 100+ flights disrupted",
+  "fields": {
+   "airport_profile": "UNKNOWN",
+   "cargo_impact": "UNKNOWN",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "01ec599448c1a55a",
+  "event_type": "Airport Disruption",
+  "event_type_reason": "drone strike ignited fuel depots at Sochi airport, 100+ flights disrupted",
+  "fields": {
+   "airport_profile": "UNKNOWN",
+   "cargo_impact": "UNKNOWN",
+   "disruption_scale": "HIGH_CANCELLATIONS",
+   "strike_ballot_only_no_date": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "90c95d1d3fcef89a",
+  "event_type": "Protest/Riot",
+  "event_type_reason": "small protests across Iranian cities amid a deepening economic crisis",
+  "fields": {
+   "martial_law_introduced": "NO",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "4eae2fcc47e87fbe",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "United Oil & Gas appointed a Chief Operating Officer",
+  "fields": {
+   "role": "COO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "7337738596a41463",
+  "event_type": "Legal Action",
+  "event_type_reason": "Supreme Court annulled a $45m customs fine over fabricated AI citations",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "cf81474bfae269af",
+  "event_type": "Chemical Spill",
+  "event_type_reason": "gas leak during maintenance at a urea plant killed one worker",
+  "fields": {
+   "news_is_public": "YES",
+   "spill_location": "INDUSTRIAL_UNIT",
+   "external_disruption": "NONE_REPORTED",
+   "regional_industrial_importance": "IMPORTANT",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT"
+  }
+ },
+ {
+  "key": "90cc6e4171c6063b",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "Kavango Resources appointed a CEO and executive director",
+  "fields": {
+   "role": "CEO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "782dfcd50b2f455b",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "rogue AI agents hijacked a German website; OpenAI reported it to the EU",
+  "fields": {
+   "incident_nature": "CONFIRMED_ATTACK_OR_BREACH",
+   "named_victim_status": "NO_NAMED_VICTIM_VENDOR_OR_PRODUCT_ONLY",
+   "confirmation_status": "CONFIRMED_BY_COMPANY",
+   "entity_role": "SERVICE_PROVIDER",
+   "industry_connection": "NOT_CONNECTED",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "38d7558c5afcd48a",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "Chrome V8 zero-day under active exploitation, patch released",
+  "fields": {
+   "incident_nature": "ACTIVE_EXPLOITATION_CAMPAIGN_NO_NAMED_VICTIM",
+   "named_victim_status": "NO_NAMED_VICTIM_VENDOR_OR_PRODUCT_ONLY",
+   "confirmation_status": "CONFIRMED_BY_COMPANY",
+   "entity_role": "SERVICE_PROVIDER",
+   "industry_connection": "UNKNOWN",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "UNKNOWN"
+  }
+ },
+ {
+  "key": "f1989cc4f5d0dd7b",
+  "event_type": "Cyber Attack",
+  "event_type_reason": "malware backdooring F5 BIG-IP servers via a known CVE, no named victim",
+  "fields": {
+   "incident_nature": "ACTIVE_EXPLOITATION_CAMPAIGN_NO_NAMED_VICTIM",
+   "named_victim_status": "NO_NAMED_VICTIM_VENDOR_OR_PRODUCT_ONLY",
+   "confirmation_status": "REPORTED_BY_THREAT_ACTOR_OR_THIRD_PARTY",
+   "entity_role": "SERVICE_PROVIDER",
+   "industry_connection": "UNKNOWN",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "UNKNOWN"
+  }
+ },
+ {
+  "key": "f9574e770f1b9ca1",
+  "event_type": null,
+  "event_type_reason": "long-range demographic projection for a German district, no event",
+  "fields": {
+   "story_nature": "UNKNOWN",
+   "subject_identifiable": "YES",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "92021754b6b7f52f",
+  "event_type": "Leadership Transition",
+  "event_type_reason": "LB Pharmaceuticals appointed a CFO",
+  "fields": {
+   "role": "CFO",
+   "supply_chain_department_consequence": "NO",
+   "announced": "YES",
+   "transition_nature": "JOINS",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "adcd58e73b2eeb81",
+  "event_type": "Financial Distress",
+  "event_type_reason": "Loparex missed interest and faces Chapter 11 after a failed recapitalisation",
+  "fields": {
+   "distress_trigger": "RIGHTS_ISSUE_CANCELLED_OR_DEBT_REFINANCING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "91e140133a453e88",
+  "event_type": "FDA/EMA/OSHA Action",
+  "event_type_reason": "state drug regulator ran 2,902 manufacturing and sales inspections",
+  "fields": {
+   "action_kind": "OTHER_ACTION",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "39048b79ea0515d5",
+  "event_type": "Extreme Weather",
+  "event_type_reason": "heavy rain damaged the JR Muroran Line, suspending express and freight services",
+  "fields": {
+   "weather_severity": "HIGHLY_DISRUPTIVE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "YES",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE"
+  }
+ },
+ {
+  "key": "537de806c440a828",
+  "event_type": "Extreme Weather",
+  "event_type_reason": "yellow rainfall warning for southern Saskatchewan, travel impacts possible",
+  "fields": {
+   "weather_severity": "MINOR_OR_ROUTINE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "e206d4b50380e5e8",
+  "event_type": "Extreme Weather",
+  "event_type_reason": "Moroccan orange alert for thunderstorms, hail and gusty winds",
+  "fields": {
+   "weather_severity": "MINOR_OR_ROUTINE",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "NO",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR"
+  }
+ },
+ {
+  "key": "688be94b61de2f31",
+  "event_type": "Business Sale",
+  "event_type_reason": "VW agreed to sell the Osnabruck plant; vehicle production ends 2027",
+  "fields": {
+   "sale_stage": "ANNOUNCED",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "6b6bc4228f0721d2",
+  "event_type": "Flood",
+  "event_type_reason": "burst water main flooded a pub, still closed two months later",
+  "fields": {
+   "flood_alert_tier": "ACTUAL_FLOODING",
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "region_industrially_important": "NO",
+   "operational_disruptions_reported": "YES",
+   "industry_relevance": "NOT_RELEVANT",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_APPLICABLE"
+  }
+ },
+ {
+  "key": "4d3cac4e260a317b",
+  "event_type": "Recall",
+  "event_type_reason": "CPSC recall of a silicone baby teether over a choking hazard",
+  "fields": {
+   "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
+   "subject_identifiable": "YES",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "industry_relevance": "NOT_RELEVANT"
+  }
+ },
+ {
+  "key": "355f1a3c6b5a42f6",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Damen acquired Dutch shiprepair group Shipdock",
+  "fields": {
+   "deal_stage": "COMPLETED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "8c93939cf4f51f77",
+  "event_type": "Merger & Acquisition",
+  "event_type_reason": "Ecolab acquiring data-centre liquid cooling maker CoolIT",
+  "fields": {
+   "deal_stage": "ANNOUNCED",
+   "strict_bar_sector": "NONE",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
+   "steel_company_involved": "NO",
+   "steel_applications_match_or_partner_involved": "NO",
+   "initial_announcement_already_notified": "UNKNOWN",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "9165f7fcdb677a51",
+  "event_type": "Business Sale",
+  "event_type_reason": "InTEC sold its commercial IT services operations to Tela",
+  "fields": {
+   "sale_stage": "COMPLETED",
+   "product_line_connection": "NOT_CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ },
+ {
+  "key": "35ac91117262360f",
+  "event_type": "Business Sale",
+  "event_type_reason": "Swiggy transferring its Lynk B2B distribution business to Udaan",
+  "fields": {
+   "sale_stage": "ANNOUNCED",
+   "product_line_connection": "CONNECTED",
+   "service_sector_applicability": "APPLICABLE",
+   "industry_relevance": "RELEVANT",
+   "story_nature": "CORPORATE_STRUCTURE_CHANGE",
+   "subject_identifiable": "YES"
+  }
+ }
+]
