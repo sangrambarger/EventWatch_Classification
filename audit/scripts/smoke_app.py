@@ -31,6 +31,12 @@ PAGES = [
     "Methodology",
 ]
 
+#: The upload page is checked separately, by actually uploading this file. Clicking it would
+#: prove nothing: with no file chosen it renders a prompt and an empty uploader, which is exactly
+#: what a broken classification path would also render.
+UPLOAD_PAGE = "Classify an upload"
+UPLOAD_FIXTURE = AUDIT_DIR / "tests" / "fixtures" / "sample_feed.csv"
+
 ERROR_MARKERS = (
     "Traceback (most recent call last)",
     "streamlit.errors",
@@ -95,7 +101,37 @@ def click_every_page(base: str) -> list[str]:
             headings = page.locator("h1").count()
             if headings == 0:
                 problems.append(f"{label}: no heading rendered")
+
+        problems += check_upload(page)
         browser.close()
+    return problems
+
+
+def check_upload(page) -> list[str]:
+    """Upload a real feed file and prove a verdict came back.
+
+    The assertion is on the download buttons and the outcome wording, not on a row count: the
+    point is that a file went in and classified rows came out, which is the one thing on this
+    page that cannot fail silently anywhere else.
+    """
+    problems: list[str] = []
+    if not UPLOAD_FIXTURE.exists():
+        return [f"{UPLOAD_PAGE}: fixture missing at {UPLOAD_FIXTURE}"]
+    try:
+        page.get_by_text(UPLOAD_PAGE, exact=False).first.click(timeout=15_000)
+        page.wait_for_timeout(1500)
+        page.locator("input[type='file']").first.set_input_files(str(UPLOAD_FIXTURE))
+    except Exception as exc:  # noqa: BLE001
+        return [f"{UPLOAD_PAGE}: could not upload ({type(exc).__name__}: {exc})"]
+
+    page.wait_for_timeout(9000)
+    body = page.inner_text("body")
+    if "Traceback" in body or "StreamlitAPIException" in body:
+        snippet = body[body.find("Traceback"):][:400] if "Traceback" in body else body[:400]
+        problems.append(f"{UPLOAD_PAGE}: exception after upload — {snippet}")
+    for marker in ("Download results", "Download escalation queue", "comes off the analyst queue"):
+        if marker not in body:
+            problems.append(f"{UPLOAD_PAGE}: no '{marker}' after uploading a real file")
     return problems
 
 
@@ -147,7 +183,7 @@ def main() -> int:
                 print(f"FAIL: {f}")
             return 1
 
-        print(f"OK: all {len(PAGES)} pages rendered with no exception and no empty page")
+        print(f"OK: all {len(PAGES)} audit pages rendered, and a real upload classified end to end")
         return 0
     finally:
         if proc.poll() is None:

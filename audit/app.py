@@ -139,6 +139,123 @@ def table_of(frame: pd.DataFrame, columns: list[str]) -> None:
     st.dataframe(frame[columns], width='stretch', hide_index=True)
 
 
+# ---------------------------------------------------------------- upload page
+
+UPLOAD_PAGE = "0 · Classify an upload"
+
+
+def render_upload_page(tok: dict, dark: bool) -> None:
+    """Upload a feed file, classify it here, download the results and the escalation queue.
+
+    This is the whole product in one screen: a file in, a verdict per row out, no API key and no
+    network call. It deliberately does **not** write into the period store — a classification run
+    is a read of a file, and mixing it with ingestion would let an ad-hoc upload silently move the
+    audited denominators on every other page.
+    """
+    st.title("Classify an upload")
+    st.caption(
+        "Runs the same code path as `scripts/classify.py`, in this process. No API key, no "
+        "network call: extraction is patterns plus a local model, and every threshold decision "
+        "is deterministic Python."
+    )
+
+    upload = st.file_uploader("Feed export (.csv or .xlsx)", type=["csv", "xlsx", "xls"])
+    if upload is None:
+        st.info(
+            "The file needs a story-title column; everything else is matched by alias "
+            "(`Story Title`, `Summary`, `Owner`, `RowID`, capture timestamp). A column that is "
+            "not found is left empty rather than guessed at."
+        )
+        return
+
+    import tempfile
+
+    from scripts import classify as classify_mod
+
+    tmp = Path(tempfile.mkdtemp()) / upload.name
+    tmp.write_bytes(upload.getvalue())
+    try:
+        rows = classify_mod.rows_from_file(tmp)
+    except SystemExit as exc:
+        st.error(str(exc))
+        return
+    if not rows:
+        st.error("No rows with a story title were found in that file.")
+        return
+
+    extractor = classify_mod.Extractor.load()
+    if extractor is None:
+        st.warning(
+            "No trained extractor on disk, so this is running on patterns and the industry "
+            "gazetteer alone. More rows will escalate. Train with `scripts/train.py`."
+        )
+    with st.spinner(f"Deciding {len(rows)} rows…"):
+        records = classify_mod.classify_rows(rows, extractor)
+    summary = classify_mod.summarise(records)
+    results = pd.DataFrame(records)
+
+    n = summary["rows"]
+    a, b, c, d = st.columns(4)
+    a.metric("Rows", n)
+    b.metric("Decided with no LLM", pct(summary["auto_resolved"], n))
+    c.metric("Not Impactful — removed", pct(summary["not_impactful"], n))
+    d.metric("Escalated", pct(summary["escalated"], n))
+
+    st.markdown(
+        f"**{pct(summary['not_impactful'], n)}** comes off the analyst queue. "
+        f"**{pct(summary['impactful'], n)}** is Impactful and **{pct(summary['review'], n)}** "
+        "needs a human — neither is a saving, and neither is counted as one."
+    )
+
+    counts = results["classification"].value_counts().to_dict()
+    st.plotly_chart(outcome_bar(counts, tok, dark, "Outcome"), width='stretch')
+
+    blockers = classify_mod.blocking_fields(records)
+    if blockers:
+        st.subheader("What is parking rows in review")
+        st.caption(
+            "Each line is a field a rule asked for and extraction could not supply. This is the "
+            "improvement backlog in priority order — write the extraction pattern at the top and "
+            "that many rows stop needing a human. A row blocked on three fields counts against "
+            "each, because clearing any one of them is separate work."
+        )
+        st.dataframe(
+            pd.DataFrame(blockers, columns=["missing field", "rows blocked"]).head(20),
+            width='stretch', hide_index=True,
+        )
+
+    queue = classify_mod.escalation_queue(records)
+    st.subheader("Downloads")
+    st.caption(
+        f"The escalation queue is **{pct(len(queue), n)}** of the upload, and it is the only "
+        "thing a model ever needs to see. One binary question per row, not a re-read of every "
+        "threshold: *“{}”*".format(classify_mod.ESCALATION_QUESTION)
+    )
+    left, right = st.columns(2)
+    left.download_button(
+        "Download results (every row, with its rule)",
+        results.reindex(columns=classify_mod.RESULT_COLUMNS).to_csv(index=False),
+        file_name=f"{Path(upload.name).stem}_results.csv", mime="text/csv",
+        width='stretch',
+    )
+    right.download_button(
+        f"Download escalation queue ({len(queue)} rows)",
+        pd.DataFrame(queue).reindex(columns=classify_mod.ESCALATION_COLUMNS).to_csv(index=False)
+        if queue else "",
+        file_name=f"{Path(upload.name).stem}_escalations.csv", mime="text/csv",
+        disabled=not queue, width='stretch',
+    )
+
+    st.subheader("Every row")
+    st.caption("Each verdict carries the verbatim rule line it fired on and where each field "
+               "came from, so any number here can be traced without re-running anything.")
+    st.dataframe(
+        results[["row_id", "story_title", "classification", "event_type", "priority",
+                 "rule_id", "missing_fields", "escalate", "field_provenance", "rule_text"]],
+        width='stretch', hide_index=True,
+    )
+
+
 # ---------------------------------------------------------------- sidebar
 
 st.sidebar.title("EventWatch audit")
@@ -147,14 +264,17 @@ tok = tokens(dark)
 
 periods = available_periods()
 if not periods:
-    st.title("No period loaded")
-    st.markdown(
-        "Ingest a feed chunk first:\n\n"
-        "```bash\n"
-        "python3 audit/scripts/ingest.py --period <name> --add <files.csv>\n"
-        "python3 audit/scripts/near_dup.py --period <name>\n"
-        "```"
-    )
+    # Classification does not need an ingested period, so the app still does its main job with
+    # an empty store. Only the audit pages, which reconcile against the teacher pass, need one.
+    st.sidebar.caption("No period ingested — classification only.")
+    render_upload_page(tok, dark)
+    with st.expander("…or ingest a period to unlock the nine audit pages"):
+        st.markdown(
+            "```bash\n"
+            "python3 audit/scripts/ingest.py --period <name> --add <files.csv>\n"
+            "python3 audit/scripts/near_dup.py --period <name>\n"
+            "```"
+        )
     st.stop()
 
 period = st.sidebar.selectbox("Period", periods)
@@ -205,7 +325,11 @@ PAGES = [
     "8 · Rules & evidence",
     "9 · Methodology",
 ]
-page = st.sidebar.radio("Page", PAGES, label_visibility="collapsed")
+page = st.sidebar.radio("Page", [UPLOAD_PAGE] + PAGES, label_visibility="collapsed")
+
+if page == UPLOAD_PAGE:
+    render_upload_page(tok, dark)
+    st.stop()
 
 total = len(view)
 labelled = int((view["stage"] != "unlabelled").sum())
