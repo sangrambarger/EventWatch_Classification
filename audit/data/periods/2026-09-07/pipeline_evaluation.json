@@ -2,11 +2,11 @@
  "rows": 859,
  "auto_decided": 688,
  "escalated": 171,
- "agree": 435,
- "agreement_rate": 0.5064,
- "teacher_removed": 204,
- "pipeline_removed": 61,
- "removed_by_both": 52,
+ "agree": 497,
+ "agreement_rate": 0.5786,
+ "teacher_removed": 208,
+ "pipeline_removed": 64,
+ "removed_by_both": 58,
  "escalation_reasons": {
   "event type undetermined": 135,
   "industry relevance undetermined": 46

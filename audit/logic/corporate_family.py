@@ -38,7 +38,7 @@ from .base import (
     evidence,
     get,
 )
-from .connection import connection_cascade, unresolved_cascade
+from .connection import connection_cascade, derived_or_given, unresolved_cascade
 from .global_gate import apply_global_gate
 
 YES_NO = frozenset({"YES", "NO"})
@@ -111,7 +111,11 @@ def _commodity_rider(fields: Mapping[str, object], prefix: str, source: str) -> 
     rider = get(fields, "commodity_rider", allowed=COMMODITY_RIDER)
     if rider in {"NONE", UNKNOWN}:
         return None
-    partner = get(fields, "partner_involved", allowed=YES_NO)
+    # `partner_involved` is a supplier-mapping lookup no story answers, so it resolves through
+    # industry relevance like every other member of DERIVED_FROM_RELEVANCE. Reading it raw here
+    # made the mining and crude riders unreachable in practice: the field was always UNKNOWN, so
+    # every rider row went to review.
+    partner = derived_or_given(fields, "partner_involved")
     product = get(fields, "product_line_connection", allowed=frozenset({"CONNECTED", "NOT_CONNECTED"}))
 
     if rider in {"MINING", "CRUDE_OIL"}:

@@ -50,6 +50,7 @@ from .base import (
     THRESHOLD_REVIEW,
     UNKNOWN,
     Decision,
+    RuleConflict,
     evidence,
     get,
 )
@@ -116,13 +117,29 @@ def _regional_gate(
             classification=IMPACTFUL, rule_id=f"{prefix}.DISRUPT", rule_text=disruption_line,
             source=source, threshold_met=True, warroom_eligible=True, evidence=trail,
         )
-    if sites == "NO" and important == "NO" and disruptions in {"NO", UNKNOWN}:
+    # No mapped sites and no regional importance means no regional presence, which is the whole
+    # basis of this gate. A reported disruption cannot rescue it: under `require_disruption` the
+    # slide needs *both*, and without it a YES on disruptions already returned Impactful above.
+    # The earlier `disruptions in {"NO", UNKNOWN}` guard on this branch meant a require_disruption
+    # type with a reported disruption in a region we have no presence in fell past every branch
+    # and out of the bottom.
+    if sites == "NO" and important == "NO":
         return Decision(
             classification=NOT_IMPACTFUL, rule_id=f"{prefix}.NONE",
             rule_text=sites_line + "  ||  " + importance_line, source=source,
             threshold_met=False, warroom_eligible=False, evidence=trail,
         )
-    missing = tuple(n for n in REGIONAL_FIELDS if get(fields, n) == UNKNOWN)
+
+    # Report what is *actually* unresolved. `sites` has already been through
+    # `derived_or_given`, so re-reading the raw field here would name a question industry
+    # relevance already answered — which is what put 36 rows of the 7 Sept shift into review
+    # citing `sites_mapped_in_region` when the pipeline had resolved it.
+    resolved = {
+        "sites_mapped_in_region": sites,
+        "region_industrially_important": important,
+        "operational_disruptions_reported": disruptions,
+    }
+    missing = tuple(n for n, value in resolved.items() if value == UNKNOWN)
     if missing:
         return Decision(
             classification=THRESHOLD_REVIEW, rule_id=f"{prefix}.REVIEW",
@@ -143,10 +160,17 @@ def _regional_type(fields, *, event_type, prefix, source, sites_line, importance
         importance_line=importance_line, disruption_line=disruption_line,
         require_disruption=require_disruption, severity_when_importance_only=severity,
     )
-    return decision or Decision(
-        classification=THRESHOLD_REVIEW, rule_id=f"{prefix}.UNRESOLVED",
-        rule_text=sites_line, source=source, missing_fields=("sites_mapped_in_region",),
-        evidence=evidence(fields, *REGIONAL_FIELDS),
+    if decision is not None:
+        return decision
+    # Unreachable: every combination of the three regional fields is now answered above. It is
+    # left as a raise rather than a default because the previous fallback claimed
+    # `sites_mapped_in_region` was missing on rows where it was known — inventing a reason is
+    # worse than admitting the rules gave no answer (plan guardrail 15).
+    raise RuleConflict(
+        f"{prefix}: no branch of the regional gate matched "
+        f"sites={derived_or_given(fields, 'sites_mapped_in_region')} "
+        f"important={get(fields, 'region_industrially_important')} "
+        f"disruptions={get(fields, 'operational_disruptions_reported')}"
     )
 
 

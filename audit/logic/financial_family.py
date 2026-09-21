@@ -44,7 +44,7 @@ from .base import (
     evidence,
     get,
 )
-from .connection import connection_cascade, derived_or_given, unresolved_cascade
+from .connection import connection_cascade, derived_or_given, mapped_party, unresolved_cascade
 from .global_gate import apply_global_gate
 
 YES_NO = frozenset({"YES", "NO"})
@@ -200,7 +200,9 @@ def decide_fine(fields: Mapping[str, object]) -> Decision:
     if gate is not None:
         return gate
     kind = get(fields, "fine_kind", allowed=FINE_KIND)
-    mapped = get(fields, "mapped_or_prominent_party_involved", allowed=YES_NO)
+    # Resolved through industry relevance, as everywhere else that gates on mapped status —
+    # reading the raw field left it permanently UNKNOWN and parked every settlement in review.
+    mapped = mapped_party(fields)
 
     # A settlement carries a higher bar than a fine: mapped partner OR a major company from our
     # verticals, with no plain product-connection route.

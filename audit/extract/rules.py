@@ -131,11 +131,19 @@ ENUM_PATTERNS: dict[str, list[tuple[str, re.Pattern]]] = {
                            r"called off (?:the |their )?strike", r"deal (?:reached|struck).{0,30}avert")),
         ("UNDERWAY", _rx(r"strike (?:began|started|entered|continues|is underway|enters)",
                          r"(?:workers|staff|employees) (?:are )?(?:on strike|walked out)",
-                         r"strike action began")),
+                         r"strike action began",
+                         # Added from the 7 Sept shift, where 33 Labor Disruption rows reached
+                         # review with no status. Participial forms only — a bare "strike" in a
+                         # headline says an event exists, not what stage it is at, so it stays
+                         # silent and the row goes to review as before.
+                         r"striking workers", r"workers (?:are )?striking",
+                         r"strikebreaking", r"ongoing strike", r"during the .{0,20}strike")),
         ("VOTE_CONFIRMED", _rx(r"voted (?:to|in favou?r of) strike", r"strike vote (?:passed|approved)",
                                r"backed (?:a |the )?strike")),
         ("FUTURE_DATED", _rx(r"strike (?:on|from|scheduled for|planned for) \w+ \d",
-                             r"will (?:go on )?strike", r"set to strike", r"strike next")),
+                             r"will (?:go on )?strike", r"set to strike", r"strike next",
+                             r"ahead of (?:a |the )?(?:nationwide |national |general )?strike",
+                             r"(?:nationwide|national|general) strike (?:on|called)")),
         ("CONTRACT_NEGOTIATIONS_ON", _rx(r"(?:contract|wage|pay) (?:talks|negotiations)",
                                          r"collective bargaining")),
         ("INTENTION_OR_BALLOT_PENDING", _rx(r"threaten(?:ed|ing)? (?:to|a) strike", r"strike ballot",
@@ -216,9 +224,18 @@ ENUM_PATTERNS: dict[str, list[tuple[str, re.Pattern]]] = {
     "sale_stage": [
         ("COMPLETED", _rx(r"completed the (?:sale|acquisition)", r"sale (?:has )?closed",
                           r"deal (?:has )?closed")),
+        # Checked before ANNOUNCED, so "entertaining a sale of X" reads as talks rather than as a
+        # done deal on the strength of the words "sale of".
         ("SIGNS_TALKS_OR_PLANS", _rx(r"in talks to sell", r"exploring a sale", r"considering a sale",
-                                     r"nears? (?:a )?sale", r"plans to sell")),
-        ("ANNOUNCED", _rx(r"(?:sold|sells|to sell|agreed to sell|divest)")),
+                                     r"nears? (?:a )?sale", r"plans to sell",
+                                     r"entertaining a sale", r"weighing a sale",
+                                     r"said to be .{0,30}sale", r"potential sale",
+                                     r"put(?:s|ting)? .{0,30}up for sale")),
+        # "sale of X to Y" is how a deal desk writes it and how 20 rows of the 7 Sept shift were
+        # written; none of them contain the verb "sell".
+        ("ANNOUNCED", _rx(r"(?:sold|sells|to sell|agreed to sell|divest)",
+                          r"\bsale of\b", r"announce\w*\s+the sale", r"\bsale to\b",
+                          r"\bexit\b.{0,30}\bsale\b", r"\bsale\b.{0,20}\bdeal\b")),
     ],
     "deal_stage": [
         ("COMPLETED", _rx(r"completed the (?:merger|acquisition)", r"deal (?:has )?closed",
@@ -228,6 +245,106 @@ ENUM_PATTERNS: dict[str, list[tuple[str, re.Pattern]]] = {
         ("SIGNS_TALKS_OR_PLANS", _rx(r"in talks to (?:acquire|buy|merge)", r"exploring (?:a )?(?:merger|acquisition)",
                                      r"nears? (?:a )?(?:deal|acquisition)")),
         ("ANNOUNCED", _rx(r"(?:acquire|acquisition|merger|merge|buy(?:s|out)?|takeover)")),
+    ],
+
+    # --- Added from the 7 Sept shift's own review backlog -------------------------------------
+    # Each of the six fields below was the named reason a block of rows could not be decided.
+    # They are here rather than in the model because every one of them is stated outright in the
+    # headline: a story says "appoints new Chief Financial Officer", it does not imply it.
+
+    # Leadership Transition gates on the seniority of the role. A headline that names a
+    # transition names the office; nothing here infers seniority from context.
+    "role": [
+        ("CEO", _rx(r"\bceo\b", r"chief executive")),
+        ("CFO", _rx(r"\bcfo\b", r"chief financial officer")),
+        ("COO", _rx(r"\bcoo\b", r"chief operating officer")),
+        ("OTHER_EXECUTIVE", _rx(r"\bchairman\b", r"\bchairperson\b", r"\bchairwoman\b",
+                                r"managing director", r"\bpresident\b", r"chief \w+ officer",
+                                r"\bct[oi]o?\b", r"\bcmo\b", r"\bchro\b", r"\bciso\b",
+                                r"executive director", r"board member", r"general manager",
+                                r"head of \w+", r"\bdirector\b")),
+    ],
+
+    # Cyber Attack's own slide separates a confirmed breach from an advisory, a campaign with no
+    # named victim, a drill and an allegation, and treats them differently. Order is load-bearing:
+    # a denial or an allegation qualifies an attack word that appears in the same sentence.
+    "incident_nature": [
+        ("CYBER_DRILL_OR_SIMULATION", _rx(r"cyber (?:drill|exercise|simulation)",
+                                          r"tabletop exercise", r"simulated (?:attack|breach)",
+                                          r"penetration test", r"red[- ]team exercise")),
+        ("ALLEGED_OR_UNCONFIRMED_INCIDENT", _rx(r"\balleged(?:ly)?\b", r"\bunconfirmed\b",
+                                                r"\bsupposed(?:ly)?\b", r"\bpurported(?:ly)?\b",
+                                                r"denies? (?:a |any )?(?:breach|hack|attack)",
+                                                r"claims? (?:to have )?(?:breached|hacked)",
+                                                r"no evidence of (?:a )?(?:breach|compromise)")),
+        ("ACTIVE_EXPLOITATION_CAMPAIGN_NO_NAMED_VICTIM", _rx(
+            r"actively exploited", r"exploitation campaign", r"under active attack",
+            r"threat actors? (?:are )?(?:targeting|exploiting)", r"in[- ]the[- ]wild attacks?",
+            r"phishing campaign", r"malware campaign")),
+        ("VULNERABILITY_ADVISORY_NO_KNOWN_ATTACK", _rx(
+            r"\bcve-\d", r"security (?:advisory|bulletin|flaw)", r"\bvulnerabilit(?:y|ies)\b",
+            r"zero[- ]day", r"patch(?:es|ed)? (?:a |the )?(?:flaw|bug|vulnerability)",
+            r"issues? (?:a |an )?(?:security )?(?:update|patch)")),
+        ("CONFIRMED_ATTACK_OR_BREACH", _rx(
+            r"data breach", r"data (?:exposure|leak|theft)", r"ransomware", r"\bhacked\b",
+            r"hackers? (?:drain|steal|stole|withdraw|withdrew|access)", r"cyber ?attack",
+            r"cyber(?:security)? incident", r"breached (?:the |its )?", r"\bextortion\b",
+            r"compromised (?:customer|user|patient|employee) data")),
+    ],
+
+    # Layoffs needs either nature or scope to decide, so one pattern firing clears the row.
+    "layoff_nature": [
+        ("FURLOUGH", _rx(r"\bfurlough")),
+        ("TEMPORARY", _rx(r"temporar(?:y|ily) (?:lay ?off|laid off|job cut|suspend)",
+                          r"lay ?offs? (?:are )?temporary")),
+        # A stated intention is future-scheduled, and the slide reports it as such. Checked
+        # before PERMANENT because "to cut 4,000 jobs" contains both readings.
+        ("FUTURE_SCHEDULED", _rx(r"\bto cut\b.{0,30}\bjobs?\b", r"plans? to (?:cut|lay ?off|axe)",
+                                 r"(?:will|set to|expected to) (?:cut|lay ?off|axe|shed)",
+                                 r"may lose (?:their )?jobs", r"could lose (?:their )?jobs",
+                                 r"(?:job cuts?|layoffs?) (?:planned|expected|looming|inevitable)",
+                                 r"next round of job cuts")),
+        ("PERMANENT", _rx(r"\blaid off\b", r"\bjob cuts?\b", r"\blayoffs?\b", r"redundanc",
+                          r"(?:cuts|axes|slashes|sheds) \d[\d,]* jobs", r"workforce reduction")),
+    ],
+    "layoff_scope": [
+        ("GLOBAL", _rx(r"\bglobal(?:ly)?\b", r"\bworldwide\b", r"across (?:all|its global)")),
+        ("SPECIFIC_DIVISION", _rx(r"(?:at|in|from) its \w+ (?:division|unit|business|arm)",
+                                  r"\b(?:division|unit|business arm) (?:will|to) (?:cut|shed|close)")),
+    ],
+
+    # Extreme Weather / Tornado. Deliberately silent on the middle ground: a forecast of heavy
+    # rain is neither clearly disruptive nor clearly routine, and guessing either way moves a
+    # verdict. Only the two ends are read.
+    "weather_severity": [
+        ("MAJOR_NAMED_STORM", _rx(r"\bhurricane\b", r"\btyphoon\b", r"\bcyclone\b",
+                                  r"tropical storm", r"\bnamed storm\b")),
+        ("HIGHLY_DISRUPTIVE", _rx(r"\bred alert\b", r"state of emergency", r"\bevacuat",
+                                  r"record[- ](?:rain|heat|flood|snow)", r"\bdevastating\b",
+                                  r"\btorrential\b", r"\bcatastrophic\b",
+                                  r"(?:thousands|millions) (?:left )?(?:without power|powerless)",
+                                  r"\bdeadly\b", r"\bkilled\b", r"\bdestroyed\b",
+                                  r"\bsevere (?:weather|storm|flooding|heat)\b")),
+        ("MINOR_OR_ROUTINE", _rx(r"no (?:damage|injuries|disruption) (?:was |were )?report",
+                                 r"\blight (?:rain|snow)\b", r"\bpassed without\b",
+                                 r"\bminor (?:flooding|damage|disruption)\b")),
+    ],
+
+    # The regional gate's third limb. A story either reports something stopping or it reports
+    # that nothing did; the NO patterns run first because "no flights were disrupted" contains
+    # "disrupted".
+    "operational_disruptions_reported": [
+        ("NO", _rx(r"no (?:disruption|impact|delays?|cancellations?)",
+                   r"operations (?:were |are )?(?:un|not )affected",
+                   r"(?:flights|services|production) (?:were |are )?(?:un|not )affected",
+                   r"without (?:any )?disruption")),
+        ("YES", _rx(r"(?:halt|suspend|cancel|close|shut)\w*\s+(?:its |the |all )?"
+                    r"(?:operation|production|flight|service|plant|factory|port|terminal)",
+                    r"(?:operations|production|flights|services|plant|factory|port|terminal)"
+                    r"\s+(?:were |was |are |is )?(?:halted|suspended|cancelled|canceled|closed|shut)",
+                    r"forced to (?:close|halt|suspend|evacuate)",
+                    r"(?:road|rail|port|airport)s? (?:were |are )?(?:blocked|closed)",
+                    r"supply (?:chain )?disruption", r"power (?:outage|cut) (?:hit|affect)")),
     ],
 }
 
