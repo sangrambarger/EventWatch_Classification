@@ -490,7 +490,7 @@
   "event_type": "Volcano",
   "event_type_reason": "Anak Krakatau eruption disrupting flights and air traffic routing",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "industry_relevance": "RELEVANT"
@@ -518,7 +518,7 @@
   "event_type": "FDA/EMA/OSHA Action",
   "event_type_reason": "state drug regulator suspended 677 licences after mass inspections",
   "fields": {
-   "action_kind": "YES",
+   "action_kind": "OTHER_ACTION",
    "industry_relevance": "RELEVANT",
    "product_line_connection": "CONNECTED",
    "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
@@ -2125,7 +2125,7 @@
   "event_type": "Volcano",
   "event_type_reason": "volcanic ashfall over a capital city prompting mitigation operations",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "industry_relevance": "UNKNOWN"

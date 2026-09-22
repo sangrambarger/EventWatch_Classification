@@ -599,7 +599,7 @@
   "event_type": "Volcano",
   "event_type_reason": "eruption keeping airports closed",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "industry_relevance": "RELEVANT",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES"
@@ -1219,7 +1219,7 @@
   "event_type": "Volcano",
   "event_type_reason": "eruption ash closing seven airports and cancelling thousands of flights",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "industry_relevance": "RELEVANT",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES"
@@ -1693,7 +1693,7 @@
   "event_type": "Environmental Hazard",
   "event_type_reason": "untreated dye wastewater discoloured a river, facility suspended",
   "fields": {
-   "smog_alert_tier": "NO",
+   "smog_alert_tier": "NOT_A_SMOG_ALERT",
    "region_industrially_important": "YES",
    "operational_disruptions_reported": "YES",
    "industry_relevance": "RELEVANT",
@@ -2403,7 +2403,7 @@
   "event_type": "FDA/EMA/OSHA Action",
   "event_type_reason": "regulator seized medicines from unlicensed storage facilities",
   "fields": {
-   "action_kind": "YES",
+   "action_kind": "OTHER_ACTION",
    "industry_relevance": "RELEVANT",
    "product_line_connection": "CONNECTED",
    "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
@@ -2870,7 +2870,7 @@
   "event_type": "Environmental Hazard",
   "event_type_reason": "illegal mining causing road collapses and threatening power infrastructure",
   "fields": {
-   "smog_alert_tier": "NO",
+   "smog_alert_tier": "NOT_A_SMOG_ALERT",
    "region_industrially_important": "YES",
    "operational_disruptions_reported": "YES",
    "industry_relevance": "RELEVANT",

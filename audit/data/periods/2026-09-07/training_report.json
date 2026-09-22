@@ -1,51 +1,51 @@
 {
  "event_type": {
-  "n": 197,
-  "classes": 32,
-  "accuracy_all": 0.812,
-  "accepted": 129,
-  "coverage_at_floor": 0.655,
-  "accuracy_at_floor": 0.953,
+  "n": 246,
+  "classes": 34,
+  "accuracy_all": 0.801,
+  "accepted": 165,
+  "coverage_at_floor": 0.671,
+  "accuracy_at_floor": 0.915,
   "floor": 0.15,
   "curve": [
    {
     "floor": 0.3,
-    "coverage": 0.406,
-    "accuracy": 0.975
+    "coverage": 0.386,
+    "accuracy": 0.979
    },
    {
     "floor": 0.4,
-    "coverage": 0.315,
-    "accuracy": 1.0
+    "coverage": 0.297,
+    "accuracy": 0.986
    },
    {
     "floor": 0.45,
-    "coverage": 0.259,
+    "coverage": 0.268,
     "accuracy": 1.0
    },
    {
     "floor": 0.5,
-    "coverage": 0.228,
+    "coverage": 0.236,
     "accuracy": 1.0
    },
    {
     "floor": 0.55,
-    "coverage": 0.203,
+    "coverage": 0.195,
     "accuracy": 1.0
    },
    {
     "floor": 0.6,
-    "coverage": 0.168,
+    "coverage": 0.171,
     "accuracy": 1.0
    },
    {
     "floor": 0.7,
-    "coverage": 0.102,
+    "coverage": 0.11,
     "accuracy": 1.0
    },
    {
     "floor": 0.8,
-    "coverage": 0.061,
+    "coverage": 0.069,
     "accuracy": 1.0
    }
   ],
@@ -53,109 +53,109 @@
   "rules_only_accuracy": null
  },
  "story_nature": {
-  "n": 202,
+  "n": 251,
   "classes": 8,
-  "accuracy_all": 0.891,
-  "accepted": 194,
-  "coverage_at_floor": 0.96,
-  "accuracy_at_floor": 0.902,
+  "accuracy_all": 0.876,
+  "accepted": 232,
+  "coverage_at_floor": 0.924,
+  "accuracy_at_floor": 0.909,
   "floor": 0.4,
   "curve": [
    {
     "floor": 0.3,
-    "coverage": 0.995,
-    "accuracy": 0.896
+    "coverage": 0.996,
+    "accuracy": 0.88
    },
    {
     "floor": 0.4,
-    "coverage": 0.96,
-    "accuracy": 0.902
+    "coverage": 0.924,
+    "accuracy": 0.909
    },
    {
     "floor": 0.45,
-    "coverage": 0.916,
-    "accuracy": 0.908
+    "coverage": 0.873,
+    "accuracy": 0.922
    },
    {
     "floor": 0.5,
-    "coverage": 0.851,
-    "accuracy": 0.924
+    "coverage": 0.785,
+    "accuracy": 0.934
    },
    {
     "floor": 0.55,
-    "coverage": 0.738,
-    "accuracy": 0.933
+    "coverage": 0.677,
+    "accuracy": 0.959
    },
    {
     "floor": 0.6,
-    "coverage": 0.604,
-    "accuracy": 0.951
+    "coverage": 0.562,
+    "accuracy": 0.965
    },
    {
     "floor": 0.7,
-    "coverage": 0.337,
+    "coverage": 0.311,
     "accuracy": 1.0
    },
    {
     "floor": 0.8,
-    "coverage": 0.134,
+    "coverage": 0.127,
     "accuracy": 1.0
    }
   ],
-  "rules_only_coverage": 0.168,
-  "rules_only_accuracy": 0.706
+  "rules_only_coverage": 0.179,
+  "rules_only_accuracy": 0.667
  },
  "industry_relevance": {
-  "n": 202,
+  "n": 251,
   "classes": 3,
-  "accuracy_all": 0.718,
-  "accepted": 201,
-  "coverage_at_floor": 0.995,
-  "accuracy_at_floor": 0.721,
+  "accuracy_all": 0.713,
+  "accepted": 250,
+  "coverage_at_floor": 0.996,
+  "accuracy_at_floor": 0.716,
   "floor": 0.35,
   "curve": [
    {
     "floor": 0.3,
     "coverage": 1.0,
-    "accuracy": 0.718
+    "accuracy": 0.713
    },
    {
     "floor": 0.4,
-    "coverage": 0.965,
-    "accuracy": 0.723
+    "coverage": 0.964,
+    "accuracy": 0.731
    },
    {
     "floor": 0.45,
-    "coverage": 0.916,
-    "accuracy": 0.741
+    "coverage": 0.884,
+    "accuracy": 0.752
    },
    {
     "floor": 0.5,
-    "coverage": 0.777,
-    "accuracy": 0.758
+    "coverage": 0.781,
+    "accuracy": 0.786
    },
    {
     "floor": 0.55,
-    "coverage": 0.653,
-    "accuracy": 0.795
+    "coverage": 0.685,
+    "accuracy": 0.808
    },
    {
     "floor": 0.6,
-    "coverage": 0.535,
-    "accuracy": 0.852
+    "coverage": 0.578,
+    "accuracy": 0.855
    },
    {
     "floor": 0.7,
-    "coverage": 0.356,
-    "accuracy": 0.917
+    "coverage": 0.359,
+    "accuracy": 0.933
    },
    {
     "floor": 0.8,
-    "coverage": 0.193,
-    "accuracy": 0.974
+    "coverage": 0.223,
+    "accuracy": 0.982
    }
   ],
-  "rules_only_coverage": 0.619,
-  "rules_only_accuracy": 0.76
+  "rules_only_coverage": 0.606,
+  "rules_only_accuracy": 0.763
  }
 }

@@ -315,7 +315,7 @@
   "event_type": "Environmental Hazard",
   "event_type_reason": "hazardous cross-border haze triggering a town emergency",
   "fields": {
-   "smog_alert_tier": "YES",
+   "smog_alert_tier": "RED_HIGHEST",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "region_industrially_important": "UNKNOWN",
@@ -423,7 +423,7 @@
   "event_type": "Environmental Hazard",
   "event_type_reason": "algal bloom forced desalination plants offline and water rationing",
   "fields": {
-   "smog_alert_tier": "NO",
+   "smog_alert_tier": "NOT_A_SMOG_ALERT",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "region_industrially_important": "YES",
@@ -436,7 +436,7 @@
  {
   "key": "f34f48b7db69ffcc",
   "event_type": "Bankruptcy",
-  "event_type_reason": "court opened insolvency proceedings for a café",
+  "event_type_reason": "court opened insolvency proceedings for a caf\u00e9",
   "fields": {
    "bankruptcy_stage": "PROCEEDING_UNDERWAY",
    "product_line_connection": "NOT_CONNECTED",
@@ -666,7 +666,7 @@
   "event_type": "FDA/EMA/OSHA Action",
   "event_type_reason": "FDA closed a plant inspection with a favourable classification",
   "fields": {
-   "action_kind": "YES",
+   "action_kind": "UNKNOWN",
    "industry_relevance": "RELEVANT",
    "product_line_connection": "CONNECTED",
    "service_sector_applicability": "NOT_A_SERVICE_SECTOR",
@@ -1008,7 +1008,7 @@
   "event_type": "Volcano",
   "event_type_reason": "volcanic eruption with lava and gas emissions",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "industry_relevance": "UNKNOWN"
@@ -1106,7 +1106,7 @@
   "event_type": "FDA/EMA/OSHA Action",
   "event_type_reason": "regulator suspended a hospital blood centre licence",
   "fields": {
-   "action_kind": "YES",
+   "action_kind": "OTHER_ACTION",
    "industry_relevance": "RELEVANT",
    "product_line_connection": "NOT_CONNECTED",
    "service_sector_applicability": "APPLICABLE",
@@ -1702,7 +1702,7 @@
   "event_type": "Volcano",
   "event_type_reason": "volcanic ash from an eruption halted airport operations",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "industry_relevance": "UNKNOWN"
@@ -1728,7 +1728,7 @@
   "event_type": "Volcano",
   "event_type_reason": "eruption closed a major airport, shifting traffic to rail",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "industry_relevance": "UNKNOWN"
@@ -2160,7 +2160,7 @@
   "event_type": "Volcano",
   "event_type_reason": "volcanic ash disrupted flights and airport operations",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "industry_relevance": "UNKNOWN"
@@ -2838,7 +2838,7 @@
   "event_type": "Volcano",
   "event_type_reason": "continuous eruption ended with activity still monitored at alert level III",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "NONE_REPORTED",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "industry_relevance": "UNKNOWN"
@@ -2916,7 +2916,7 @@
   "event_type": "Volcano",
   "event_type_reason": "volcanic ash closed airports and triggered ticket refunds",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "industry_relevance": "UNKNOWN"
@@ -2927,7 +2927,7 @@
   "event_type": "Volcano",
   "event_type_reason": "eruption ash kept several airports closed with mass cancellations",
   "fields": {
-   "volcanic_activity": "YES",
+   "volcanic_activity": "ERUPTING",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "industry_relevance": "UNKNOWN"
@@ -2964,7 +2964,7 @@
   "event_type": "Environmental Hazard",
   "event_type_reason": "recurring seasonal crop burning driving hazardous air quality",
   "fields": {
-   "smog_alert_tier": "NO",
+   "smog_alert_tier": "NOT_A_SMOG_ALERT",
    "story_nature": "RECYCLED_REMINDER_OF_KNOWN_DEVELOPMENT",
    "subject_identifiable": "YES",
    "region_industrially_important": "YES",
@@ -2996,7 +2996,7 @@
   "event_type": "Environmental Hazard",
   "event_type_reason": "general commentary on worsening wildfire smoke air quality",
   "fields": {
-   "smog_alert_tier": "NO",
+   "smog_alert_tier": "NOT_A_SMOG_ALERT",
    "story_nature": "DISRUPTION_OR_RISK_SIGNAL",
    "subject_identifiable": "YES",
    "region_industrially_important": "UNKNOWN",
