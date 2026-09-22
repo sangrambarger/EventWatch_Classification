@@ -1,26 +1,37 @@
 {
  "period": "2026-09-07",
  "rows_in_period": 1079,
- "rows_labelled": 639,
- "rows_unlabelled": 440,
+ "rows_labelled": 859,
+ "rows_unlabelled": 220,
  "duplicate_keys": 0,
  "orphan_keys": 0,
  "unknown_event_types": {},
- "invalid_values": {},
- "invalid_value_count": 0,
+ "invalid_values": {
+  "smog_alert_tier": {
+   "NO": 5,
+   "YES": 1
+  },
+  "action_kind": {
+   "YES": 4
+  },
+  "volcanic_activity": {
+   "YES": 11
+  }
+ },
+ "invalid_value_count": 21,
  "fields_omitted": {},
  "unknown_rate": {
-  "product_line_connection": 0.165,
-  "industry_relevance": 0.117,
-  "selling_party_is_mapped_partner": 0.761,
-  "service_sector_applicability": 0.056,
-  "region_industrially_important": 0.223,
-  "initial_announcement_already_notified": 0.478,
+  "product_line_connection": 0.136,
+  "industry_relevance": 0.097,
+  "initial_announcement_already_notified": 0.54,
+  "service_sector_applicability": 0.045,
+  "region_industrially_important": 0.195,
   "neighbouring_evacuations": 0.71,
+  "duration_hours": 0.72,
   "affected_region_has_major_infrastructure": 0.452,
-  "disruption_scale": 0.171,
-  "duration_hours": 0.667,
-  "steel_applications_match_or_partner_involved": 0.196,
-  "partner_software_attacked": 0.429
+  "disruption_scale": 0.138,
+  "multi_tier_connection": 0.688,
+  "steel_applications_match_or_partner_involved": 0.143,
+  "operational_disruptions_reported": 0.05
  }
 }
