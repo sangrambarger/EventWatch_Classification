@@ -3,10 +3,10 @@
   "n": 246,
   "classes": 34,
   "accuracy_all": 0.801,
-  "accepted": 165,
-  "coverage_at_floor": 0.671,
-  "accuracy_at_floor": 0.915,
-  "floor": 0.15,
+  "accepted": 114,
+  "coverage_at_floor": 0.463,
+  "accuracy_at_floor": 0.939,
+  "floor": 0.25,
   "curve": [
    {
     "floor": 0.3,
@@ -109,10 +109,10 @@
   "n": 251,
   "classes": 3,
   "accuracy_all": 0.713,
-  "accepted": 250,
-  "coverage_at_floor": 0.996,
-  "accuracy_at_floor": 0.716,
-  "floor": 0.35,
+  "accepted": 222,
+  "coverage_at_floor": 0.884,
+  "accuracy_at_floor": 0.752,
+  "floor": 0.45,
   "curve": [
    {
     "floor": 0.3,

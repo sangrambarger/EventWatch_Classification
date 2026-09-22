@@ -1,14 +1,14 @@
 {
  "rows": 1079,
- "auto_decided": 853,
- "escalated": 226,
- "agree": 636,
- "agreement_rate": 0.5894,
+ "auto_decided": 771,
+ "escalated": 308,
+ "agree": 607,
+ "agreement_rate": 0.5626,
  "teacher_removed": 232,
- "pipeline_removed": 85,
- "removed_by_both": 66,
+ "pipeline_removed": 73,
+ "removed_by_both": 60,
  "escalation_reasons": {
-  "event type undetermined": 167,
-  "industry relevance undetermined": 71
+  "event type undetermined": 250,
+  "industry relevance undetermined": 84
  }
 }
